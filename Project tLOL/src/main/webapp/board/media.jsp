@@ -5,10 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#media").load("board.do?board_name=media")
+	});	
+</script>
 </head>
 <body>
-<jsp:include page="board.jsp">
-	<jsp:param value="media" name="board_name"/>
-</jsp:include>
+<div id="media"></div>
 </body>
 </html>

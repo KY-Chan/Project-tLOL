@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
+<!DOCTYPE html><html><head><meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#notice").load("board.do?board_name=notice")
+	});	
+</script>
 </head>
 <body>
-<jsp:include page="board.jsp">
-	<jsp:param value="notice" name="board_name"/>
-</jsp:include>
+<div id="notice"></div>
 </body>
 </html>

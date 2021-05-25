@@ -1,4 +1,4 @@
-package tLOL.article;
+package tLOL.model;
 
 import java.sql.Date;
 
@@ -11,7 +11,7 @@ public class Article {
 	private Date article_date;
 	private int article_read;
 	private int article_recom;
-	private String del;
+	private String article_del;
 	public int getBoard_num() {
 		return board_num;
 	}
@@ -60,11 +60,11 @@ public class Article {
 	public void setArticle_recom(int article_recom) {
 		this.article_recom = article_recom;
 	}
-	public String getDel() {
-		return del;
-	}
 
-	public void setDel(String del) {
-		this.del = del;
+	public String getArticle_del() {
+		return article_del;
+	}
+	public void setArticle_del(String article_del) {
+		this.article_del = article_del;
 	}
 }

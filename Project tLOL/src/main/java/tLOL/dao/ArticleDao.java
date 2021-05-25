@@ -8,7 +8,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import tLOL.article.*;
+import tLOL.model.Article;
 public class ArticleDao {
 	private static ArticleDao instance = new ArticleDao();
 	private ArticleDao() {}
@@ -32,25 +32,23 @@ public class ArticleDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Connection conn = getConnection();
-		String sql = "select * from (select rowNum rn, a.* from "
-				+ "(select * from article order by ref desc, re_step) a)"
-				+ "    where rn between ? and ?";
+		String sql = "select * from article";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, startRow);
-			pstmt.setInt(2, endRow);
+			//pstmt.setInt(1, startRow);
+			//pstmt.setInt(2, endRow);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Article article = new Article();
 				article.setBoard_num(rs.getInt("board_num"));
 				article.setArticle_num(rs.getInt("article_num"));
 				article.setAccount_num(rs.getInt("account_num"));
-				article.setArticle_content(rs.getString("article_content"));
 				article.setArticle_title(rs.getString("article_title"));
+				article.setArticle_content(rs.getString("article_content"));
 				article.setArticle_date(rs.getDate("article_date"));
 				article.setArticle_read(rs.getInt("article_read"));
 				article.setArticle_recom(rs.getInt("article_recom"));
-				article.setDel(rs.getString("del"));
+				article.setArticle_del(rs.getString("article_del"));
 				
 				list.add(article);
 			}
@@ -134,7 +132,7 @@ public class ArticleDao {
 				article.setArticle_date(rs.getDate("article_date"));
 				article.setArticle_read(rs.getInt("article_read"));
 				article.setArticle_recom(rs.getInt("article_recom"));
-				article.setDel(rs.getString("del"));
+				article.setArticle_del(rs.getString("article_del"));
 			}
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
