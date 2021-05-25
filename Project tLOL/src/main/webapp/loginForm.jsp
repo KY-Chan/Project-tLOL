@@ -1,81 +1,170 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- 디바이스에 맞는 사이즈 자동 조정 -->
-<meta name="viewport" content="width=device-width" initial-scale="1">
-<!-- 디자인을 담당하는 bootstrap css 참조 -->
-<link rel="stylesheet" href="css/bootstrap.css">
-
-<title>tLOL</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+	
+	<title>Project.tLOL.gg</title>
+	
+	<!-- Bootstrap core CSS -->
+	<link href="CSS-Bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Additional CSS Files -->
+	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/fontawesome.css">
+	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/templatemo-style.css">
+	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/owl.css">
+	<link rel="stylesheet" href="CSS-Bootstrap/css/bootstrap.css">
 </head>
-<body>
-	<!-- nav=하나의 웹사이트에 전반적인 구조를 보여줌 -->
-	<nav class="navbar navbar-default">
-		<div class="navbar-header"> <!-- html header -->
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<!-- icon-bar가 하나의 네비 바 짝대기로 간주하면 됨 -->
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<!-- navbar-brand는 로고같은 것 -->
-			<a class="navbar-brand" href="main.jsp">Project.tLOL.gg</a>
-		</div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<!-- <ul>은 어떤 리스트 같은 것을 보여줄 때 사용 -->
-			<ul class="nav navbar-nav">
-				<li><a href="main.jsp">Main</a></li>
-			</ul>
-			<!-- nav 오른쪽 -->
-			<ul class="nav navbar-nav navbar-right">
-				<!-- dropdown 버튼 생성 -->
-				<li class="dropdown">
-					<!-- #은 현재 가리키는 링크가 없다는 것을 나타냄 -->
-					<a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">가입하기<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-					<!-- active는 현재 선택이 되었다는 뜻, 현재 선택된 홈페이지를 의미 -->
-					<li class="active"><a href="login.do">로그인</a></li>
-					<li><a href="joinForm.do">회원가입</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<div class="container">
-		<div class="col-lg-4"></div>
-		<!-- login양식이 들어감 -->
-		<div class="col-lg-4">
-			<div class="jumbotron" style="padding-top: 20px;">
-				<form method="post" action="login.do">
-					<h3 style="text-align: center;">회원 로그인</h3>
-					<div class="form-group">
-						<!-- placeholder는 현재 어떠한것도 입력되지 않았을때 보여지는 것, name은 서버프로그램 작성시 중요 요소
-							maxlength는 아이디를 20자로 제한하는것 -->
-						<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20">
-					</div>
-					<div class="form-group">
-						<!-- placeholder는 현재 어떠한것도 입력되지 않았을때 보여지는 것, name은 서버프로그램 작성시 중요 요소
-							maxlength는 아이디를 20자로 제한하는것 -->
-						<input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20">
-					</div>
-					<input type="submit" class="btn btn-primary form-control" value="로그인"><br>
-				</form>
-				<div class="col-lg-4" style="padding-top: 5px;"></div>
-				<form method="post" action="joinForm.do">
-					<input type="submit" class="btn btn-primary form-control" value="회원가입">
-				</form>
-			</div>
-		</div>
-	</div>
-	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-</body>
-</html>
 
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Main -->
+<div id="main">
+<div class="inner">
+
+<!-- Header -->
+<header id="header">
+	<div class="logo">
+		<a href="main.do">Project.tLOL.gg</a>
+	</div>
+</header>
+
+<!-- Tables -->
+<section class="tables">
+	<form method="post" action="login.do">       
+		<div class="container-fluid">
+		<div class="row">
+		<div class="col-md-12">
+		<div class="section-heading"></div>
+		<div class="default-table">
+			<table>
+				<thead class="section-heading">
+					<tr>
+						<th><h2 style="text-align: center;">로그인 화면</h2></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="text" class="form-control" placeholder="아이디" name="account_id" required="required" autofocus="autofocus" maxlength="20"></td>
+					</tr>
+					<tr>
+						<td><input type="password" class="form-control" placeholder="비밀번호" name="account_pw" required="required" maxlength="20"></td>
+					</tr>
+					<tr>
+						<td><input type="submit" class="btn btn-primary form-control" value="로그인"></td>
+					</tr>
+					<tr>
+						<td><a href="joinForm.do" class="btn btn-primary form-control">회원가입</a></td>
+				</tbody>
+			</table>
+		</div>
+		</div>
+		</div>
+		</div>
+	</form>
+</section>
+</div> <!-- Main end -->    
+</div> <!-- Wrapper end -->    
+               
+              
+
+<!-- Sidebar -->
+<div id="sidebar">
+
+  <div class="inner">
+
+    <!-- Search Box -->
+<section id="search" class="alt">
+  <form method="get" action="#">
+    <input type="text" name="search" id="search" placeholder="Search..." />
+  </form>
+</section>
+  
+<!-- Menu -->
+<nav id="menu">
+   <ul>
+     <li><a href="index.html">Homepage</a></li>
+     <li><a href="simple_page.html">Simple Page</a></li>
+     <li><a href="shortcodes.html">Shortcodes</a></li>
+     <li>
+       <span class="opener">Dropdown One</span>
+       <ul>
+         <li><a href="#">First Sub Menu</a></li>
+         <li><a href="#">Second Sub Menu</a></li>
+         <li><a href="#">Third Sub Menu</a></li>
+       </ul>
+     </li>
+     <li>
+       <span class="opener">Dropdown Two</span>
+       <ul>
+         <li><a href="#">Sub Menu #1</a></li>
+         <li><a href="#">Sub Menu #2</a></li>
+         <li><a href="#">Sub Menu #3</a></li>
+       </ul>
+     </li>
+     <li><a href="https://www.google.com">External Link</a></li>
+   </ul>
+ </nav>
+
+ <!-- Featured Posts -->
+<div class="featured-posts">
+  <div class="heading">
+    <h2>Featured Posts</h2>
+  </div>
+  <div class="owl-carousel owl-theme">
+    <a href="#">
+      <div class="featured-item">
+        <img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured one">
+        <p>Aliquam egestas convallis eros sed gravida. Curabitur consequat sit.</p>
+      </div>
+    </a>
+    <a href="#">
+      <div class="featured-item">
+        <img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured two">
+        <p>Donec a scelerisque massa. Aliquam non iaculis quam. Duis arcu turpis.</p>
+      </div>
+    </a>
+    <a href="#">
+      <div class="featured-item">
+        <img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured three">
+        <p>Suspendisse ac convallis urna, vitae luctus ante. Donec sit amet.</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- Footer -->
+        <footer id="footer">
+          <p class="copyright">Copyright &copy; 2021 Project.tLOL.gg</p>
+        </footer>
+        
+      </div>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+    <script src="CSS-Bootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="CSS-Bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="CSS-Bootstrap/assets/js/browser.min.js"></script>
+    <script src="CSS-Bootstrap/assets/js/breakpoints.min.js"></script>
+    <script src="CSS-Bootstrap/assets/js/transition.js"></script>
+    <script src="CSS-Bootstrap/assets/js/owl-carousel.js"></script>
+    <script src="CSS-Bootstrap/assets/js/custom.js"></script>
+</body>
+
+
+  </body>
+
+</html>
