@@ -19,7 +19,6 @@
 	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/fontawesome.css">
 	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/templatemo-style.css">
 	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/owl.css">
-	<link rel="stylesheet" href="CSS-Bootstrap/css/bootstrap.css">
 </head>
 
 <body class="is-preload">
@@ -43,7 +42,7 @@
 	<form method="post" action="login.do">       
 		<div class="container-fluid">
 		<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-6 col-md-12">
 		<div class="section-heading"></div>
 		<div class="default-table">
 			<table>
@@ -144,7 +143,8 @@
 
 <!-- Footer -->
         <footer id="footer">
-          <p class="copyright">Copyright &copy; 2021 Project.tLOL.gg</p>
+          <p class="copyright">Copyright &copy; 2021 Project.tLOL.gg
+          <br>Designed by <a rel="nofollow" href="https://www.facebook.com/templatemo">Template Mo</a></p>
         </footer>
         
       </div>
@@ -156,15 +156,12 @@
 <!-- Bootstrap core JavaScript -->
     <script src="CSS-Bootstrap/vendor/jquery/jquery.min.js"></script>
     <script src="CSS-Bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+	
     <script src="CSS-Bootstrap/assets/js/browser.min.js"></script>
     <script src="CSS-Bootstrap/assets/js/breakpoints.min.js"></script>
     <script src="CSS-Bootstrap/assets/js/transition.js"></script>
     <script src="CSS-Bootstrap/assets/js/owl-carousel.js"></script>
     <script src="CSS-Bootstrap/assets/js/custom.js"></script>
-</body>
-
-
+  
   </body>
-
 </html>
