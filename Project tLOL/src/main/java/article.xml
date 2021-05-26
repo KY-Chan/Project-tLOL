@@ -5,5 +5,4 @@
 	<select id="list" parameterType="int" resultType="article">
 		select * from article where board_num=#{board_num} 
 	</select>
-	
 </mapper> 
