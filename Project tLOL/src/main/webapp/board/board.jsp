@@ -45,22 +45,22 @@
 		<c:if test="${not empty list }">
 			<c:forEach var="article" items="${list }">
 				<tr>
-					<td>${number }<c:set var="number" value="${number - 1 }"></c:set></td>
+					<td>${article.article_num }</td>
 					<c:if test="${article.article_del == 'y' }">
 						<th colspan="5">삭제된 게시글 입니다</th>
 					</c:if>
 					<c:if test="${article.article_del != 'y' }">
 						<td title="${article.article_title }">
-							<!--  <a href="content.do?num=${board.num}&pageNum=${currentPage }">
-								${board.subject}</a> -->
+							<a href="content.do?num=${article.article_num}&pageNum=${currentPage }">
+								${article.article_title}</a>
 								<c:if test="${article.article_read > 50 }">
-								<img alt="" src="images/hot.gif">
-							</c:if>
+									<img alt="" src="images/hot.gif">
+								</c:if>
 						</td>
 						<td>${article.account_num }</td>
-						<td>${article.article_date }</td>
 						<td>${article.article_read}</td>
 						<td>${article.article_recom}</td>
+						<td>${article.article_date}</td>
 					</c:if>
 				</tr>
 			</c:forEach>

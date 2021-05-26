@@ -21,10 +21,10 @@ public class BoardAction implements CommandProcess {
 			pageNum = "1";
 		
 		int currentPage = Integer.parseInt(pageNum);
-		int total = ad.getTotal();
+		int total = ad.getTotal(board_num);
 		int startRow = (currentPage - 1) * ROW_PER_PAGE + 1;
 		int endRow = startRow + ROW_PER_PAGE - 1;
-		List<Article> list = ad.list(startRow, endRow);
+		List<Article> list = ad.list(startRow, endRow, board_num);
 		int number = total - startRow + 1;
 		int totalPage = (int) Math.ceil((double) total / ROW_PER_PAGE);
 		int startPage = currentPage - (currentPage - 1) % PAGE_PER_BLOCK;
@@ -39,7 +39,7 @@ public class BoardAction implements CommandProcess {
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totalPage", totalPage);
 		
-		request.setAttribute("board_name", board_name);
+		request.setAttribute("board_num", board_num);
 		return "board";
 	}
 
