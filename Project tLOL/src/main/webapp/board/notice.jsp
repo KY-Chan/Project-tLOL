@@ -5,7 +5,7 @@
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#notice").load("board.do?board_name=notice")
+		$("#notice").load("board.do?board_num=1")
 	});	
 </script>
 </head>

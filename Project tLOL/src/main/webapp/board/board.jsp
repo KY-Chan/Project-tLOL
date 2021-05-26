@@ -29,14 +29,13 @@
 </c:if>
 </h2>
 <table>
-		<caption>게시글 목록</caption>
 		<tr>
-			<th>번호</th>
-			<th>제목</th>
+			<th>글번호</th>
+			<th>글제목</th>
 			<th>작성자</th>
-			<th>이메일</th>
-			<th>작성일</th>
 			<th>조회수</th>
+			<th>추천수</th>
+			<th>작성일</th>
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
@@ -51,7 +50,7 @@
 						<th colspan="5">삭제된 게시글 입니다</th>
 					</c:if>
 					<c:if test="${article.article_del != 'y' }">
-						<td title="${article.article_content }">
+						<td title="${article.article_title }">
 							<!--  <a href="content.do?num=${board.num}&pageNum=${currentPage }">
 								${board.subject}</a> -->
 								<c:if test="${article.article_read > 50 }">

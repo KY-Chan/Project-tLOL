@@ -8,7 +8,7 @@
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#news").load("board.do?board_name=news")
+		$("#news").load("board.do?board_num=2")
 	});	
 </script>
 </head>

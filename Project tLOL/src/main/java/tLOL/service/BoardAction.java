@@ -16,9 +16,10 @@ public class BoardAction implements CommandProcess {
 		final int ROW_PER_PAGE = 10;
 		final int PAGE_PER_BLOCK = 10;
 		String pageNum = request.getParameter("pageNum");
-		String board_name = request.getParameter("board_name");
+		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		if (pageNum == null || pageNum.equals(""))
 			pageNum = "1";
+		
 		int currentPage = Integer.parseInt(pageNum);
 		int total = ad.getTotal();
 		int startRow = (currentPage - 1) * ROW_PER_PAGE + 1;

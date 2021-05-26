@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="articlens">
+	<select id="select" parameterType="string" resultType="article">
+		select * from article where article_num=#{article_num} 
+	</select>
+	<!-- 조회 -->
+	<insert id="insert" parameterType="article">
+		insert into article values (#{userID},#{userPassword},#{userName},#{userNickName}, sysdate, 'n')
+	</insert>
+	<!-- 수정 -->
+	<update id="update" parameterType="member">
+		update users set userPassword=#{userPassword}, userName=#{userName}, userNickName=#{userNickName} where userID=#{userID}
+	</update>
+	
+	<!-- delete, 진짜 삭제하지않고 del컬럼 값을 y로 수정 -->
+	<update id="delete" parameterType="string">
+		update users set del='y' where userID=#{userID}
+	</update>
+</mapper> 
