@@ -8,7 +8,7 @@
 <title>Project.tLOL.gg join in process</title>
 </head>
 <body>
-	<c:if test="${result > 0 }">
+	<c:if test="${result ==  1 }">
 		<script type="text/javascript">
 			alert("회원가입 성공");
 			location.href = "loginForm.do";

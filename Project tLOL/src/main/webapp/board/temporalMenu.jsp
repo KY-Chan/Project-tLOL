@@ -8,9 +8,7 @@
 </head>
 <body>
 	<div id="sidebar">
-
 		<div class="inner">
-
 			<!-- Menu -->
 			<nav id="menu">
 				<ul>
