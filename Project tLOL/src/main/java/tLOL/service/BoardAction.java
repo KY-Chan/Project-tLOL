@@ -19,7 +19,6 @@ public class BoardAction implements CommandProcess {
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		if (pageNum == null || pageNum.equals(""))
 			pageNum = "1";
-		
 		int currentPage = Integer.parseInt(pageNum);
 		int total = ad.getTotal(board_num);
 		int startRow = (currentPage - 1) * ROW_PER_PAGE + 1;
