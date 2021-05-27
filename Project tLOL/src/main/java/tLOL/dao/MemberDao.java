@@ -24,8 +24,8 @@ public class MemberDao {
 				System.out.println(e.getMessage());
 			}
 	}
-	public Member select(String userID) {
-		return (Member) session.selectOne("memberns.select", userID);
+	public Member select(String account_id) {
+		return (Member) session.selectOne("memberns.select", account_id);
 	}
 	public int insert(Member member) {
 		return session.insert("memberns.insert", member);	
@@ -33,8 +33,8 @@ public class MemberDao {
 	public int update(Member member) {
 		return session.update("memberns.update", member);
 	}
-	public int delete(String userID) {
-		return session.update("memberns.delete", userID);
+	public int delete(String account_id) {
+		return session.update("memberns.delete", account_id);
 	}
 
 }

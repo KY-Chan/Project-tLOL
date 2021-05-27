@@ -10,11 +10,13 @@ import tLOL.model.Member;
 public class UpdateForm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 				HttpSession session = request.getSession();
-				String id = (String)session.getAttribute("id");
+				String account_id = (String)session.getAttribute("account_id");
 				MemberDao md = MemberDao.getInstance();
-				Member member = md.select(id);
+				// updateForm이 아닌곳에서도 session check하기 
+				if (account_id != null) {
+				Member member = md.select(account_id);
 				request.setAttribute("member", member);
-				
+				}
 		return "updateForm"; //updateForm.jsp에 member값 전달
 	}
 }

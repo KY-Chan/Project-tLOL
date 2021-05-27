@@ -4,7 +4,7 @@
 <configuration>
 	<properties resource="dbconnect.properties" />
 	<typeAliases>
-		<!-- ch17.model.Member를 짧게 member로 별명을 붙이자 -->
+		<!-- ch17.model.Member를 짧게 member -->
 		<typeAlias alias="member" type="tLOL.model.Member" />
 		<typeAlias alias="article" type="tLOL.model.Article" />
 	</typeAliases>

@@ -6,12 +6,12 @@ import tLOL.dao.MemberDao;
 import tLOL.model.Member;
 public class Confirm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		String id = request.getParameter("id");
+		String account_id = request.getParameter("account_id");
 		String msg  = "";
 		MemberDao md = MemberDao.getInstance();
-		Member member  = md.select(id);
+		Member member  = md.select(account_id);
 		if (member == null) msg = "사용 가능한 아이디입니다";
-		else msg = "사용중이니 다른 아이디를 사용하세요";
+		else msg = "이미 사용중인 아이디입니다";
 		request.setAttribute("msg", msg);
 		return "confirm";
 	}

@@ -2,20 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="memberns">
+	<!-- 로그인 -->
 	<select id="select" parameterType="string" resultType="member">
-		select * from users where userID=#{userID} 
+		select * from Accounts where account_id=#{account_id}
 	</select>
-	<!-- 조회 -->
+	
+	<!-- 회원가입 -->
 	<insert id="insert" parameterType="member">
-		insert into users values (#{userID},#{userPassword},#{userName},#{userNickName}, sysdate, 'n')
+		<!-- 회원가입시 회원번호 1씩 증가 -->
+		<selectKey keyProperty="account_num" resultType="integer" order="BEFORE">
+			select nvl(max(account_num),0) + 1 account_num from Accounts 
+		</selectKey>
+		insert into Accounts values (#{account_num}, #{account_id}, #{account_pw}, #{account_nickname}, sysdate, #{account_email}, 'n')
 	</insert>
+	
 	<!-- 수정 -->
 	<update id="update" parameterType="member">
-		update users set userPassword=#{userPassword}, userName=#{userName}, userNickName=#{userNickName} where userID=#{userID}
+		update Accounts set account_pw=#{account_pw}, account_nickname=#{account_nickname}, account_email=#{account_email} where account_id=#{account_id}
 	</update>
 	
-	<!-- delete, 진짜 삭제하지않고 del컬럼 값을 y로 수정 -->
+	<!-- delete, 진짜 삭제하지않고 del컬럼 값을 y로 수정 y=탈퇴한회원, n=탈퇴하지않은회원 -->
 	<update id="delete" parameterType="string">
-		update users set del='y' where userID=#{userID}
+		update Accounts set account_del='y' where account_id=#{account_id}
 	</update>
 </mapper> 

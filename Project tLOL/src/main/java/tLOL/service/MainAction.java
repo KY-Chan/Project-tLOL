@@ -8,10 +8,10 @@ import tLOL.model.Member;
 public class MainAction implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("id");
-		if (id != null) {
+		String account_id = (String)session.getAttribute("account_id");
+		if (account_id != null) {
 			MemberDao md  = MemberDao.getInstance();
-			Member member = md.select(id);
+			Member member = md.select(account_id);
 			request.setAttribute("member", member);
 		}
 		return "main";

@@ -1,48 +1,56 @@
 package tLOL.model;
 import java.sql.Date;
 public class Member {
-	private String userID;
-	private String userPassword;
-	private String userName;
-	private String userNickName;
-	private Date reg_date;
-	private String del;
+	private int account_num;
+	private String account_id;
+	private String account_pw;
+	private String account_nickname;
+	private Date account_reg_date;
+	private String account_email;
+	private String account_del;
 	
-	public String getUserID() {
-		return userID;
+	public int getAccount_num() {
+		return account_num;
 	}
-	public void setUserID(String userID) {
-		this.userID = userID;
+	public void setAccount_num(int account_num) {
+		this.account_num = account_num;
 	}
-	public String getUserPassword() {
-		return userPassword;
+	public String getAccount_id() {
+		return account_id;
 	}
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
+	public void setAccount_id(String account_id) {
+		this.account_id = account_id;
 	}
-	public String getUserName() {
-		return userName;
+	public String getAccount_pw() {
+		return account_pw;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setAccount_pw(String account_pw) {
+		this.account_pw = account_pw;
 	}
-	public String getUserNickName() {
-		return userNickName;
+	public String getAccount_nickname() {
+		return account_nickname;
 	}
-	public void setUserNickName(String userNickName) {
-		this.userNickName = userNickName;
+	public void setAccount_nickname(String account_nickname) {
+		this.account_nickname = account_nickname;
 	}
-	public Date getReg_date() {
-		return reg_date;
+	public Date getAccount_reg_date() {
+		return account_reg_date;
 	}
-	public void setReg_date(Date reg_date) {
-		this.reg_date = reg_date;
+	public void setAccount_reg_date(Date account_reg_date) {
+		this.account_reg_date = account_reg_date;
 	}
-	public String getDel() {
-		return del;
+	public String getAccount_email() {
+		return account_email;
 	}
-	public void setDel(String del) {
-		this.del = del;
+	public void setAccount_email(String account_email) {
+		this.account_email = account_email;
+	}
+	public String getAccount_del() {
+		return account_del;
+	}
+	public void setAccount_del(String account_del) {
+		this.account_del = account_del;
 	}
 	
+
 }
