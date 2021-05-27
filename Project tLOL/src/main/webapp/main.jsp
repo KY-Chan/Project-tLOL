@@ -145,7 +145,6 @@
           <p class="copyright">Copyright &copy; 2021 Project.tLOL.gg
           <br>Designed by <a rel="nofollow" href="https://www.facebook.com/templatemo">Template Mo</a></p>
         </footer>
-        
       </div>
     </div>
 
