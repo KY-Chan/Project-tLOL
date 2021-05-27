@@ -9,7 +9,7 @@
 <script type="text/javascript">
 	function del() {
 		var con = confirm("정말로 탈퇴하시겠습니까?");
-		if (con) location.href="delete.do";
+		if (con) location.href="Accounts/delete.do";
 		else alert("삭제가 취소 되었습니다");
 	}
 </script>
@@ -24,12 +24,12 @@
 	<title>Project.tLOL.gg</title>
 	
 	<!-- Bootstrap core CSS -->
-	<link href="../CSS-Bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="CSS-Bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	
 	<!-- Additional CSS Files -->
-	<link rel="stylesheet" href="../CSS-Bootstrap/assets/css/fontawesome.css">
-	<link rel="stylesheet" href="../CSS-Bootstrap/assets/css/templatemo-style.css">
-	<link rel="stylesheet" href="../CSS-Bootstrap/assets/css/owl.css">
+	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/fontawesome.css">
+	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/templatemo-style.css">
+	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/owl.css">
 </head>
 
 <body class="is-preload">
@@ -57,10 +57,10 @@
 		<div class="section-heading">${member.account_id }님 반갑습니다</div>
 		<div class="default-table">
 			<table>
-				<tr><td><button onclick="location.href='view.do'">2323232</button></td></tr>
-				<tr><td><button onclick="location.href='updateForm.do'">343124</button></td></tr>
+				<tr><td><button onclick="location.href='Accounts/view.do'">2323232</button></td></tr>
+				<tr><td><button onclick="location.href='Accounts/updateForm.do'">343124</button></td></tr>
 				<tr><td><button onclick="del()"></button>234233</td></tr>
-				<tr><td><button onclick="location.href='logout.do'">4</button></td></tr>
+				<tr><td><button onclick="location.href='Accounts/logout.do'">4</button></td></tr>
 			</table>
 		</div>
 		</div>
@@ -94,21 +94,21 @@
      <li>
        <span class="opener">회원</span>
        <ul>
-         <li><a href="updateForm.do">회원정보 수정</a></li>
+         <li><a href="Accounts/updateForm.do">회원정보 수정</a></li>
          <li><a href="#">내 글 관리 & 댓글 관리</a></li>
          <li><a href="Accounts/loginForm.do">로그인</a></li>
-         <li><a href="logout.do">로그아웃</a></li>
+         <li><a href="Accounts/logout.do">로그아웃</a></li>
        </ul>
      </li>
      <li>
        <span class="opener">게시판</span>
        <ul>
-         <li><a href="#">공지사항</a></li>
-         <li><a href="#">뉴스</a></li>
-         <li><a href="#">자유게시판</a></li>
-         <li><a href="#">매칭게시판</a></li>
-         <li><a href="#">갤러리</a></li>
-         <li><a href="#">팁/노하우</a></li>
+         <li><a href="Boards/notice.jsp">공지사항</a></li>
+         <li><a href="Boards/news.jsp">뉴스</a></li>
+         <li><a href="Boards/free.jsp">자유게시판</a></li>
+         <li><a href="Boards/match.jsp">매칭게시판</a></li>
+         <li><a href="Boards/media.jsp">갤러리</a></li>
+         <li><a href="#Boards/tip.jsp">팁/노하우</a></li>
        </ul>
      </li>
      <li><a href="https://www.google.com">External Link</a></li>
@@ -123,19 +123,19 @@
   <div class="owl-carousel owl-theme">
     <a href="#">
       <div class="featured-item">
-        <img src="../CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured one">
+        <img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured one">
         <p>Aliquam egestas convallis eros sed gravida. Curabitur consequat sit.</p>
       </div>
     </a>
     <a href="#">
       <div class="featured-item">
-        <img src="../CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured two">
+        <img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured two">
         <p>Donec a scelerisque massa. Aliquam non iaculis quam. Duis arcu turpis.</p>
       </div>
     </a>
     <a href="#">
       <div class="featured-item">
-        <img src="../CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured three">
+        <img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured three">
         <p>Suspendisse ac convallis urna, vitae luctus ante. Donec sit amet.</p>
       </div>
     </a>
@@ -155,14 +155,14 @@
 
 <!-- Scripts -->
 <!-- Bootstrap core JavaScript -->
-    <script src="../CSS-Bootstrap/vendor/jquery/jquery.min.js"></script>
-    <script src="../CSS-Bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="CSS-Bootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="CSS-Bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	
-    <script src="../CSS-Bootstrap/assets/js/browser.min.js"></script>
-    <script src="../CSS-Bootstrap/assets/js/breakpoints.min.js"></script>
-    <script src="../CSS-Bootstrap/assets/js/transition.js"></script>
-    <script src="../CSS-Bootstrap/assets/js/owl-carousel.js"></script>
-    <script src="../CSS-Bootstrap/assets/js/custom.js"></script>
+    <script src="CSS-Bootstrap/assets/js/browser.min.js"></script>
+    <script src="CSS-Bootstrap/assets/js/breakpoints.min.js"></script>
+    <script src="CSS-Bootstrap/assets/js/transition.js"></script>
+    <script src="CSS-Bootstrap/assets/js/owl-carousel.js"></script>
+    <script src="CSS-Bootstrap/assets/js/custom.js"></script>
   
   </body>
 </html>
