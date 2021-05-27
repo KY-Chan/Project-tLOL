@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../CSS-Bootstrap/js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$("#media").load("board.do?board_num=5")

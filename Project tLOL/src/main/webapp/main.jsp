@@ -147,7 +147,6 @@
         </footer>
       </div>
     </div>
-
 </div>
 
 <!-- Scripts -->
