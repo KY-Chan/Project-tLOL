@@ -8,6 +8,7 @@ public class Member {
 	private Date account_reg_date;
 	private String account_email;
 	private String account_del;
+	private int account_admin;
 	
 	public int getAccount_num() {
 		return account_num;
@@ -51,6 +52,11 @@ public class Member {
 	public void setAccount_del(String account_del) {
 		this.account_del = account_del;
 	}
-	
+	public int getAccount_admin() {
+		return account_admin;
+	}
+	public void setAccount_admin(int account_admin) {
+		this.account_admin = account_admin;
+	}
 
 }

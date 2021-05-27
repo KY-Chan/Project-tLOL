@@ -94,10 +94,10 @@
      <li>
        <span class="opener">회원</span>
        <ul>
-         <li><a href="updateForm.do">회원정보 수정</a></li>
+         <li><a href="Accounts/updateForm.do">회원정보 수정</a></li>
          <li><a href="#">내 글 관리 & 댓글 관리</a></li>
          <li><a href="Accounts/loginForm.do">로그인</a></li>
-         <li><a href="logout.do">로그아웃</a></li>
+         <li><a href="Accounts/logout.do">로그아웃</a></li>
        </ul>
      </li>
      <li>
