@@ -6,7 +6,8 @@ CREATE TABLE Accounts
     account_nickname    VARCHAR2(20) NOT NULL,
     account_reg_date    DATE NOT NULL,
     account_email    VARCHAR2(30),
-    account_del    CHAR(1) DEFAULT 'n' NOT NULL
+    account_del    CHAR(1) DEFAULT 'n' NOT NULL,
+    account_admin	NUMBER DEFAULT 0 NOT NULL
 );
 
 ALTER TABLE Accounts
