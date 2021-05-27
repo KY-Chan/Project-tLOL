@@ -3,10 +3,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html><html><head><meta charset="UTF-8">
-<title>Insert title here</title></head><body>
-<c:set var="id" value="${sessionScope.id }"></c:set>
-<c:if test="${empty id }">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Project.tLOL.gg</title>
+</head>
+<body>
+<c:set var="account_id" value="${sessionScope.account_id }"></c:set>
+<c:if test="${empty account_id }">
 	<script type="text/javascript">
 		location.href="loginForm.do";
 	</script>

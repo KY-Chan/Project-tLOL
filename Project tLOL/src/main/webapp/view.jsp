@@ -8,21 +8,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Project.tLOL.gg</title>
 <link rel="stylesheet" type="text/css" href="common.css">
 </head>
 <body>
-	<table><caption>회원정보</caption>
-		<tr><th>아이디</th><td>${member.id }</td></tr>
-		<tr><th>이름</th><td>${member.name }</td></tr>
-		<tr><th>전화</th><td>${member.tel }</td></tr>
-		<tr><th>주소</th><td>${member.address }</td></tr>
-		<tr><th>등록일</th><td>${member.reg_date}</td></tr>
+	<table><caption>회원정보 확인</caption>
+		<tr><th>아이디</th><td>${member.account_id }</td></tr>
+		<tr><th>닉네임</th><td>${member.account_nickname }</td></tr>
+		<tr><th>e-mail</th><td>${member.account_email }</td></tr>
+		<tr><th>등록일</th><td>${member.account_reg_date}</td></tr>
 	</table>
-	<!-- 클릭시 command.properties에 있는 main.do로 이동해 MainAction.java로 이동함 -->
-	<a href="main.do">메인</a>
-	
-	<!-- 클릭시 command.properties에 있는 updateForm.do로 이동해 updateForm.java로 이동함 -->
-	<a href="updateForm.do">회원정보 수정</a>
 </body>
 </html>

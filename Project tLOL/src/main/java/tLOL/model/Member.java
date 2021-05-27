@@ -5,7 +5,7 @@ public class Member {
 	private String account_id;
 	private String account_pw;
 	private String account_nickname;
-	private Date reg_date;
+	private Date account_reg_date;
 	private String account_email;
 	private String account_del;
 	
@@ -33,11 +33,11 @@ public class Member {
 	public void setAccount_nickname(String account_nickname) {
 		this.account_nickname = account_nickname;
 	}
-	public Date getReg_date() {
-		return reg_date;
+	public Date getAccount_reg_date() {
+		return account_reg_date;
 	}
-	public void setReg_date(Date reg_date) {
-		this.reg_date = reg_date;
+	public void setAccount_reg_date(Date account_reg_date) {
+		this.account_reg_date = account_reg_date;
 	}
 	public String getAccount_email() {
 		return account_email;
@@ -52,6 +52,5 @@ public class Member {
 		this.account_del = account_del;
 	}
 	
-	
-	
+
 }
