@@ -112,6 +112,7 @@
    </ul>
  </nav>
 
+
  <!-- Featured Posts -->
 <div class="featured-posts">
   <div class="heading">
