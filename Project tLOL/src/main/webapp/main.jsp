@@ -24,12 +24,12 @@
 	<title>Project.tLOL.gg</title>
 	
 	<!-- Bootstrap core CSS -->
-	<link href="CSS-Bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../CSS-Bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	
 	<!-- Additional CSS Files -->
-	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/fontawesome.css">
-	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/templatemo-style.css">
-	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/owl.css">
+	<link rel="stylesheet" href="../CSS-Bootstrap/assets/css/fontawesome.css">
+	<link rel="stylesheet" href="../CSS-Bootstrap/assets/css/templatemo-style.css">
+	<link rel="stylesheet" href="../CSS-Bootstrap/assets/css/owl.css">
 </head>
 
 <body class="is-preload">
@@ -112,7 +112,6 @@
    </ul>
  </nav>
 
-
  <!-- Featured Posts -->
 <div class="featured-posts">
   <div class="heading">
@@ -121,19 +120,19 @@
   <div class="owl-carousel owl-theme">
     <a href="#">
       <div class="featured-item">
-        <img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured one">
+        <img src="../CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured one">
         <p>Aliquam egestas convallis eros sed gravida. Curabitur consequat sit.</p>
       </div>
     </a>
     <a href="#">
       <div class="featured-item">
-        <img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured two">
+        <img src="../CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured two">
         <p>Donec a scelerisque massa. Aliquam non iaculis quam. Duis arcu turpis.</p>
       </div>
     </a>
     <a href="#">
       <div class="featured-item">
-        <img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured three">
+        <img src="../CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured three">
         <p>Suspendisse ac convallis urna, vitae luctus ante. Donec sit amet.</p>
       </div>
     </a>
@@ -145,20 +144,22 @@
           <p class="copyright">Copyright &copy; 2021 Project.tLOL.gg
           <br>Designed by <a rel="nofollow" href="https://www.facebook.com/templatemo">Template Mo</a></p>
         </footer>
+        
       </div>
     </div>
+
 </div>
 
 <!-- Scripts -->
 <!-- Bootstrap core JavaScript -->
-    <script src="CSS-Bootstrap/vendor/jquery/jquery.min.js"></script>
-    <script src="CSS-Bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../CSS-Bootstrap/vendor/jquery/jquery.min.js"></script>
+    <script src="../CSS-Bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	
-    <script src="CSS-Bootstrap/assets/js/browser.min.js"></script>
-    <script src="CSS-Bootstrap/assets/js/breakpoints.min.js"></script>
-    <script src="CSS-Bootstrap/assets/js/transition.js"></script>
-    <script src="CSS-Bootstrap/assets/js/owl-carousel.js"></script>
-    <script src="CSS-Bootstrap/assets/js/custom.js"></script>
+    <script src="../CSS-Bootstrap/assets/js/browser.min.js"></script>
+    <script src="../CSS-Bootstrap/assets/js/breakpoints.min.js"></script>
+    <script src="../CSS-Bootstrap/assets/js/transition.js"></script>
+    <script src="../CSS-Bootstrap/assets/js/owl-carousel.js"></script>
+    <script src="../CSS-Bootstrap/assets/js/custom.js"></script>
   
   </body>
 </html>
