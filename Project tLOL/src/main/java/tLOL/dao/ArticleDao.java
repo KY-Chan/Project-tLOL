@@ -49,4 +49,16 @@ public class ArticleDao {
 	public int getTotal(int board_num) {
 		return (int) session.selectOne("articlens.total", board_num);
 	}
+	public void readcountUpdate(int article_num, int board_num) {
+		Map<String, Integer> parms = new HashMap<String, Integer>();
+		parms.put("board_num", board_num);
+		parms.put("article_num", article_num);
+		session.update("articlens.readcount", parms);		
+	}
+	public Article select(int article_num, int board_num) {
+		Map<String, Integer> parms = new HashMap<String, Integer>();
+		parms.put("board_num", board_num);
+		parms.put("article_num", article_num);
+		return (Article) session.selectOne("articlens.select", parms);	
+	}
 }

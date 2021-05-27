@@ -51,7 +51,7 @@
 					</c:if>
 					<c:if test="${article.article_del != 'y' }">
 						<td title="${article.article_title }">
-							<a href="content.do?num=${article.article_num}&pageNum=${currentPage }">
+							<a href="content.do?article_num=${article.article_num}&board_num=${article.board_num}&pageNum=${currentPage }">
 								${article.article_title}</a>
 								<c:if test="${article.article_read > 50 }">
 									<img alt="" src="images/hot.gif">
