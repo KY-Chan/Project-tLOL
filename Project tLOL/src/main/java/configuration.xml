@@ -4,6 +4,7 @@
 <configuration>
 	<properties resource="dbconnect.properties" />
 	<typeAliases>
+		<!-- ch17.model.Member를 짧게 member -->
 		<typeAlias alias="member" type="tLOL.model.Member" />
 	</typeAliases>
 	<environments default="development">
