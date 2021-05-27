@@ -96,16 +96,19 @@
        <ul>
          <li><a href="updateForm.do">회원정보 수정</a></li>
          <li><a href="#">내 글 관리 & 댓글 관리</a></li>
-         <li><a href="loginForm.do">로그인</a></li>
+         <li><a href="Accounts/loginForm.do">로그인</a></li>
          <li><a href="logout.do">로그아웃</a></li>
        </ul>
      </li>
      <li>
-       <span class="opener">Dropdown Two</span>
+       <span class="opener">게시판</span>
        <ul>
-         <li><a href="#">Sub Menu #1</a></li>
-         <li><a href="#">Sub Menu #2</a></li>
-         <li><a href="#">Sub Menu #3</a></li>
+         <li><a href="#">공지사항</a></li>
+         <li><a href="#">뉴스</a></li>
+         <li><a href="#">자유게시판</a></li>
+         <li><a href="#">매칭게시판</a></li>
+         <li><a href="#">갤러리</a></li>
+         <li><a href="#">팁/노하우</a></li>
        </ul>
      </li>
      <li><a href="https://www.google.com">External Link</a></li>

@@ -14,7 +14,7 @@
 <c:if test="${empty account_id }">
 	<script type="text/javascript">
 		alert("로그인 해주세요")
-		location.href="accounts/loginForm.do";
+		location.href="Accounts/loginForm.do";
 	</script>
 </c:if>
 </body>
