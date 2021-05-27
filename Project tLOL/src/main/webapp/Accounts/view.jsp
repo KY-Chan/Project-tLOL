@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- 회원가입 하지 않은 사람들이 수정 삭제 못하게 하는 jsp -->
-<%@ include file="sessionChk.jsp" %>
+<%@ include file="../sessionChk.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
