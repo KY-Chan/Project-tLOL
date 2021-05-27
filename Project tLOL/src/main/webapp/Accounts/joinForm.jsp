@@ -7,7 +7,7 @@
 <!-- 디바이스에 맞는 사이즈 자동 조정 -->
 <meta name="viewport" content="width=device-width" initial-scale="1">
 <!-- 디자인을 담당하는 bootstrap css 참조 -->
-<link rel="stylesheet" href="CSS-Bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="../CSS-Bootstrap/css/bootstrap.css">
 
 <title>Project.tLOL.gg</title>
 
@@ -53,6 +53,6 @@
 		</div>	
 	</div>
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="CSS-Bootstrap/js/bootstrap.js"></script>
+	<script src="../CSS-Bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

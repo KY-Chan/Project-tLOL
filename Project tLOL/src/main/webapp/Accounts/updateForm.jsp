@@ -17,12 +17,12 @@
 	<title>Project.tLOL.gg</title>
 	
 	<!-- Bootstrap core CSS -->
-	<link href="CSS-Bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../CSS-Bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	
 	<!-- Additional CSS Files -->
-	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/fontawesome.css">
-	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/templatemo-style.css">
-	<link rel="stylesheet" href="CSS-Bootstrap/assets/css/owl.css">
+	<link rel="stylesheet" href="../CSS-Bootstrap/assets/css/fontawesome.css">
+	<link rel="stylesheet" href="../CSS-Bootstrap/assets/css/templatemo-style.css">
+	<link rel="stylesheet" href="../CSS-Bootstrap/assets/css/owl.css">
 </head>
 	<script type="text/javascript">
 		function chk() {
@@ -59,25 +59,25 @@
 	<form action="update.do" name="frm" onsubmit="return chk()">
 		<div class="container-fluid">
 		<div class="row">
-		<div class="col-md-6 col-md-12">
+		<div class="col-md-12">
 		<div class="section-heading"><h2 style="text-align: center;">회원정보 수정</h2></div>
 		<div class="default-table">
 		<input type="hidden" name="account_id" value="${member.account_id}">
 		<table>
-			<tr><th>아이디</th><td>${member.account_id }</td></tr>
-			<tr><th>암호</th><td><input type="password" name="account_pw" required="required" autofocus="autofocus"></td></tr>
-			<tr><th>암호확인</th><td><input type="password" name="account_pw2" required="required"></td></tr>
-			<tr><th>닉네임</th><td><input type="text" name="account_nickname" required="required" value="${member.account_nickname}"></td></tr>
-			<tr><th>e-mail</th><td><input type="email" name="account_email" required="required" value="${member.account_email}"></td></tr>
-			<tr><th>등록일</th><td>${member.account_reg_date}</td></tr>
-			<tr><th colspan="2"><input type="submit" value="수정완료"></th></tr>
-			<tr><th colspan="2"><button onclick="del()">회원탈퇴</button></th></tr>
+			<tr><th align="center">아이디</th><td>${member.account_id }</td></tr>
+			<tr><th align="center">비밀번호</th><td><input type="password" name="account_pw" required="required" autofocus="autofocus"></td></tr>
+			<tr><th align="center">비밀번호 확인</th><td><input type="password" name="account_pw2" required="required"></td></tr>
+			<tr><th align="center">닉네임</th><td><input type="text" name="account_nickname" required="required" value="${member.account_nickname}"></td></tr>
+			<tr><th align="center">e-mail</th><td><input type="email" name="account_email" required="required" value="${member.account_email}"></td></tr>
+			<tr><th align="center">등록일</th><td>${member.account_reg_date}</td></tr>
+			<tr><td valign="middle" align="center" colspan="2"><input type="submit" value="수정완료"></td></tr>
 		</table>
 		</div>
 		</div>
 		</div>
 		</div>
 	</form>
+	<button onclick="del()">회원탈퇴</button>
 </section>
 </div> <!-- Main end -->    
 </div> <!-- Wrapper end -->
@@ -128,19 +128,19 @@
 <div class="owl-carousel owl-theme">
 	<a href="#">
 		<div class="featured-item">
-			<img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured one">
+			<img src="../CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured one">
 			<p>Aliquam egestas convallis eros sed gravida. Curabitur consequat sit.</p>
 		</div>
 	</a>
 	<a href="#">
 		<div class="featured-item">
-			<img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured two">
+			<img src="../CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured two">
 			<p>Donec a scelerisque massa. Aliquam non iaculis quam. Duis arcu turpis.</p>
 		</div>
 	</a>
 	<a href="#">
 		<div class="featured-item">
-			<img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured three">
+			<img src="../CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured three">
 			<p>Suspendisse ac convallis urna, vitae luctus ante. Donec sit amet.</p>
 		</div>
 	</a>
@@ -160,14 +160,14 @@
 
 <!-- Scripts -->
 <!-- Bootstrap core JavaScript -->
-	<script src="CSS-Bootstrap/vendor/jquery/jquery.min.js"></script>
-	<script src="CSS-Bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="../CSS-Bootstrap/vendor/jquery/jquery.min.js"></script>
+	<script src="../CSS-Bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 		
-	<script src="CSS-Bootstrap/assets/js/browser.min.js"></script>
-	<script src="CSS-Bootstrap/assets/js/breakpoints.min.js"></script>
-	<script src="CSS-Bootstrap/assets/js/transition.js"></script>
-	<script src="CSS-Bootstrap/assets/js/owl-carousel.js"></script>
-	<script src="CSS-Bootstrap/assets/js/custom.js"></script>
+	<script src="../CSS-Bootstrap/assets/js/browser.min.js"></script>
+	<script src="../CSS-Bootstrap/assets/js/breakpoints.min.js"></script>
+	<script src="../CSS-Bootstrap/assets/js/transition.js"></script>
+	<script src="../CSS-Bootstrap/assets/js/owl-carousel.js"></script>
+	<script src="../CSS-Bootstrap/assets/js/custom.js"></script>
   
 </body>
 </html>
