@@ -16,12 +16,12 @@
 
 <head>
 	<meta charset="utf-8">
+	<title>Project.tLOL.gg</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 	
-	<title>Project.tLOL.gg</title>
 	
 	<!-- Bootstrap core CSS -->
 	<link href="CSS-Bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -71,86 +71,7 @@
 </div> <!-- Main end -->    
 </div> <!-- Wrapper end -->    
                
-              
-
-<!-- Sidebar -->
-<div id="sidebar">
-
-  <div class="inner">
-
-    <!-- Search Box -->
-<section id="search" class="alt">
-  <form method="get" action="#">
-    <input type="text" name="search" id="search" placeholder="Search..." />
-  </form>
-</section>
-  
-<!-- Menu -->
-<nav id="menu">
-   <ul>
-     <!-- <li><a href="index.html">회원</a></li>
-     <li><a href="simple_page.html">Simple Page</a></li>
-     <li><a href="shortcodes.html">Shortcodes</a></li> -->
-     <li>
-       <span class="opener">회원</span>
-       <ul>
-         <li><a href="Accounts/updateForm.do">회원정보 수정</a></li>
-         <li><a href="#">내 글 관리 & 댓글 관리</a></li>
-         <li><a href="Accounts/loginForm.do">로그인</a></li>
-         <li><a href="Accounts/logout.do">로그아웃</a></li>
-       </ul>
-     </li>
-     <li>
-       <span class="opener">게시판</span>
-       <ul>
-         <li><a href="Boards/notice.jsp">공지사항</a></li>
-         <li><a href="Boards/news.jsp">뉴스</a></li>
-         <li><a href="Boards/free.jsp">자유게시판</a></li>
-         <li><a href="Boards/match.jsp">매칭게시판</a></li>
-         <li><a href="Boards/media.jsp">갤러리</a></li>
-         <li><a href="#Boards/tip.jsp">팁/노하우</a></li>
-       </ul>
-     </li>
-     <li><a href="https://www.google.com">External Link</a></li>
-   </ul>
- </nav>
-
- <!-- Featured Posts -->
-<div class="featured-posts">
-  <div class="heading">
-    <h2>Featured Posts</h2>
-  </div>
-  <div class="owl-carousel owl-theme">
-    <a href="#">
-      <div class="featured-item">
-        <img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured one">
-        <p>Aliquam egestas convallis eros sed gravida. Curabitur consequat sit.</p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="featured-item">
-        <img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured two">
-        <p>Donec a scelerisque massa. Aliquam non iaculis quam. Duis arcu turpis.</p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="featured-item">
-        <img src="CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured three">
-        <p>Suspendisse ac convallis urna, vitae luctus ante. Donec sit amet.</p>
-      </div>
-    </a>
-  </div>
-</div>
-
-<!-- Footer -->
-        <footer id="footer">
-          <p class="copyright">Copyright &copy; 2021 Project.tLOL.gg
-          <br>Designed by <a rel="nofollow" href="https://www.facebook.com/templatemo">Template Mo</a></p>
-        </footer>
-        
-      </div>
-    </div>
-
+<jsp:include page="sideMenu.jsp"></jsp:include>
 </div>
 
 <!-- Scripts -->
