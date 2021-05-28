@@ -8,7 +8,7 @@
 <script type="text/javascript" src="../CSS-Bootstrap/js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#news").load("board.do?board_num=2")
+		$("#news").load("board.do?board_num=2&pageNum=${param.pageNum}" )
 	});	
 </script>
 </head>
