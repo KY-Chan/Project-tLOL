@@ -13,7 +13,7 @@
 		<selectKey keyProperty="account_num" resultType="integer" order="BEFORE">
 			select nvl(max(account_num),0) + 1 account_num from Accounts 
 		</selectKey>
-		insert into Accounts values (#{account_num}, #{account_id}, #{account_pw}, #{account_nickname}, sysdate, #{account_email}, 'n')
+		insert into Accounts values (#{account_num}, #{account_id}, #{account_pw}, #{account_nickname}, sysdate, #{account_email}, 'n', '0')
 	</insert>
 	
 	<!-- 수정 -->

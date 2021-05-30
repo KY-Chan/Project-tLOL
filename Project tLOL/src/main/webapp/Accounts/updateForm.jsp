@@ -1,29 +1,27 @@
-<!-- 회원정보 수정 jsp -->
-
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <!-- 회원가입 하지 않은 사람들이 수정 삭제 못하게 하는 jsp -->
 <%@ include file="../sessionChk.jsp" %>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
 
+<!DOCTYPE html>
+<html lang="ko">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
-	<meta name="author" content="">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+	<meta name="generator" content="Hugo 0.83.1">
 	
-	<title>Project.tLOL.gg</title>
+	<title>Project tLOL.gg update</title>
+	<script type="text/javascript" src="../bootstrap/js/jquery.js"></script>
 	
-	<!-- Bootstrap core CSS -->
-	<link href="../CSS-Bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="../bootstrap/css/login.css" rel="stylesheet">	
 	
-	<!-- Additional CSS Files -->
-	<link rel="stylesheet" href="../CSS-Bootstrap/assets/css/fontawesome.css">
-	<link rel="stylesheet" href="../CSS-Bootstrap/assets/css/templatemo-style.css">
-	<link rel="stylesheet" href="../CSS-Bootstrap/assets/css/owl.css">
-</head>
 	<script type="text/javascript">
 		function chk() {
 			if (frm.account_pw.value != frm.account_pw2.value) {
@@ -38,136 +36,78 @@
 			else alert("회원 탈퇴가 취소되었습니다")
 		}
 	</script>
-<body class="is-preload">
+</head>
 
-<!-- Wrapper -->
-<div id="wrapper">
-
-<!-- Main -->
-<div id="main">
-<div class="inner">
-
-<!-- Header -->
-<header id="header">
-	<div class="logo">
-		<a href="main.do">Project.tLOL.gg</a>
-	</div>
-</header>
-
-<!-- Tables -->
-<section class="tables">
-	<form action="update.do" name="frm" onsubmit="return chk()">
-		<div class="container-fluid">
-		<div class="row">
-		<div class="col-md-12">
-		<div class="section-heading"><h2 style="text-align: center;">회원정보 수정</h2></div>
-		<div class="default-table">
-		<input type="hidden" name="account_id" value="${member.account_id}">
-		<table>
-			<tr><th align="center">아이디</th><td>${member.account_id }</td></tr>
-			<tr><th align="center">비밀번호</th><td><input type="password" name="account_pw" required="required" autofocus="autofocus"></td></tr>
-			<tr><th align="center">비밀번호 확인</th><td><input type="password" name="account_pw2" required="required"></td></tr>
-			<tr><th align="center">닉네임</th><td><input type="text" name="account_nickname" required="required" value="${member.account_nickname}"></td></tr>
-			<tr><th align="center">e-mail</th><td><input type="email" name="account_email" required="required" value="${member.account_email}"></td></tr>
-			<tr><th align="center">등록일</th><td>${member.account_reg_date}</td></tr>
-			<tr><td valign="middle" align="center" colspan="2"><input type="submit" value="수정완료"></td></tr>
-		</table>
-		</div>
-		</div>
-		</div>
-		</div>
-	</form>
-	<button onclick="del()">회원탈퇴</button>
-</section>
-</div> <!-- Main end -->    
-</div> <!-- Wrapper end -->
-
-<!-- Sidebar -->
-<div id="sidebar">
-
-<div class="inner">
-
-<!-- Search Box -->
-<section id="search" class="alt">
-	<form method="get" action="#">
-		<input type="text" name="search" id="search" placeholder="Search..." />
-	</form>
-</section>
-  
-<!-- Menu -->
-<nav id="menu">
-	<ul>
-		<!-- <li><a href="index.html">회원</a></li>
-		<li><a href="simple_page.html">Simple Page</a></li>
-		<li><a href="shortcodes.html">Shortcodes</a></li> -->
-		<li>
-			<span class="opener">회원</span>
-			<ul>
-				<li><a href="updateForm.do">회원정보 수정</a></li>
-				<li><a href="#">내 글 관리 & 댓글 관리</a></li>
-				<li><a href="loginForm.do">로그인</a></li>
-			</ul>
-		</li>
-		<li>
-			<span class="opener">Dropdown Two</span>
-			<ul>
-				<li><a href="#">Sub Menu #1</a></li>
-				<li><a href="#">Sub Menu #2</a></li>
-				<li><a href="#">Sub Menu #3</a></li>
-			</ul>
-		</li>
-		<li><a href="https://www.google.com">External Link</a></li>
-	</ul>
-</nav>
-
-<!-- Featured Posts -->
-<div class="featured-posts">
-<div class="heading">
-	<h2>Featured Posts</h2>
-</div>
-<div class="owl-carousel owl-theme">
-	<a href="#">
-		<div class="featured-item">
-			<img src="../CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured one">
-			<p>Aliquam egestas convallis eros sed gravida. Curabitur consequat sit.</p>
-		</div>
-	</a>
-	<a href="#">
-		<div class="featured-item">
-			<img src="../CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured two">
-			<p>Donec a scelerisque massa. Aliquam non iaculis quam. Duis arcu turpis.</p>
-		</div>
-	</a>
-	<a href="#">
-		<div class="featured-item">
-			<img src="../CSS-Bootstrap/assets/images/featured_post_01.jpg" alt="featured three">
-			<p>Suspendisse ac convallis urna, vitae luctus ante. Donec sit amet.</p>
-		</div>
-	</a>
-</div>
-</div>
-
-<!-- Footer -->
-<footer id="footer">
-	<p class="copyright">Copyright &copy; 2021 Project.tLOL.gg
-	<br>Designed by <a rel="nofollow" href="https://www.facebook.com/templatemo">Template Mo</a></p>
-</footer>
-
-</div>
-</div>
-
-</div>
-
-<!-- Scripts -->
-<!-- Bootstrap core JavaScript -->
-	<script src="../CSS-Bootstrap/vendor/jquery/jquery.min.js"></script>
-	<script src="../CSS-Bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-		
-	<script src="../CSS-Bootstrap/assets/js/browser.min.js"></script>
-	<script src="../CSS-Bootstrap/assets/js/breakpoints.min.js"></script>
-	<script src="../CSS-Bootstrap/assets/js/transition.js"></script>
-	<script src="../CSS-Bootstrap/assets/js/owl-carousel.js"></script>
-	<script src="../CSS-Bootstrap/assets/js/custom.js"></script>
-  
+<body class="text-center">
+	<div class="container">
+		<form method="post" action="update.do" name="frm" onsubmit="return chk()">	
+			<div class="row mb-3 align-items-center">
+				<div class="col form-floating">
+					<div class="mb-5"><img src="../images/logo.png" alt=""></div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col form-floating mb-1">
+					<h2>회원 정보 수정</h2>
+				</div>
+			</div>	
+			<input type="hidden" name="account_id" value="${member.account_id}">
+			<div class="row mb-2 align-items-center">
+				<div class="col-sm-3"></div>
+				<label for="inputId" class="col-sm-2 col-form-label">아이디</label>
+				<div class="col-sm-4 form-floating">
+					<input type="text" class="form-control" id="inputId" aria-label="${member.account_id }" readonly>
+				</div>
+				<div class="col-sm-3"></div>
+			</div>	
+			<div class="row mb-2 align-items-center">
+				<div class="col-sm-3"></div>
+				<label for="inputPassword" class="col-sm-2 col-form-label">비밀번호</label>
+				<div class="col-sm-4 form-floating">
+					<input type="password" class="w-100 form-control" id="inputPassword" placeholder="비밀번호" name="account_pw" required="required" maxlength="20">
+					<label for="floatingInput">Password</label>	
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+			<div class="row mb-2 align-items-center">
+				<div class="col-sm-3"></div>
+				<label for="inputPassword2" class="col-sm-2 col-form-label">비밀번호 확인</label>
+				<div class="col-sm-4 form-floating">
+					<input type="password" class="form-control" id="inputPassword2" placeholder="비밀번호" name="account_pw2" required="required" maxlength="20">
+					<label for="floatingInput">Password Check</label>	
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+			<div class="row mb-2 align-items-center">
+				<div class="col-sm-3"></div>
+				<label for="inputNickname" class="col-sm-2 col-form-label">닉네임</label>
+				<div class="col-sm-4 form-floating">
+					<input type="text" class="form-control" id="inputNickname" placeholder="닉네임" name="account_nickname" required="required" maxlength="20">
+					<label for="floatingInput">Nickname</label>	
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+			<div class="row mb-2 align-items-center">
+				<div class="col-sm-3"></div>
+				<label for="inputEmail" class="col-sm-2 col-form-label">이메일</label>
+				<div class="col-sm-4 form-floating">
+					<input type="email" class="form-control" id="inputEmail" placeholder="e-mail" name="account_email" required="required" maxlength="30">
+					<label for="floatingInput">e-mail</label>
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+			<div class="row mb-2 align-items-center">
+				<div class="col-sm-3"></div>
+				<label for="inputDate" class="col-sm-2 col-form-label">등록일</label>
+				<div class="col-sm-4 form-floating">
+					<input type="text" class="form-control" id="inputDate" aria-label="${member.account_reg_date}" readonly>
+				</div>
+				<div class="col-sm-3"></div>
+			</div>
+			<div class="d-grid gap-2 col-6 mx-auto"><button class="btn btn-lg btn-primary" type="submit">수정완료</button></div><br>
+			<button class="mt-2 btn btn-danger btn-sm" onclick="del()">회원탈퇴</button>
+			<p class="text-muted">&copy; Project.tLOL.gg</p>
+		</form>
+	</div>	
 </body>
 </html>
