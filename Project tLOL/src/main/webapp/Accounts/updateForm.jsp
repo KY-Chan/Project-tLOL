@@ -50,13 +50,13 @@
 				<div class="col form-floating mb-1">
 					<h2>회원 정보 수정</h2>
 				</div>
-			</div>	
-			<input type="hidden" name="account_id" value="${member.account_id}">
+			</div>
 			<div class="row mb-2 align-items-center">
+			<input type="hidden" name="account_id" value="${member.account_id}">
 				<div class="col-sm-3"></div>
 				<label for="inputId" class="col-sm-2 col-form-label">아이디</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" class="form-control" id="inputId" aria-label="${member.account_id }" readonly>
+					<input type="text" readonly class="form-control-plaintext" id="inputId" value="${member.account_id }">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>	
@@ -100,7 +100,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputDate" class="col-sm-2 col-form-label">등록일</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" class="form-control" id="inputDate" aria-label="${member.account_reg_date}" readonly>
+					<input type="text" readonly class="form-control-plaintext" id="inputDate" value="${member.account_reg_date}">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>

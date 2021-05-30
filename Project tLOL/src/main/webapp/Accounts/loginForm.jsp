@@ -21,7 +21,7 @@
 <body class="text-center">
 	<main class="form-signin">
 		<form method="post" action="login.do">	
-			<div class="mb-4 nav justify-content-center" onclick="location.href='main.do'"><img src="../images/logo.png" alt=""></div>
+			<div class="mb-4 nav justify-content-center" onclick="location.href='../main.do'"><img src="../images/logo.png" alt=""></div>
 			<h1 class="h3 mb-3 mt-5 fw-normal">로그인</h1>
 			<div class="form-floating">
 				<input type="text" class="form-control" placeholder="아이디" name="account_id" required="required" autofocus="autofocus" maxlength="20">

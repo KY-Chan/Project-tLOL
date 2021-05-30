@@ -29,7 +29,7 @@
 		<form method="post" action="update.do" name="frm" onsubmit="return chk()">	
 			<div class="row mb-3 align-items-center">
 				<div class="col form-floating">
-					<div class="mb-5" onclick="location.href='main.do'"><img src="../images/logo.png" alt=""></div>
+					<div class="mb-5" onclick="location.href='../main.do'"><img src="../images/logo.png" alt=""></div>
 				</div>
 			</div>
 			<div class="row align-items-center">
@@ -42,7 +42,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputId" class="col-sm-2 col-form-label">아이디</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" class="form-control" id="inputId" aria-label="${member.account_id }" readonly>
+					<input type="text" readonly class="form-control-plaintext" id="inputId" value="${member.account_id }">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
@@ -50,7 +50,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputNickname" class="col-sm-2 col-form-label">닉네임</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" class="form-control" id="inputNickname" aria-label="${member.account_nickname }" readonly>
+					<input type="text" readonly class="form-control-plaintext" id="inputNickname" value="${member.account_nickname }">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
@@ -58,7 +58,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputEmail" class="col-sm-2 col-form-label">이메일</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" class="form-control" id="inputEmail" aria-label="${member.account_email }" readonly>
+					<input type="text" readonly class="form-control-plaintext" id="inputEmail" value="${member.account_email }">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
@@ -66,11 +66,11 @@
 				<div class="col-sm-3"></div>
 				<label for="inputDate" class="col-sm-2 col-form-label">등록일</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" class="form-control" id="inputDate" aria-label="${member.account_reg_date}" readonly>
+					<input type="text" readonly class="form-control-plaintext" id="inputDate" value="${member.account_reg_date}">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
-			<div class="d-grid gap-2 col-6 mx-auto"><button class="btn btn-lg btn-primary" type="submit" onclick="location.href='main.do'">메인화면으로 돌아가기</button></div><br>
+			<div class="d-grid gap-2 col-5 mx-auto"><button class="btn btn-lg btn-primary" type="submit" onclick="location.href='../main.do'">메인화면으로 돌아가기</button></div><br>
 			<p class="mt-2 text-muted">&copy; Project.tLOL.gg</p>
 		</form>
 	</div>	

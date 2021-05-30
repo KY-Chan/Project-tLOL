@@ -34,12 +34,12 @@
 
 <body class="text-center">
 		<form class="form-signin" method="post" action="join.do" name="frm">	
-			<div class="mb-4 nav justify-content-center" onclick="location.href='main.do'"><img src="../images/logo.png" alt=""></div>
+			<div class="mb-4 nav justify-content-center" onclick="location.href='../main.do'"><img src="../images/logo.png" alt=""></div>
 			<h1 class="h3 mb-4 mt-5 fw-normal">회원가입</h1>
 			<div class="form-floating">
 				<input type="text" class="form-control" placeholder="아이디" name="account_id" required="required" autofocus="autofocus" maxlength="20">
 				<label for="floatingInput">ID</label>
-				<input type="button" class="mt-1 w-40 btn btn-lg btn-primary" value="중복체크" onclick="chk()">		
+				<input type="button" class="mt-2 mb-1 w-40 btn btn-outline-primary btn-sm" value="중복체크" onclick="chk()">		
 			</div>
 			<div id="err"></div>
 			<div class="mt-1 form-floating">
