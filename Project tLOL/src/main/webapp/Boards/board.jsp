@@ -9,22 +9,22 @@
 </head>
 <body>
 <h2>
-<c:if test="${board_name == 'notice'}">
+<c:if test="${board_num eq 1}">
 	공지사항
 </c:if>
-<c:if test="${param.board_name eq 'news'}">
+<c:if test="${param.board_num eq 2}">
 	뉴스
 </c:if>
-<c:if test="${param.board_name eq 'free'}">
+<c:if test="${param.board_num eq 3}">
 	자유게시판
 </c:if>
-<c:if test="${param.board_name eq 'match'}">
+<c:if test="${param.board_num eq 4}">
 	매칭게시판
 </c:if>
-<c:if test="${param.board_name eq 'media'}">
+<c:if test="${param.board_num eq 5}">
 	갤러리/영상
 </c:if>
-<c:if test="${param.board_name eq 'tip'}">
+<c:if test="${param.board_num eq 6}">
 	팁/노하우
 </c:if>
 </h2>
