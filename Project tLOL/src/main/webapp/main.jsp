@@ -13,6 +13,7 @@
 <!-- Bootstrap core CSS -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <link href="bootstrap/css/headers.css" rel="stylesheet">
+<link href="bootstrap/css/sidebar.css" rel="stylesheet">
 <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
 
 <style>
@@ -53,6 +54,64 @@
 			</div>
 		</div>
 	</header>
+	
+	<!-- Sidebar -->
+	<div class="flex-shrink-0 p-3 bg-white" style="width: 215px;">
+		<input type="search" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
+		<span class="fs-5 fw-semibold">멀티서치??</span>
+		<ul class="list-unstyled ps-0">
+			<li class="border-top my-3"></li>
+			<li class="mb-1">
+				<button class="btn btn-toggle align-items-center rounded collapsed"
+					data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">뉴스&정보</button>
+				<div class="collapse show" id="home-collapse">
+					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+						<li><a href="#" class="link-dark rounded">news1</a></li>
+						<li><a href="#" class="link-dark rounded">news2</a></li>
+						<li><a href="#" class="link-dark rounded">news3</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="mb-1">
+				<button class="btn btn-toggle align-items-center rounded collapsed"
+					data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">커뮤니티</button>
+				<div class="collapse show" id="dashboard-collapse">
+					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+						<li><a href="#" class="link-dark rounded">community1</a></li>
+						<li><a href="#" class="link-dark rounded">community2</a></li>
+						<li><a href="#" class="link-dark rounded">community3</a></li>
+						<li><a href="#" class="link-dark rounded">community4</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="mb-1">
+				<button class="btn btn-toggle align-items-center rounded collapsed"
+					data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">매칭</button>
+				<div class="collapse show" id="orders-collapse">
+					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+						<li><a href="#" class="link-dark rounded">matching</a></li>
+						<li><a href="#" class="link-dark rounded">matching</a></li>
+						<li><a href="#" class="link-dark rounded">matching</a></li>
+						<li><a href="#" class="link-dark rounded">matching</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="border-top my-3"></li>
+			<li class="mb-1">
+				<button class="btn btn-toggle align-items-center rounded collapsed"
+					data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">blah blah</button>
+				<div class="collapse show" id="account-collapse">
+					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+						<li><a href="#" class="link-dark rounded">blah...</a></li>
+						<li><a href="#" class="link-dark rounded">blah</a></li>
+						<li><a href="#" class="link-dark rounded">blah</a></li>
+						<li><a href="#" class="link-dark rounded">blah</a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
 	<script src="bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<script src="../bootstrap/js/sidebar.js"></script>
 </body>
 </html>
