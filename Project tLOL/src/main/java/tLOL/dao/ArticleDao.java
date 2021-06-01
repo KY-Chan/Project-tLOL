@@ -37,15 +37,23 @@ public class ArticleDao {
 			System.out.println(e.getMessage());
 		}
 	}
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked") // 게시판 글 불러오기
 	public List<Article> list(int startRow, int endRow, int board_num) {
 		Map<String, Integer> parms = new HashMap<String, Integer>();
 		parms.put("board_num", board_num);
 		parms.put("startRow", startRow);
 		parms.put("endRow", endRow);
 		return session.selectList("articlens.selectList", parms);
-		
 	}
+	@SuppressWarnings("unchecked") // 내가 쓴 글 불러오기
+	public List<Article> myList(int startRow, int endRow, int account_num) {
+		Map<String, Integer> parms = new HashMap<String, Integer>();
+		parms.put("account_num", account_num);
+		parms.put("startRow", startRow);
+		parms.put("endRow", endRow);
+		return session.selectList("articlens.selectMyList", parms);
+	}
+	
 	public int getTotal(int board_num) {
 		return (int) session.selectOne("articlens.total", board_num);
 	}

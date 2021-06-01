@@ -5,6 +5,9 @@
 	<select id="selectList" parameterType="map" resultType="article">
 		select * from (select rowNum rn, e.* from (select * from article where board_num=${board_num} order by article_num desc) e) where rn between ${startRow} and ${endRow}
 	</select>
+	<select id="selectMyList" parameterType="map" resultType="article">
+		select * from (select rowNum rn, e.* from (select * from article where account_num=${account_num} order by article_date desc) e) where rn between ${startRow} and ${endRow}
+	</select>
 	<select id="total" parameterType="int" resultType="int">
 		select count(*) from article where board_num=#{board_num}
 	</select>
