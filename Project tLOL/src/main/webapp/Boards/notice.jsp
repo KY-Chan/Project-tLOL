@@ -8,11 +8,11 @@
 <script type="text/javascript" src="../CSS-Bootstrap/js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#free").load("board.do?board_num=3")
+		$("#notice").load("board.do?board_num=1&pageNum=${param.pageNum}")
 	});	
 </script>
 </head>
 <body>
-<div id="free"></div>
+<div id="notice"></div>
 </body>
 </html>

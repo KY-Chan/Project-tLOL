@@ -12,6 +12,7 @@
 			<!-- Menu -->
 			<nav id="menu">
 				<ul>
+					<li><a href="myArticle.jsp">내 게시글</a></li>
 					<li><a href="notice.jsp">공지사항</a></li>
 					<li><a href="news.jsp">뉴스</a></li>
 					<li><a href="free.jsp">자유게시판</a></li>

@@ -11,6 +11,7 @@
 <meta name="generator" content="Hugo 0.83.1">
 <title>Main page</title>
 
+
 <!-- Bootstrap core CSS -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <link href="bootstrap/css/headers.css" rel="stylesheet">
@@ -37,6 +38,7 @@
 	<header class="p-3 mb-3 border-bottom">
 
 		<div class="container-fluid">
+
 		<div class="row flex-nowrap">	
 		<div class="d-flex flex-wrap align-items-center justify-content-center">
 			<a class="navbar-brand" href="#"> <img src="images/logo.png" alt="" width="230" height="100"></a>
