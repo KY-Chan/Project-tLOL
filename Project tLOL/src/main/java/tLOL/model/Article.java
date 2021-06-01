@@ -12,6 +12,7 @@ public class Article {
 	private int article_read;
 	private int article_recom;
 	private String article_del;
+	
 	public int getBoard_num() {
 		return board_num;
 	}
