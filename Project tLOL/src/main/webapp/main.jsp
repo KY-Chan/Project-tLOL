@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -34,6 +35,7 @@
 </head>
 <body>
 	<header class="p-3 mb-3 border-bottom">
+
 		<div class="container-fluid">
 		<div class="row flex-nowrap">	
 		<div class="d-flex flex-wrap align-items-center justify-content-center">
@@ -58,6 +60,7 @@
 	</header>
 	
 	<!-- Sidebar -->
+
 	<div class="container-fluid">
 		<div class="row flex-nowrap">
 		<div class="col-2 flex-shrink-0 p-3 bg-white" style="width: 215px;">

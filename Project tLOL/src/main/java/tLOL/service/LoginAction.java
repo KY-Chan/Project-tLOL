@@ -15,10 +15,15 @@ public class LoginAction implements CommandProcess {
 		// Accounts 테이블 del컬럼 값이 y일때도 포함하기, y=yes n=no
 		if (member == null || member.getAccount_del().equals("y")) result = -1;
 		else {
-			if (member.getAccount_pw().equals(account_pw)) {
+			if (member.getAccount_pw().equals(account_pw) && member.getAccount_admin() == 0) {
 				HttpSession session = request.getSession();
 				session.setAttribute("account_id", account_id);
 				result = 1;
+			}
+			else if (member.getAccount_pw().equals(account_pw) && member.getAccount_admin() == 1) {
+				HttpSession session = request.getSession();
+				session.setAttribute("account_id", account_id);
+				result = 2;
 			}
 		}
 		request.setAttribute("result", result);
