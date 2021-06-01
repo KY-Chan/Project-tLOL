@@ -11,6 +11,9 @@
 	<select id="total" parameterType="int" resultType="int">
 		select count(*) from article where board_num=#{board_num}
 	</select>
+	<select id="myTotal" parameterType="int" resultType="int">
+		select count(*) from article where account_num=#{account_num}
+	</select>
 	<update id="readcount" parameterType="map">
 		update article set article_read = article_read + 1 where board_num = ${ board_num} and article_num = ${ article_num}
 	</update>

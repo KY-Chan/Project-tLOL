@@ -69,4 +69,7 @@ public class ArticleDao {
 		parms.put("article_num", article_num);
 		return (Article) session.selectOne("articlens.select", parms);	
 	}
+	public int getMyTotal(int account_num) {
+		return (int) session.selectOne("articlens.myTotal", account_num);
+	}
 }

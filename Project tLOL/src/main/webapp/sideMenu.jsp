@@ -27,21 +27,21 @@
      <li>
        <span class="opener">회원</span>
        <ul>
-         <li><a href="Accounts/updateForm.do">회원정보 수정</a></li>
-         <li><a href="#">내 글 관리 & 댓글 관리</a></li>
-         <li><a href="Accounts/loginForm.do">로그인</a></li>
-         <li><a href="Accounts/logout.do">로그아웃</a></li>
+         <li><a href="/Project_tLOL/Accounts/updateForm.do">회원정보 수정</a></li>
+         <li><a href="/Project_tLOL/Boards/myArticle.jsp">내 글 관리 & 댓글 관리</a></li>
+         <li><a href="/Project_tLOL/Accounts/loginForm.do">로그인</a></li>
+         <li><a href="/Project_tLOL/Accounts/logout.do">로그아웃</a></li>
        </ul>
      </li>
      <li>
        <span class="opener">게시판</span>
        <ul>
-         <li><a href="Boards/notice.jsp">공지사항</a></li>
-         <li><a href="Boards/news.jsp">뉴스</a></li>
-         <li><a href="Boards/free.jsp">자유게시판</a></li>
-         <li><a href="Boards/match.jsp">매칭게시판</a></li>
-         <li><a href="Boards/media.jsp">갤러리</a></li>
-         <li><a href="#Boards/tip.jsp">팁/노하우</a></li>
+         <li><a href="/Project_tLOL/Boards/notice.jsp">공지사항</a></li>
+         <li><a href="/Project_tLOL/Boards/news.jsp">뉴스</a></li>
+         <li><a href="/Project_tLOL/Boards/free.jsp">자유게시판</a></li>
+         <li><a href="/Project_tLOL/Boards/match.jsp">매칭게시판</a></li>
+         <li><a href="/Project_tLOL/Boards/media.jsp">갤러리</a></li>
+         <li><a href="/Project_tLOL/Boards/tip.jsp">팁/노하우</a></li>
        </ul>
      </li>
      <li><a href="https://www.google.com">External Link</a></li>

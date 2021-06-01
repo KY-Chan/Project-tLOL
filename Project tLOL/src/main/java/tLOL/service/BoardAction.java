@@ -16,6 +16,8 @@ public class BoardAction implements CommandProcess {
 		ArticleDao ad = ArticleDao.getInstance();
 		BoardDao bd = BoardDao.getInstance();
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
+		//int account_num = Integer.parseInt(request.getParameter("account_num"));
+		int account_num = 1;
 		
 		final int ROW_PER_PAGE = 10;
 		final int PAGE_PER_BLOCK = 10;
@@ -24,8 +26,12 @@ public class BoardAction implements CommandProcess {
 		if (pageNum == null || pageNum.equals(""))
 			pageNum = "1";
 		int currentPage = Integer.parseInt(pageNum);
-		
-		int total = ad.getTotal(board_num);
+		int total = 0;
+		if(board_num > 0) {
+			total = ad.getTotal(board_num);
+		} else {
+			total = ad.getMyTotal(account_num);
+		}
 		int startRow = (currentPage - 1) * ROW_PER_PAGE + 1;
 		int endRow = startRow + ROW_PER_PAGE - 1;
 		int number = total - startRow + 1;
@@ -41,8 +47,6 @@ public class BoardAction implements CommandProcess {
 			String board_name = bd.getName(board_num);
 			request.setAttribute("board_name", board_name);
 		} else { // 내 게시글 보기
-			//int account_num = Integer.parseInt(request.getParameter("account_num"));
-			int account_num = 1;
 			List<Article> list = ad.myList(startRow, endRow, account_num);
 			request.setAttribute("list", list);
 		}
@@ -52,7 +56,8 @@ public class BoardAction implements CommandProcess {
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totalPage", totalPage);
-		
+		System.out.println("startPage : " + startPage);
+		System.out.println("endPage : " + endPage);
 		request.setAttribute("board_num", board_num);
 		return "board";
 	}
