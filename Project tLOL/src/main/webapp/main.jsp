@@ -38,8 +38,9 @@
 		<div class="container">
 			<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 				<a class="navbar-brand" href="#"> <img src="images/logo.png" alt="" width="230" height="100"></a>
-				<form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
+				<form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" action="#">
 					<input type="search" class="form-control" placeholder="소환사명 검색..." aria-label="Search">
+					<button type="submit" class="summoner_serach_button"></button>
 				</form>
 				<c:choose>
 					<c:when test="${member.account_id == null }">
