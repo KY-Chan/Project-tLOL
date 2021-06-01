@@ -18,11 +18,13 @@ public class LoginAction implements CommandProcess {
 			if (member.getAccount_pw().equals(account_pw) && member.getAccount_admin() == 0) {
 				HttpSession session = request.getSession();
 				session.setAttribute("account_id", account_id);
+				session.setAttribute("account_num", member.getAccount_num());
 				result = 1;
 			}
 			else if (member.getAccount_pw().equals(account_pw) && member.getAccount_admin() == 1) {
 				HttpSession session = request.getSession();
 				session.setAttribute("account_id", account_id);
+				session.setAttribute("account_num", member.getAccount_num());
 				result = 2;
 			}
 		}

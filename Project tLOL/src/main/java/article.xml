@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="articlens">
 	<select id="selectList" parameterType="map" resultType="article">
-		select * from (select rowNum rn, e.* from (select * from article where board_num=${board_num} order by article_num desc) e) where rn between ${startRow} and ${endRow}
+		select * from (select rowNum rn, e.* from (select ar.*, ac.account_nickname from article ar, accounts ac where board_num=${board_num} and ar.account_num = ac.account_num order by article_num desc) e) where rn between ${startRow} and ${endRow}
 	</select>
 	<select id="selectMyList" parameterType="map" resultType="article">
 		select * from (select rowNum rn, e.* from (select * from article where account_num=${account_num} order by article_date desc) e) where rn between ${startRow} and ${endRow}

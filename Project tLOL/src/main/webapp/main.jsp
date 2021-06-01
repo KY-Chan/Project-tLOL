@@ -51,7 +51,7 @@
 				data-bs-display="static" aria-expanded="false">회원</button>
 				<ul class="dropdown-menu dropdown-menu-end">
 					<li><a class="dropdown-item" href="Accounts/updateForm.do">회원정보 수정</a></li>
-					<li><a class="dropdown-item" href="#">내글보기 & 내댓글보기</a></li>
+					<li><a class="dropdown-item" href="/Project_tLOL/Boards/myArticle.jsp">내글보기 & 내댓글보기</a></li>
 					<li><hr class="dropdown-divider"></li>
 					<li><a class="dropdown-item" href="Accounts/logout.do">로그아웃</a></li>
 				</ul>
@@ -75,9 +75,8 @@
 						data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">뉴스&정보</button>
 					<div class="collapse show" id="home-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="#" class="link-dark rounded">news1</a></li>
-							<li><a href="#" class="link-dark rounded">news2</a></li>
-							<li><a href="#" class="link-dark rounded">news3</a></li>
+							<li><a href="/Project_tLOL/Boards/notice.jsp" class="link-dark rounded">공지사항</a></li>
+							<li><a href="/Project_tLOL/Boards/news.jsp" class="link-dark rounded">뉴스</a></li>
 						</ul>
 					</div>
 				</li>
@@ -86,10 +85,9 @@
 						data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">커뮤니티</button>
 					<div class="collapse show" id="dashboard-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="#" class="link-dark rounded">community1</a></li>
-							<li><a href="#" class="link-dark rounded">community2</a></li>
-							<li><a href="#" class="link-dark rounded">community3</a></li>
-							<li><a href="#" class="link-dark rounded">community4</a></li>
+							<li><a href="/Project_tLOL/Boards/free.jsp" class="link-dark rounded">자유게시판</a></li>
+							<li><a href="/Project_tLOL/Boards/tip.jsp" class="link-dark rounded">팁/노하우</a></li>
+							<li><a href="/Project_tLOL/Boards/meida.jsp" class="link-dark rounded">이미지/영상</a></li>
 						</ul>
 					</div>
 				</li>
@@ -98,7 +96,7 @@
 						data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">매칭</button>
 					<div class="collapse show" id="orders-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="#" class="link-dark rounded">matching</a></li>
+							<li><a href="/Project_tLOL/Boards/match.jsp" class="link-dark rounded">매칭게시판</a></li>
 							<li><a href="#" class="link-dark rounded">matching</a></li>
 							<li><a href="#" class="link-dark rounded">matching</a></li>
 							<li><a href="#" class="link-dark rounded">matching</a></li>

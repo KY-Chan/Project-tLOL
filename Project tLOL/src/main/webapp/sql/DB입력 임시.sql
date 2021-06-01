@@ -25,4 +25,4 @@ insert into board values(5, '갤러리/영상');
 insert into board values(6, '팁/노하우');
 
 select * from article;
-select * from (select rowNum rn, e.* from (select * from article where board_num = 2 and article_del = 'n') e) where rn between 2 and 10;
+select * from (select rowNum rn, e.* from (select a.*, m.account_nickname from article a, accounts m where board_num = 2 and article_del = 'n' and a.account_num = m.account_num) e) where rn between 2 and 10;

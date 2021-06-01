@@ -43,7 +43,7 @@
 						<c:if test="${article.article_read > 50 }">
 							<img alt="" src="images/hot.gif">
 						</c:if></td>
-						<td>${article.account_num }</td>
+						<td>${article.account_nickname }</td>
 						<td>${article.article_read}</td>
 						<td>${article.article_recom}</td>
 						<td>${article.article_date}</td>
