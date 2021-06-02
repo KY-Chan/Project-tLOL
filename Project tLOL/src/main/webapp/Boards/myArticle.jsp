@@ -6,11 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<c:set var="account_num" value="${sessionScope.account_num }"></c:set>
 <script type="text/javascript" src="../bootstrap/js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#myArticle").load("boardMine.do?pageNum=${param.pageNum}&account_num=${account_num}")
+		$("#myArticle").load("boardMine.do?pageNum=${param.pageNum}&account_num=${sessionScope.account_num }")
 	});	
 </script>
 </head>
