@@ -14,15 +14,16 @@ public class WriteAction implements CommandProcess {
 		String page_num = request.getParameter("page_num");
 		String title = request.getParameter("article_title");
 		String content = request.getParameter("article_content");
+		int account_num = Integer.parseInt(request.getParameter("account_num"));
 		ArticleDao ad = ArticleDao.getInstance();
 		Article article = new Article();
 		article.setBoard_num(board_num);
 		article.setArticle_title(title);
 		article.setArticle_content(content);
+		article.setAccount_num(account_num);
 		int result = ad.insert(article);
 		request.setAttribute("result", result);
 		request.setAttribute("page_num", page_num);
-		
 		return "writeAction";
 	}
 

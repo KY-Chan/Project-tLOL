@@ -63,7 +63,7 @@
 			<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
 		<br>
-		<button onclick="location.href='writeForm.do?num=0&pageNum=1'">글쓰기</button>
+		<button onclick="location.href='writeForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
 	</div>
 </body>
 </html>

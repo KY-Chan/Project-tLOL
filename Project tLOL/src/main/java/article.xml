@@ -20,4 +20,10 @@
 	<select id="select" parameterType="map" resultType="article">
 		select * from article where board_num = ${ board_num} and article_num = ${ article_num}
 	</select>
+		<insert id="insert" parameterType="article" >
+		<selectKey keyProperty="article_num" order="BEFORE" resultType="integer">
+			select nvl(max(article_num), 0) + 1 article_num from article
+		</selectKey>
+		insert into article values(#{board_num}, #{article_num}, #{account_num}, #{article_title}, #{article_content}, sysdate, 0, 0 ,'n')
+	 </insert>
 </mapper> 
