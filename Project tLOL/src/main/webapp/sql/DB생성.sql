@@ -46,7 +46,7 @@ CREATE TABLE Comments
     board_num    NUMBER NOT NULL,
     article_num    NUMBER NOT NULL,
     comm_num    NUMBER NOT NULL,
-    account_num    NUMBER,
+    account_num    NUMBER NOT NULL,
     comm_content    VARCHAR2(200) NOT NULL,
     comm_recom    NUMBER DEFAULT 0 NOT NULL,
     comm_date    DATE NOT NULL,

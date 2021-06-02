@@ -25,8 +25,47 @@
 	<button onclick="location.href='javascript:history.back()'">게시글 목록</button><br> 
 </div>
 <div id="disp"></div>
+<form action="commentAction.do" method="post">
+	<table>
+		<caption>댓글</caption>
+		<tr>
+			<th>작성자</th>
+			<th>내용</th>
+			<th>추천수</th>
+			<th>작성일</th>
+			<th></th>
+		</tr>
+		<tr>
+			<c:if test="${empty list }">
+				<tr>
+					<th colspan="5">댓글이 없습니다</th>
+				</tr>
+			</c:if>
+			<c:if test="${not empty list }">
+				<c:forEach var="comment" items="${list }">
+					<tr>
+						<c:if test="${comment.comm_del == 'y' }">
+							<th colspan="5">삭제된 댓글 입니다</th>
+						</c:if>
+						<c:if test="${comment.comm_del != 'y' }">
+							<td>${comment.account_nickname }</td>
+							<td>${comment.comm_content}</td>
+							<td>${comment.comm_recom}</td>
+							<td>${comment.comm_date}</td>
+							<td>삭제버튼</td>
+						</c:if>
+					</tr>
+				</c:forEach>
+			</c:if>
+		</tr>
+		<tr>
+			<th>${sessionScope.account_nickname }</th>
+			<th><textarea style="resize: none;" rows="2" cols="40" name="content" required="required"></textarea></th>
+			<th colspan="3"><input type="submit" value="확인"></th>
+		</tr>
+	</table>
 
-
+</form>
 
 </body>
 </html>

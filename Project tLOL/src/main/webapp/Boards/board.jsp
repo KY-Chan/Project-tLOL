@@ -29,12 +29,9 @@
 		<c:if test="${not empty list }">
 			<c:forEach var="article" items="${list }">
 				<tr>
-					<c:if test="${board_num eq 0 }">
-						<td>${article.board_num }</td>
-					</c:if>
 					<td>${article.article_num }</td>
 					<c:if test="${article.article_del == 'y' }">
-						<th colspan="5">삭제된 게시글 입니다</th>
+						<th colspan="6">삭제된 게시글 입니다</th>
 					</c:if>
 					<c:if test="${article.article_del != 'y' }">
 						<td title="${article.article_title }">
