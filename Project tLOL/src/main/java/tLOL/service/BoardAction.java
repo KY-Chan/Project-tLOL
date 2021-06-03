@@ -24,6 +24,7 @@ public class BoardAction implements CommandProcess {
 		if (pageNum == null || pageNum.equals(""))
 			pageNum = "1";
 		int currentPage = Integer.parseInt(pageNum);
+		
 		if(tmp_board_num == null || tmp_board_num.equals("")) { // 내가 쓴 글
 			int account_num = Integer.parseInt(request.getParameter("account_num"));
 			int total = ad.getMyTotal(account_num);
@@ -46,7 +47,7 @@ public class BoardAction implements CommandProcess {
 			request.setAttribute("startPage", startPage);
 			request.setAttribute("endPage", endPage);
 			request.setAttribute("totalPage", totalPage);
-			return "boardMine";
+			return "boardMyArticle";
 			
 		} else { // 일반 게시판
 			int board_num = Integer.parseInt(tmp_board_num);

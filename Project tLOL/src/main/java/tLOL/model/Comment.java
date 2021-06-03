@@ -4,6 +4,16 @@ import java.sql.Date;
 
 public class Comment {
 	private int board_num;
+	private int article_num;
+	private int comm_num;
+	private int account_num;
+	private String comm_content;
+	private int comm_recom;
+	private Date comm_date;
+	private String comm_del;
+	private String account_nickname;
+	private String board_name;
+	private String article_title;
 	public int getBoard_num() {
 		return board_num;
 	}
@@ -28,10 +38,10 @@ public class Comment {
 	public void setAccount_num(int account_num) {
 		this.account_num = account_num;
 	}
-	public int getAccount_nickname() {
+	public String getAccount_nickname() {
 		return account_nickname;
 	}
-	public void setAccount_nickname(int account_nickname) {
+	public void setAccount_nickname(String account_nickname) {
 		this.account_nickname = account_nickname;
 	}
 	public String getComm_content() {
@@ -58,13 +68,17 @@ public class Comment {
 	public void setComm_del(String comm_del) {
 		this.comm_del = comm_del;
 	}
-	private int article_num;
-	private int comm_num;
-	private int account_num;
-	private int account_nickname;
-	private String comm_content;
-	private int comm_recom;
-	private Date comm_date;
-	private String comm_del;
+	public String getBoard_name() {
+		return board_name;
+	}
+	public void setBoard_name(String board_name) {
+		this.board_name = board_name;
+	}
+	public String getArticle_title() {
+		return article_title;
+	}
+	public void setArticle_title(String article_title) {
+		this.article_title = article_title;
+	}
 	
 }

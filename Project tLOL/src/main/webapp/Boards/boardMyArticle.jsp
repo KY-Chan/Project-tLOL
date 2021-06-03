@@ -26,18 +26,16 @@
 		<c:if test="${not empty list }">
 			<c:forEach var="article" items="${list }">
 				<tr>
-					<td>${article.board_num }</td>
+					<td>${article.board_name }</td>
 					<td>${article.article_num }</td>
 					<c:if test="${article.article_del == 'y' }">
 						<th colspan="5">삭제된 게시글 입니다</th>
 					</c:if>
 					<c:if test="${article.article_del != 'y' }">
-						<td title="${article.article_title }">
-						<a href="content.do?article_num=${article.article_num}&board_num=${article.board_num}&pageNum=${currentPage }">
+						<td>
+							<a href="content.do?article_num=${article.article_num}&board_num=${article.board_num}&pageNum=${currentPage }">
 								${article.article_title}</a>
-						<c:if test="${article.article_read > 50 }">
-							<img alt="" src="images/hot.gif">
-						</c:if></td>
+						</td>
 						<td>${article.article_read}</td>
 						<td>${article.article_recom}</td>
 						<td>${article.article_date}</td>
@@ -48,13 +46,13 @@
 	</table>
 	<div align="center">
 		<c:if test="${startPage > PAGE_PER_BLOCK}">
-			<button onclick="location.href='boardMine.do?account_num=${account_num }&pageNum=${startPage - 1}'">이전</button>
+			<button onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${startPage - 1}'">이전</button>
 		</c:if>
 		<c:forEach var="i" begin="${startPage}" end="${endPage}">
-			<button onclick="location.href='boardMine.do?account_num=${account_num }&pageNum=${i}'">${i }</button>
+			<button onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${i}'">${i }</button>
 		</c:forEach>
 		<c:if test="${endPage < totalPage}">
-			<button onclick="location.href='boardMine.do?account_num=${account_num }&pageNum=${endPage + 1}'">다음</button>
+			<button onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
 	</div>
 </body>

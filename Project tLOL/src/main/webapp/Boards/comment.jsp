@@ -11,7 +11,7 @@
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
 		alert("입력 성공");
-		location.href = "board.do?pageNum=${pageNum}&board_num=${board_num}";
+		location.href = "content.do?article_num=${article_num}&board_num=${board_num}&pageNum=${pageNum }";
 	</script>
 </c:if>
 <c:if test="${result == 0 }">
@@ -20,6 +20,5 @@
 		history.go(-1);
 	</script>
 </c:if>
-<!-- 입력 성공 or 입력실패 알림창 다음페이지 (목록으로 or 실패 시 글쓰기화면으로 넘어감) -->
 </body>
 </html>

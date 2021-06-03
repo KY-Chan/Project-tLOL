@@ -9,11 +9,11 @@
 <script type="text/javascript" src="../bootstrap/js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#myArticle").load("board.do?pageNum=${param.pageNum}&account_num=${sessionScope.account_num }")
+		$("#myComment").load("myComment.do?account_num=${sessionScope.account_num }")
 	});	
 </script>
 </head>
 <body>
-<div id="myArticle"></div>
+<div id="myComment"></div>
 </body>
 </html>

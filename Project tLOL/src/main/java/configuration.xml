@@ -8,6 +8,7 @@
 		<typeAlias alias="member" type="tLOL.model.Member" />
 		<typeAlias alias="article" type="tLOL.model.Article" />
 		<typeAlias alias="board" type="tLOL.model.Board" />
+		<typeAlias alias="comment" type="tLOL.model.Comment" />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -24,5 +25,6 @@
 		<mapper resource="member.xml" />
 		<mapper resource="article.xml" />
 		<mapper resource="board.xml" />
+		<mapper resource="comment.xml" />
 	</mappers>
 </configuration>

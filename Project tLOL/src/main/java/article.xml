@@ -6,7 +6,7 @@
 		select * from (select rowNum rn, e.* from (select ar.*, ac.account_nickname from article ar, accounts ac where board_num=${board_num} and ar.account_num = ac.account_num order by article_num desc) e) where rn between ${startRow} and ${endRow}
 	</select>
 	<select id="selectMyList" parameterType="map" resultType="article">
-		select * from (select rowNum rn, e.* from (select * from article where account_num=${account_num} order by article_date desc) e) where rn between ${startRow} and ${endRow}
+		select * from (select rowNum rn, e.* from (select a.*, null, b.board_name from article a, board b where account_num=${account_num} and a.board_num = b.board_num order by article_date desc) e) where rn between ${startRow} and ${endRow}
 	</select>
 	<select id="total" parameterType="int" resultType="int">
 		select count(*) from article where board_num=#{board_num}
@@ -18,9 +18,9 @@
 		update article set article_read = article_read + 1 where board_num = ${ board_num} and article_num = ${ article_num}
 	</update>
 	<select id="select" parameterType="map" resultType="article">
-		select * from article where board_num = ${ board_num} and article_num = ${ article_num}
+		select ar.*, ac.account_nickname, b.board_name from article ar, accounts ac, board b where ar.board_num = ${ board_num} and ar.article_num = ${ article_num} and ac.account_num = ar.account_num and ar.board_num = b.board_num
 	</select>
-		<insert id="insert" parameterType="article" >
+	<insert id="insert" parameterType="article" >
 		<selectKey keyProperty="article_num" order="BEFORE" resultType="integer">
 			select nvl(max(article_num), 0) + 1 article_num from article where board_num=#{board_num}
 		</selectKey>

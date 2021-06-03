@@ -41,7 +41,7 @@
 
 		<div class="row flex-nowrap">	
 		<div class="d-flex flex-wrap align-items-center justify-content-center">
-			<a class="navbar-brand" href="#"> <img src="images/logo.png" alt="" width="230" height="100"></a>
+			<a class="navbar-brand" href="#"> <img src="/Project_tLOL/images/logo.png" alt="" width="230" height="100"></a>
 			<form class="col-lg-auto mb-2 mb-lg-0 me-lg-auto">
 				<input type="search" class="form-control" placeholder="소환사명 검색..." aria-label="Search">
 			</form>
@@ -51,7 +51,8 @@
 				data-bs-display="static" aria-expanded="false">회원</button>
 				<ul class="dropdown-menu dropdown-menu-end">
 					<li><a class="dropdown-item" href="Accounts/updateForm.do">회원정보 수정</a></li>
-					<li><a class="dropdown-item" href="/Project_tLOL/Boards/myArticle.jsp">내글보기 & 내댓글보기</a></li>
+					<li><a class="dropdown-item" href="/Project_tLOL/Boards/myArticle.jsp">내 글 보기</a></li>
+					<li><a class="dropdown-item" href="/Project_tLOL/Boards/myComment.jsp">내 댓글 보기</a></li>
 					<li><hr class="dropdown-divider"></li>
 					<li><a class="dropdown-item" href="Accounts/logout.do">로그아웃</a></li>
 				</ul>
@@ -63,7 +64,7 @@
 	
 	<!-- Sidebar -->
 
-	<div class="container-fluid">
+	
 		<div class="row flex-nowrap">
 		<div class="col-2 flex-shrink-0 p-3 bg-white" style="width: 215px;">
 			<input type="search" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
@@ -227,6 +228,6 @@
 		</div>
 	</div>
 	<script src="bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-	<script src="../bootstrap/js/sidebar.js"></script>	
+	<script src="bootstrap/js/sidebar.js"></script>	
 </body>
 </html>

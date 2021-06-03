@@ -13,6 +13,7 @@ public class Article {
 	private int article_recom;
 	private String article_del;
 	private String account_nickname;
+	private String board_name;
 	public int getBoard_num() {
 		return board_num;
 	}
@@ -74,4 +75,11 @@ public class Article {
 	public void setAccount_nickname(String account_nickname) {
 		this.account_nickname = account_nickname;
 	}
+	public String getBoard_name() {
+		return board_name;
+	}
+	public void setBoard_name(String board_name) {
+		this.board_name = board_name;
+	}
+	
 }
