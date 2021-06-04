@@ -152,7 +152,7 @@
 				<c:forEach var="comment" items="${list }">
 					<tr>
 						<c:if test="${comment.comm_del == 'y' }">
-							<th>삭제된 댓글 입니다</th>
+							<th colspan="5">삭제된 댓글 입니다</th>
 						</c:if>
 						<c:if test="${comment.comm_del != 'y' }">
 							<td>${comment.account_nickname }</td>
@@ -160,7 +160,7 @@
 							<td>${comment.comm_recom}</td>
 							<td>${comment.comm_date}</td>
 							<c:if test="${account_num eq comment.account_num}">
-								<td><a href="commentDelete.do?comm_num=${comm_num }&article_num=${article_num }&board_num=${board_num}&pageNum=${pageNum }">삭제</a></td>
+								<td><a href="commentDelete.do?comm_num=${comment.comm_num }&article_num=${article_num }&board_num=${board_num}&pageNum=${pageNum }">삭제</a></td>
 							</c:if>
 						</c:if>
 					</tr>

@@ -18,6 +18,6 @@
 		select count(*) from comments where account_num=#{account_num}
 	</select>
 	<update id="delete" parameterType="int">
-		update comments set comm_del='y' where comment_num=#{comment_num}
+		update comments set comm_del='y' where comm_num=#{comm_num}
 	</update>
 </mapper> 
