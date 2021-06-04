@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,6 @@
 <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Hugo 0.83.1">
 <title>Main page</title>
-
 
 <!-- Bootstrap core CSS -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -48,16 +47,16 @@
 				    </form>
 			    </div>
 				<c:choose>
-					<c:when test="${member.account_id == null }">
+					<c:when test="${sessionScope.account_id == null }">
 						<div class="dropdown text-end">
 							<button type="button" class="btn btn-outline-secondary text-white me-2" onclick="location.href='Accounts/loginForm.do'">Login</button>
 						</div>
 					</c:when>
-					<c:when test="${member.account_id != null }">
+					<c:when test="${sessionScope.account_id != null }">
 						<div class="dropdown text-end">
 							<c:choose>
-								<c:when test="${member.account_admin == 0 }">
-									<span class="textUserNick">${member.account_nickname }</span>
+								<c:when test="${sessionScope.account_admin == 0 }">
+									<span class="textUserNick">${sessionScope.account_nickname }</span>
 									<span class="textUserEnd">님 환영합니다</span>
 									<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" 
 									data-bs-display="static" aria-expanded="false">내정보</button>
@@ -69,7 +68,7 @@
 										<li><a class="dropdown-item" href="/Project_tLOL/Accounts/logout.do">로그아웃</a></li>
 									</ul>
 								</c:when>
-								<c:when test="${member.account_admin == 1 }">
+								<c:when test="${sessionScope.account_admin == 1 }">
 									<span class="textUserNick">관리자</span>
 									<span class="textUserEnd">님 환영합니다</span>
 									<button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" 
@@ -77,6 +76,9 @@
 									<ul class="dropdown-menu dropdown-menu-end">
 										<li><a class="dropdown-item" href="#">회원관리</a></li>
 										<li><a class="dropdown-item" href="#">게시글 관리</a></li>
+										<li><hr class="dropdown-divider"></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Boards/myArticle.jsp">내 글 보기</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Boards/myComment.jsp">내 댓글 보기</a></li>
 										<li><hr class="dropdown-divider"></li>
 										<li><a class="dropdown-item" href="Accounts/logout.do">로그아웃</a></li>
 									</ul>
