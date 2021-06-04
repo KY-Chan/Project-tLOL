@@ -35,29 +35,56 @@
 </style>
 </head>
 <body>
-	<header class="p-3 mb-3 border-bottom">
-
-		<div class="container-fluid">
-
-		<div class="row flex-nowrap">	
-		<div class="d-flex flex-wrap align-items-center justify-content-center">
-			<a class="navbar-brand" href="#"> <img src="images/logo.png" alt="" width="230" height="100"></a>
-			<form class="col-lg-auto mb-2 mb-lg-0 me-lg-auto">
-				<input type="search" class="form-control" placeholder="소환사명 검색..." aria-label="Search">
-			</form>
-			<div class="dropdown text-end">
-				<button type="button" class="btn btn-light text-dark me-2" onclick="location.href='Accounts/loginForm.do'">Login</button>
-				<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" 
-				data-bs-display="static" aria-expanded="false">회원</button>
-				<ul class="dropdown-menu dropdown-menu-end">
-					<li><a class="dropdown-item" href="Accounts/updateForm.do">회원정보 수정</a></li>
-					<li><a class="dropdown-item" href="/Project_tLOL/Boards/myArticle.jsp">내글보기 & 내댓글보기</a></li>
-					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" href="Accounts/logout.do">로그아웃</a></li>
-				</ul>
+<header class="p-3 mb-3 border-bottom bg-dark text-white">
+		<div class="container">
+			<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+				<a class="navbar-brand" href="#"> <img src="images/logo-remove.png" alt="" width="230" height="100"></a>
+				<div class="col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"></div>
+				<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+				    <form class="input-group">
+				      <input type="search" class="form-control form-control-dark" placeholder="소환사명 검색..." aria-label="Search">
+				      <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+				    </form>
+			    </div>
+				<c:choose>
+					<c:when test="${member.account_id == null }">
+						<div class="dropdown text-end">
+							<button type="button" class="btn btn-outline-secondary text-white me-2" onclick="location.href='Accounts/loginForm.do'">Login</button>
+						</div>
+					</c:when>
+					<c:when test="${member.account_id != null }">
+						<div class="dropdown text-end">
+							<c:choose>
+								<c:when test="${member.account_admin == 0 }">
+									<span class="textUserNick">${member.account_nickname }</span>
+									<span class="textUserEnd">님 환영합니다</span>
+									<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" 
+									data-bs-display="static" aria-expanded="false">내정보</button>
+									<ul class="dropdown-menu dropdown-menu-end">
+										<li><a class="dropdown-item" href="/Project_tLOL/Accounts/updateForm.do">회원정보 수정</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Boards/myArticle.jsp">내 글 보기</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Boards/myComment.jsp">내 댓글 보기</a></li>
+										<li><hr class="dropdown-divider"></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Accounts/logout.do">로그아웃</a></li>
+									</ul>
+								</c:when>
+								<c:when test="${member.account_admin == 1 }">
+									<span class="textUserNick">관리자</span>
+									<span class="textUserEnd">님 환영합니다</span>
+									<button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" 
+									data-bs-display="static" aria-expanded="false">관리메뉴</button>
+									<ul class="dropdown-menu dropdown-menu-end">
+										<li><a class="dropdown-item" href="#">회원관리</a></li>
+										<li><a class="dropdown-item" href="#">게시글 관리</a></li>
+										<li><hr class="dropdown-divider"></li>
+										<li><a class="dropdown-item" href="Accounts/logout.do">로그아웃</a></li>
+									</ul>
+								</c:when>
+							</c:choose>
+						</div>
+					</c:when>
+				</c:choose>
 			</div>
-		</div>
-		</div>
 		</div>
 	</header>
 	
@@ -65,7 +92,7 @@
 
 	<div class="container-fluid">
 		<div class="row flex-nowrap">
-		<div class="col-2 flex-shrink-0 p-3 bg-white" style="width: 215px;">
+		<div class="col-2 flex-shrink-0 p-3 bg-white" style="width: 210px;">
 			<input type="search" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
 			<span class="fs-5 fw-semibold">멀티서치??</span>
 			<ul class="list-unstyled ps-0">
@@ -87,7 +114,7 @@
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 							<li><a href="/Project_tLOL/Boards/free.jsp" class="link-dark rounded">자유게시판</a></li>
 							<li><a href="/Project_tLOL/Boards/tip.jsp" class="link-dark rounded">팁/노하우</a></li>
-							<li><a href="/Project_tLOL/Boards/meida.jsp" class="link-dark rounded">이미지/영상</a></li>
+							<li><a href="/Project_tLOL/Boards/media.jsp" class="link-dark rounded">이미지/영상</a></li>
 						</ul>
 					</div>
 				</li>
@@ -120,109 +147,19 @@
 		</div>
 		
 		<!-- Content Start -->
-		<div class="col-10 bd-content">
-	    <h1>CONTENT 시작!!!!!!!!!!!!</h1>
-	    <p class="lead">Basic grid layouts to get you familiar with building within the Bootstrap grid system.</p>
-	    <p>In these examples the <code>.themed-grid-col</code> class is added to the columns to add some theming. This is not a class that is available in Bootstrap by default.</p>
-	
-	    <h2 class="mt-4">Five grid tiers</h2>
-	    <p>There are five tiers to the Bootstrap grid system, one for each range of devices we support. Each tier starts at a minimum viewport size and automatically applies to the larger devices unless overridden.</p>
-	
-	    <div class="row mb-3">
-	      <div class="col-4 themed-grid-col">.col-4</div>
-	      <div class="col-4 themed-grid-col">.col-4</div>
-	      <div class="col-4 themed-grid-col">.col-4</div>
+		<div class="col-10 bg-white">
+			<div class="row mt-5 mb-2">
+				<a href="main.do"><img src="images/logo-remove.png" class="rounded mx-auto d-block" alt="" width="460" height="200"></a>
+			</div>
+		<div class="row d-flex justify-content-center">
+			<div class="col-6">
+				<input type="search" class="mb-4 form-control" placeholder="소환사명 검색..." aria-label="Search">	
+	    	</div>
 	    </div>
-	
-	    <div class="row mb-3">
-	      <div class="col-sm-4 themed-grid-col">.col-sm-4</div>
-	      <div class="col-sm-4 themed-grid-col">.col-sm-4</div>
-	      <div class="col-sm-4 themed-grid-col">.col-sm-4</div>
-	    </div>
-	
-	    <div class="row mb-3">
-	      <div class="col-md-4 themed-grid-col">.col-md-4</div>
-	      <div class="col-md-4 themed-grid-col">.col-md-4</div>
-	      <div class="col-md-4 themed-grid-col">.col-md-4</div>
-	    </div>
-	
-	    <div class="row mb-3">
-	      <div class="col-lg-4 themed-grid-col">.col-lg-4</div>
-	      <div class="col-lg-4 themed-grid-col">.col-lg-4</div>
-	      <div class="col-lg-4 themed-grid-col">.col-lg-4</div>
-	    </div>
-	
-	    <div class="row mb-3">
-	      <div class="col-xl-4 themed-grid-col">.col-xl-4</div>
-	      <div class="col-xl-4 themed-grid-col">.col-xl-4</div>
-	      <div class="col-xl-4 themed-grid-col">.col-xl-4</div>
-	    </div>
-	
-	    <div class="row mb-3">
-	      <div class="col-xxl-4 themed-grid-col">.col-xxl-4</div>
-	      <div class="col-xxl-4 themed-grid-col">.col-xxl-4</div>
-	      <div class="col-xxl-4 themed-grid-col">.col-xxl-4</div>
+	    <div class="row">
+	     <h1 class="text-center">HOT 게시글</h1>
 	    </div>
 	    
-	    <!-- Content table for YChan:) -->
-	    테이블 시자아아아아악!!!!!!
-	    <table class="table table-hover"> <!-- hover기능 싫으면 왼쪽 table-hover지우면됨 -->
-					<thead>
-						<tr>
-							<th scope="col">Class</th>
-							<th scope="col">Heading</th>
-							<th scope="col">Heading</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">Default</th>
-							<td>Cell</td>
-							<td>Cell</td>
-						</tr>
-
-						<tr class="table-primary">
-							<th scope="row">Primary</th>
-							<td>Cell</td>
-							<td>Cell</td>
-						</tr>
-						<tr class="table-secondary">
-							<th scope="row">Secondary</th>
-							<td>Cell</td>
-							<td>Cell</td>
-						</tr>
-						<tr class="table-success">
-							<th scope="row">Success</th>
-							<td>Cell</td>
-							<td>Cell</td>
-						</tr>
-						<tr class="table-danger">
-							<th scope="row">Danger</th>
-							<td>Cell</td>
-							<td>Cell</td>
-						</tr>
-						<tr class="table-warning">
-							<th scope="row">Warning</th>
-							<td>Cell</td>
-							<td>Cell</td>
-						</tr>
-						<tr class="table-info">
-							<th scope="row">Info</th>
-							<td>Cell</td>
-							<td>Cell</td>
-						</tr>
-						<tr class="table-light">
-							<th scope="row">Light</th>
-							<td>Cell</td>
-							<td>Cell</td>
-						</tr>
-						<tr class="table-dark">
-							<th scope="row">Dark</th>
-							<td>Cell</td>
-							<td>Cell</td>
-						</tr>
-					</tbody>
-				</table> <!-- Content table end -->
 		</div> <!-- content end -->
 		</div>
 	</div>
