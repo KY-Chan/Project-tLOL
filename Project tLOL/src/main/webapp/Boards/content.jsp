@@ -19,9 +19,14 @@
 
 <script type="text/javascript" src="../bootstrap/js/jquery.js"></script>
 <script type="text/javascript">
-	/* $(function() {
-		$('#disp').load('list.do?pageNum=${pageNum}');
-	}); */
+	function article_delete() {
+		if(confirm("정말 삭제하시겠습니까?") == true) {
+			location.href='deleteBoard.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}';
+		} else {
+			return;
+		}
+		
+	}
 </script>
 </head>
 <body>
@@ -123,7 +128,7 @@
 <div align="center"><br>
   <c:if test="${not empty account_id }">
 	  <button onclick="location.href='updateBoardForm.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">수정</button> 
-	  <button onclick="location.href='deleteBoard.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">삭제</button> 
+	  <button onclick="article_delete()">삭제</button> 
 	</c:if>
   <button onclick="location.href='board.do?board_num=${board_num }&pageNum=${pageNum}'">게시글 목록</button>
 
