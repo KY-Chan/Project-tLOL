@@ -35,6 +35,7 @@
 </style>
 </head>
 <body>
+
 <header class="p-3 mb-3 border-bottom bg-dark text-white">
 		<div class="container">
 			<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -90,7 +91,7 @@
 	
 	<!-- Sidebar -->
 
-	<div class="container-fluid">
+	
 		<div class="row flex-nowrap">
 		<div class="col-2 flex-shrink-0 p-3 bg-white" style="width: 210px;">
 			<input type="search" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
@@ -164,6 +165,6 @@
 		</div>
 	</div>
 	<script src="bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-	<script src="../bootstrap/js/sidebar.js"></script>	
+	<script src="bootstrap/js/sidebar.js"></script>	
 </body>
 </html>

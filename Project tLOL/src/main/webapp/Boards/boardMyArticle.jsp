@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,13 +16,6 @@
 <link href="../bootstrap/css/headers.css" rel="stylesheet">
 <link href="../bootstrap/css/sidebar.css" rel="stylesheet">
 <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
-
-<script type="text/javascript" src="../bootstrap/js/jquery.js"></script>
-<script type="text/javascript">
-	/* $(function() {
-		$('#disp').load('list.do?pageNum=${pageNum}');
-	}); */
-</script>
 </head>
 <body>
 <header class="p-3 mb-3 border-bottom">
@@ -51,11 +44,8 @@
 		</div>
 		</div>
 	</header>
-	
-	<!-- Sidebar -->
 
-	
-		<div class="row flex-nowrap">
+<div class="row flex-nowrap">
 		<div class="col-2 flex-shrink-0 p-3 bg-white" style="width: 215px;">
 			<input type="search" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
 			<span class="fs-5 fw-semibold">멀티서치??</span>
@@ -109,81 +99,56 @@
 				</li>
 			</ul>
 		</div>
-		
-		<div class="col-10 bd-content">
-	<h2>${article.board_name }</h2>
-	<table class="table table-hover">
-		<tr class="table-primary"><th width="100">제목</th><td>${article.article_title }</td></tr>
-		<tr class="table-primary"><th>작성자</th><td>${article.account_nickname }</td></tr>
-		<tr class="table-primary"><th>조회수</th><td>${article.article_read }</td></tr>
-		<tr class="table-primary"><th>작성일</th><td>${article.article_date }</td></tr>
-		<tr class="table-primary"><th>추천수</th><td>${article.article_recom }</td></tr>
-		<tr class="table-info"><th>내용</th><td><pre>${article.article_content }</pre></td></tr>
-	</table>
-<div align="center"><br>
-	<c:if test="${not empty account_id }">
-		<button onclick="location.href='#'">수정</button> 
-		<button onclick="location.href='#'">삭제</button>
-	</c:if>
-	<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${pageNum}'">게시글 목록</button>
-</div>
-<br><br>
-<div id="disp"></div>
-<form action="commentAction.do" method="post">
-	<input type="hidden" name="account_num" value="${sessionScope.account_num }">
-	<input type="hidden" name="board_num" value="${board_num }">
-	<input type="hidden" name="article_num" value="${article_num }">
-	<input type="hidden" name="pageNum" value="${pageNum }">
+<div class="col-10 bd-content">
+	<h2>내가 쓴 글</h2>
 	<table class="table table-hover">
 		<tr class="table-primary">
-			<th style="width: 10%">작성자</th>
-			<th style="width: 50%">내용</th>
-			<th style="width: 10%">추천수</th>
-			<th style="width: 20%">작성일</th>
-			<th style="width: 10%"></th>
+			<th>게시판</th>
+			<th>글번호</th>
+			<th>글제목</th>
+			<th>조회수</th>
+			<th>추천수</th>
+			<th>작성일</th>
 		</tr>
-		<tr>
-			<c:if test="${empty list }">
-				<tr>
-					<th colspan="5">댓글이 없습니다</th>
-				</tr>
-			</c:if>
-			<c:if test="${not empty list }">
-				<c:forEach var="comment" items="${list }">
-					<tr>
-						<c:if test="${comment.comm_del == 'y' }">
-							<th colspan="5">삭제된 댓글 입니다</th>
-						</c:if>
-						<c:if test="${comment.comm_del != 'y' }">
-							<td>${comment.account_nickname }</td>
-							<td>${comment.comm_content}</td>
-							<td>${comment.comm_recom}</td>
-							<td>${comment.comm_date}</td>
-							<c:if test="${account_num eq comment.account_num}">
-								<td><a href="commentDelete.do?comm_num=${comment.comm_num }&article_num=${article_num }&board_num=${board_num}&pageNum=${pageNum }">삭제</a></td>
-							</c:if>
-						</c:if>
-					</tr>
-				</c:forEach>
-			</c:if>
-		</tr>
-		<c:if test="${empty account_id }">
+		<c:if test="${empty list }">
 			<tr>
-				<th colspan="5">로그인 후 댓글을 작성할 수 있습니다</th>
+				<th colspan="6">게시글이 없습니다</th>
 			</tr>
 		</c:if>
-		<c:if test="${not empty account_id }">
-			<tr>
-				<th>${sessionScope.account_nickname }</th>
-				<th colspan="3"><textarea style="resize: none; box-sizing: border-box; width: 100%" name="comm_content" required="required"></textarea></th>
-				<th><input type="submit" value="확인"></th>
-			</tr>
+		<c:if test="${not empty list }">
+			<c:forEach var="article" items="${list }">
+				<tr>
+					<td>${article.board_name }</td>
+					<td>${article.article_num }</td>
+					<c:if test="${article.article_del == 'y' }">
+						<th colspan="5">삭제된 게시글 입니다</th>
+					</c:if>
+					<c:if test="${article.article_del != 'y' }">
+						<td>
+							<a href="content.do?article_num=${article.article_num}&board_num=${article.board_num}&pageNum=${currentPage }">
+								${article.article_title}</a>
+						</td>
+						<td>${article.article_read}</td>
+						<td>${article.article_recom}</td>
+						<td>${article.article_date}</td>
+					</c:if>
+				</tr>
+			</c:forEach>
 		</c:if>
 	</table>
-
-</form>
-
-</div></div>
+	<div align="center">
+		<c:if test="${startPage > PAGE_PER_BLOCK}">
+			<button onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${startPage - 1}'">이전</button>
+		</c:if>
+		<c:forEach var="i" begin="${startPage}" end="${endPage}">
+			<button onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${i}'">${i }</button>
+		</c:forEach>
+		<c:if test="${endPage < totalPage}">
+			<button onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${endPage + 1}'">다음</button>
+		</c:if>
+	</div>
+	</div>
+</div>
 </body>
 
 <script src="../bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
