@@ -7,6 +7,7 @@ import tLOL.dao.MemberDao;
 import tLOL.model.Member;
 public class LoginAction implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
+		String referer = request.getParameter("referer"); // 이전 페이지
 		String account_id = request.getParameter("account_id");
 		String account_pw = request.getParameter("account_pw");
 		MemberDao md = MemberDao.getInstance();
@@ -31,6 +32,7 @@ public class LoginAction implements CommandProcess {
 			}
 		}
 		request.setAttribute("result", result);
+		request.setAttribute("referer",referer);
 		return "login";
 	}
 

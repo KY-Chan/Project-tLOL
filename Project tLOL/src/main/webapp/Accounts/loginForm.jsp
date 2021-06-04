@@ -20,7 +20,8 @@
 </head>
 <body class="text-center">
 	<main class="form-signin">
-		<form method="post" action="login.do">	
+		<form method="post" action="login.do">
+		<input type="hidden" name="referer" value="${referer }">
 			<div class="mb-4 nav justify-content-center" onclick="location.href='../main.do'"><img src="../images/logo.png" alt=""></div>
 			<h1 class="h3 mb-3 mt-5 fw-normal">로그인</h1>
 			<div class="form-floating">
