@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import tLOL.dao.ArticleDao;
 import tLOL.dao.BoardDao;
@@ -27,6 +28,11 @@ public class BoardAction implements CommandProcess {
 		int currentPage = Integer.parseInt(pageNum);
 		
 		if(tmp_board_num == null || tmp_board_num.equals("")) { // 내가 쓴 글
+			HttpSession session = request.getSession();
+		    if (session == null || session.getAttribute("account_num") == null ) {
+		    	return "../sessionChk";
+		    } 
+			
 			int account_num = Integer.parseInt(request.getParameter("account_num"));
 			int total = ad.getMyTotal(account_num);
 			

@@ -11,6 +11,9 @@ public class DeleteAction implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
+	    if (session == null || session.getAttribute("account_num") == null ) {
+	    	return "../sessionChk";
+	    }
 		String account_id = (String)session.getAttribute("account_id");
 		MemberDao md = MemberDao.getInstance();
 		if (account_id != null) {
