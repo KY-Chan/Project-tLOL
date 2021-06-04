@@ -65,9 +65,10 @@ public class ArticleDao {
 	public int getMyTotal(int account_num) {
 		return (int) session.selectOne("articlens.myTotal", account_num);
 	}
-	   public int insert(Article article) {
-		      return session.insert("articlens.insert", article);
-		   }
+
+	public int insert(Article article) {
+    return session.insert("articlens.insert", article);
+  }
 	public int update(int article_num, int board_num, String article_title, String article_content) {
 		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("board_num", board_num);

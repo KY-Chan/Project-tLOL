@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="commentns">
+	<select id="selectList" parameterType="map" resultType="comment">
+		select c.*, a.account_nickname from comments c, accounts a where c.account_num=a.account_num and c.board_num=${board_num} and c.article_num=${article_num}
+	</select>
+	<select id="selectMyList" parameterType="map" resultType="comment">
+		select * from (select rowNum rn, e.* from (select c.*, b.board_name, a.article_title from comments c, board b, article a where c.account_num=${account_num} and c.board_num=b.board_num and c.article_num = a.article_num order by comm_date desc) e) where rn between ${startRow} and ${endRow}
+	</select>
+	<insert id="insert" parameterType="comment" >
+		<selectKey keyProperty="comm_num" order="BEFORE" resultType="integer">
+			select nvl(max(comm_num), 0) + 1 comm_num from comments where board_num=#{board_num} and article_num=#{article_num}
+		</selectKey>
+		insert into comments values(#{board_num}, #{article_num}, #{comm_num}, #{account_num}, #{comm_content}, 0, sysdate, 'n')
+	 </insert>
+	 <select id="myTotal" parameterType="int" resultType="int">
+		select count(*) from comments where account_num=#{account_num}
+	</select>
+	<update id="delete" parameterType="int">
+		update comments set comm_del='y' where comm_num=#{comm_num}
+	</update>
+</mapper> 
