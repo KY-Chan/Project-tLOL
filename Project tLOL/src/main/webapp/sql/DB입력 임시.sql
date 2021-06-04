@@ -14,6 +14,7 @@ insert into article values(2, 9, 1, '더미', '더미', sysdate, 0, 0, 'n');
 insert into article values(2, 10, 1, '더미', '더미', sysdate, 0, 0, 'n');
 insert into article values(2, 11, 1, '더미', '더미', sysdate, 0, 0, 'n');
 insert into article values(2, 12, 1, '더미', '더미', sysdate, 0, 0, 'n');
+insert into article values(2, 14, 1, '더미', '더미', sysdate, 0, 0, 'y');
 select * from (select rowNum rn from article e) where rn between ? and ?
 select * from board;
 insert into board values(1, '공지사항');

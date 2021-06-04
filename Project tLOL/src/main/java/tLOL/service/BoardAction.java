@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import tLOL.dao.ArticleDao;
 import tLOL.dao.BoardDao;
+import tLOL.dao.CommentDao;
 import tLOL.model.Article;
 
 public class BoardAction implements CommandProcess {
@@ -15,11 +16,11 @@ public class BoardAction implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		ArticleDao ad = ArticleDao.getInstance();
 		BoardDao bd = BoardDao.getInstance();
-		String tmp_board_num = request.getParameter("board_num");
 		
 		final int ROW_PER_PAGE = 10;
 		final int PAGE_PER_BLOCK = 10;
 		
+		String tmp_board_num = request.getParameter("board_num");
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals(""))
 			pageNum = "1";

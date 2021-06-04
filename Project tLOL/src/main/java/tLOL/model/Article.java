@@ -12,8 +12,10 @@ public class Article {
 	private int article_read;
 	private int article_recom;
 	private String article_del;
+	// additional data
 	private String account_nickname;
 	private String board_name;
+	private int comment_count;
 	public int getBoard_num() {
 		return board_num;
 	}
@@ -80,6 +82,12 @@ public class Article {
 	}
 	public void setBoard_name(String board_name) {
 		this.board_name = board_name;
+	}
+	public int getComment_count() {
+		return comment_count;
+	}
+	public void setComment_count(int comment_count) {
+		this.comment_count = comment_count;
 	}
 	
 }

@@ -29,15 +29,15 @@
 				<input type="search" class="form-control" placeholder="소환사명 검색..." aria-label="Search">
 			</form>
 			<div class="dropdown text-end">
-				<button type="button" class="btn btn-light text-dark me-2" onclick="location.href='Accounts/loginForm.do'">Login</button>
+				<button type="button" class="btn btn-light text-dark me-2" onclick="location.href='/Project_tLOL/Accounts/loginForm.do'">Login</button>
 				<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" 
 				data-bs-display="static" aria-expanded="false">회원</button>
 				<ul class="dropdown-menu dropdown-menu-end">
-					<li><a class="dropdown-item" href="Accounts/updateForm.do">회원정보 수정</a></li>
+					<li><a class="dropdown-item" href="/Project_tLOL/Accounts/updateForm.do">회원정보 수정</a></li>
 					<li><a class="dropdown-item" href="/Project_tLOL/Boards/myArticle.jsp">내 글 보기</a></li>
 					<li><a class="dropdown-item" href="/Project_tLOL/Boards/myComment.jsp">내 댓글 보기</a></li>
 					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" href="Accounts/logout.do">로그아웃</a></li>
+					<li><a class="dropdown-item" href="/Project_tLOL/Accounts/logout.do">로그아웃</a></li>
 				</ul>
 			</div>
 		</div>
@@ -71,7 +71,7 @@
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 							<li><a href="/Project_tLOL/Boards/free.jsp" class="link-dark rounded">자유게시판</a></li>
 							<li><a href="/Project_tLOL/Boards/tip.jsp" class="link-dark rounded">팁/노하우</a></li>
-							<li><a href="/Project_tLOL/Boards/meida.jsp" class="link-dark rounded">이미지/영상</a></li>
+							<li><a href="/Project_tLOL/Boards/media.jsp" class="link-dark rounded">이미지/영상</a></li>
 						</ul>
 					</div>
 				</li>
@@ -156,7 +156,10 @@
 			<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
 		<br>
-		<button onclick="location.href='writeForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
+		<c:if test="${not empty account_id }">
+			<button onclick="location.href='writeForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
+		</c:if>
+		
 	</div>
 	
 	</div>

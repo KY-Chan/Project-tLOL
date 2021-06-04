@@ -36,15 +36,15 @@
 				<input type="search" class="form-control" placeholder="소환사명 검색..." aria-label="Search">
 			</form>
 			<div class="dropdown text-end">
-				<button type="button" class="btn btn-light text-dark me-2" onclick="location.href='Accounts/loginForm.do'">Login</button>
+				<button type="button" class="btn btn-light text-dark me-2" onclick="location.href='/Project_tLOL/Accounts/loginForm.do'">Login</button>
 				<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" 
 				data-bs-display="static" aria-expanded="false">회원</button>
 				<ul class="dropdown-menu dropdown-menu-end">
-					<li><a class="dropdown-item" href="Accounts/updateForm.do">회원정보 수정</a></li>
+					<li><a class="dropdown-item" href="/Project_tLOL/Accounts/updateForm.do">회원정보 수정</a></li>
 					<li><a class="dropdown-item" href="/Project_tLOL/Boards/myArticle.jsp">내 글 보기</a></li>
 					<li><a class="dropdown-item" href="/Project_tLOL/Boards/myComment.jsp">내 댓글 보기</a></li>
 					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" href="Accounts/logout.do">로그아웃</a></li>
+					<li><a class="dropdown-item" href="/Project_tLOL/Accounts/logout.do">로그아웃</a></li>
 				</ul>
 			</div>
 		</div>
@@ -78,7 +78,7 @@
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 							<li><a href="/Project_tLOL/Boards/free.jsp" class="link-dark rounded">자유게시판</a></li>
 							<li><a href="/Project_tLOL/Boards/tip.jsp" class="link-dark rounded">팁/노하우</a></li>
-							<li><a href="/Project_tLOL/Boards/meida.jsp" class="link-dark rounded">이미지/영상</a></li>
+							<li><a href="/Project_tLOL/Boards/media.jsp" class="link-dark rounded">이미지/영상</a></li>
 						</ul>
 					</div>
 				</li>
@@ -121,8 +121,10 @@
 		<tr class="table-info"><th>내용</th><td><pre>${article.article_content }</pre></td></tr>
 	</table>
 <div align="center"><br>
-	<button onclick="location.href='#'">수정</button> 
-	<button onclick="location.href='#'">삭제</button> 
+	<c:if test="${not empty account_id }">
+		<button onclick="location.href='#'">수정</button> 
+		<button onclick="location.href='#'">삭제</button>
+	</c:if>
 	<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${pageNum}'">게시글 목록</button>
 </div>
 <br><br>
@@ -131,13 +133,14 @@
 	<input type="hidden" name="account_num" value="${sessionScope.account_num }">
 	<input type="hidden" name="board_num" value="${board_num }">
 	<input type="hidden" name="article_num" value="${article_num }">
+	<input type="hidden" name="pageNum" value="${pageNum }">
 	<table class="table table-hover">
 		<tr class="table-primary">
-			<th>작성자</th>
-			<th>내용</th>
-			<th>추천수</th>
-			<th>작성일</th>
-			<th></th>
+			<th style="width: 10%">작성자</th>
+			<th style="width: 50%">내용</th>
+			<th style="width: 10%">추천수</th>
+			<th style="width: 20%">작성일</th>
+			<th style="width: 10%"></th>
 		</tr>
 		<tr>
 			<c:if test="${empty list }">
@@ -149,24 +152,33 @@
 				<c:forEach var="comment" items="${list }">
 					<tr>
 						<c:if test="${comment.comm_del == 'y' }">
-							<th colspan="5">삭제된 댓글 입니다</th>
+							<th>삭제된 댓글 입니다</th>
 						</c:if>
 						<c:if test="${comment.comm_del != 'y' }">
 							<td>${comment.account_nickname }</td>
 							<td>${comment.comm_content}</td>
 							<td>${comment.comm_recom}</td>
 							<td>${comment.comm_date}</td>
-							<td><a href="">삭제</a></td>
+							<c:if test="${account_num eq comment.account_num}">
+								<td><a href="commentDelete.do?comm_num=${comm_num }&article_num=${article_num }&board_num=${board_num}&pageNum=${pageNum }">삭제</a></td>
+							</c:if>
 						</c:if>
 					</tr>
 				</c:forEach>
 			</c:if>
 		</tr>
-		<tr>
-			<th>${sessionScope.account_nickname }</th>
-			<th><textarea style="resize: none; box-sizing: border-box; width: 100%" name="comm_content" required="required"></textarea></th>
-			<th colspan="3"><input type="submit" value="확인"></th>
-		</tr>
+		<c:if test="${empty account_id }">
+			<tr>
+				<th colspan="5">로그인 후 댓글을 작성할 수 있습니다</th>
+			</tr>
+		</c:if>
+		<c:if test="${not empty account_id }">
+			<tr>
+				<th>${sessionScope.account_nickname }</th>
+				<th colspan="3"><textarea style="resize: none; box-sizing: border-box; width: 100%" name="comm_content" required="required"></textarea></th>
+				<th><input type="submit" value="확인"></th>
+			</tr>
+		</c:if>
 	</table>
 
 </form>

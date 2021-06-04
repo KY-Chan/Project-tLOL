@@ -51,4 +51,7 @@ public class CommentDao {
 	public int getMyTotal(int account_num) {
 		return (int) session.selectOne("commentns.myTotal", account_num);
 	}
+	public int delete(int comm_num) {
+		return (int) session.update("commentns.delete", comm_num);
+	}
 }
