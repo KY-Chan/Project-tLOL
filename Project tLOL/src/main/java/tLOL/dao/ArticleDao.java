@@ -68,4 +68,18 @@ public class ArticleDao {
 	   public int insert(Article article) {
 		      return session.insert("articlens.insert", article);
 		   }
+	public int update(int article_num, int board_num, String article_title, String article_content) {
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("board_num", board_num);
+		parms.put("article_num", article_num);
+		parms.put("article_title", article_title);
+		parms.put("article_content", article_content);
+		return session.update("articlens.update", parms);
+	}
+	public int delete(int article_num, int board_num) {
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("board_num", board_num);
+		parms.put("article_num", article_num);
+		return session.update("articlens.delete", parms);
+	}
 }

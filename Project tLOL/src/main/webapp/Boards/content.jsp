@@ -20,8 +20,8 @@
 		<tr><th>내용</th><td><pre>${article.article_content }</pre></td></tr>
 	</table>
 <div align="center"><br>
-	<button onclick="location.href='#'">수정</button> 
-	<button onclick="location.href='#'">삭제</button> 
+	<button onclick="location.href='updateBoardForm.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">수정</button> 
+	<button onclick="location.href='deleteBoard.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">삭제</button> 
 	<button onclick="location.href='javascript:history.back()'">게시글 목록</button><br> 
 </div>
 <div id="disp"></div>
