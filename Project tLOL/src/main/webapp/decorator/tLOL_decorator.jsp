@@ -116,7 +116,7 @@
 				</li>
 				<li class="mb-1">
 					<button class="btn btn-toggle align-items-center rounded collapsed"
-						data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">커뮤니티</button>
+						data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">커뮤니티</button>
 					<div class="collapse show" id="dashboard-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 							<li><a href="/Project_tLOL/Boards/board.do?board_num=3" class="link-dark rounded">자유게시판</a></li>
@@ -127,7 +127,7 @@
 				</li>
 				<li class="mb-1">
 					<button class="btn btn-toggle align-items-center rounded collapsed"
-						data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">매칭</button>
+						data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">매칭</button>
 					<div class="collapse show" id="orders-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 							<li><a href="/Project_tLOL/Boards/board.do?board_num=4" class="link-dark rounded">매칭게시판</a></li>
@@ -140,7 +140,7 @@
 				<li class="border-top my-3"></li>
 				<li class="mb-1">
 					<button class="btn btn-toggle align-items-center rounded collapsed"
-						data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">blah blah</button>
+						data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="true">blah blah</button>
 					<div class="collapse show" id="account-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 							<li><a href="#" class="link-dark rounded">blah...</a></li>
