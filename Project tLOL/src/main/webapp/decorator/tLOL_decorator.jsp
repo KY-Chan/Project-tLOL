@@ -9,15 +9,19 @@
 	<meta name="description" content="">
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Hugo 0.83.1">
-
+	<title>롤 전적 검색 - tLOL</title>
+	<link rel="icon" href="../images/icon.png">
+	
 	<!-- Bootstrap core CSS -->
 	<link href="/Project_tLOL/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link href="/Project_tLOL/bootstrap/css/headers.css" rel="stylesheet">
 	<link href="/Project_tLOL/bootstrap/css/sidebar.css" rel="stylesheet">
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
-	<title>Main page</title>
-	
+
+	<!-- Custom styles for this template -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
 	<style>
 		.bd-placeholder-img {
 			font-size: 1.125rem;
