@@ -10,7 +10,7 @@
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Hugo 0.83.1">
 	<title>롤 전적 검색 - tLOL</title>
-	<link rel="icon" href="../images/icon.png">
+	<link rel="icon" href="./images/icon.png">
 	
 	<!-- Bootstrap core CSS -->
 	<link href="/Project_tLOL/bootstrap/css/bootstrap.min.css" rel="stylesheet"
@@ -46,6 +46,17 @@
 		  border-color: #fff;
 		  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
 		}
+		
+				.btn-toggle:hover,
+		.btn-toggle:focus {
+		  color: rgba(0, 0, 0, .85);
+		  background-color: #0d6efd;
+		}
+		
+				.btn-toggle-nav a:hover,
+		.btn-toggle-nav a:focus {
+		  background-color: #0d6efd;
+		}
 	</style>
 	
 	<!-- Custom styles for this template -->
@@ -53,8 +64,8 @@
     
 </head>
 
-<body>
-	<header class="p-3 mb-3 border-bottom bg-dark text-white">
+<body style="background-image: url('./images/background.png')">
+	<header class="bg-dark text-white">
 		<div class="container">
 			<div class="d-flex flex-nowrap align-items-center justify-content-between">
 				<a class="navbar-brand" href="/Project_tLOL/main.jsp">
@@ -77,8 +88,9 @@
 							<c:choose>
 								<c:when test="${sessionScope.account_admin == 0 }">
 									<span class="textUserNick">${sessionScope.account_nickname }</span>
-									<span class="textUserEnd">님 환영합니다</span>
-									<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" 
+									<span class="textUserEnd">님 환영합니다!</span>
+									<span style="padding: 10px"></span>
+									<button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" 
 									data-bs-display="static" aria-expanded="false">내정보</button>
 									<ul class="dropdown-menu dropdown-menu-end">
 										<li><a class="dropdown-item" href="/Project_tLOL/Accounts/updateForm.do">회원정보 수정</a></li>
@@ -90,7 +102,8 @@
 								</c:when>
 								<c:when test="${sessionScope.account_admin == 1 }">
 									<span class="textUserNick">관리자</span>
-									<span class="textUserEnd">님 환영합니다</span>
+									<span class="textUserEnd">님 환영합니다!</span>
+									<span style="padding: 10px"></span>
 									<button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" 
 									data-bs-display="static" aria-expanded="false">관리메뉴</button>
 									<ul class="dropdown-menu dropdown-menu-end">
@@ -110,70 +123,87 @@
 			</div>
 		</div>
 	</header>
+	<div class="bg-primary" style="height: 20px;">
+		<div class="container">
+		</div>
+	</div>
 	
 	<!-- Sidebar + Contents -->
-	<div class="row flex-nowrap">
+	<aside class="row flex-nowrap">
 		<!-- Sidebar -->
-		<div class="col-2 flex-shrink-0 p-3 bg-white" style="width: 210px;">
-			<input type="search" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
-			<span class="fs-5 fw-semibold">멀티서치??</span>
+		<div class="col-2 flex-shrink-0 p-3 bg-dark text-white" style="width: 220px; height: 1080px;">
+			<form class="input-group">
+				<input type="search" class="mb-4 form-control form-control-dark" placeholder="게시판 검색..." aria-label="Search">
+				<button class="mb-4 btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+			</form>
+			<div class="fs-5 fw-semibold">멀티서치??</div>
 			<ul class="list-unstyled ps-0">
 				<li class="border-top my-3"></li>
 				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed"
+					<button class="btn btn-toggle align-items-center rounded collapsed text-white"
 						data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">뉴스&정보</button>
 					<div class="collapse show" id="home-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/Project_tLOL/Boards/board.do?board_num=1" class="link-dark rounded">공지사항</a></li>
-							<li><a href="/Project_tLOL/Boards/board.do?board_num=2" class="link-dark rounded">뉴스</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed"
-						data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">커뮤니티</button>
-					<div class="collapse show" id="dashboard-collapse">
-						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/Project_tLOL/Boards/board.do?board_num=3" class="link-dark rounded">자유게시판</a></li>
-							<li><a href="/Project_tLOL/Boards/board.do?board_num=6" class="link-dark rounded">팁/노하우</a></li>
-							<li><a href="/Project_tLOL/Boards/board.do?board_num=5" class="link-dark rounded">이미지/영상</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed"
-						data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">매칭</button>
-					<div class="collapse show" id="orders-collapse">
-						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/Project_tLOL/Boards/board.do?board_num=4" class="link-dark rounded">매칭게시판</a></li>
-							<li><a href="#" class="link-dark rounded">matching</a></li>
-							<li><a href="#" class="link-dark rounded">matching</a></li>
-							<li><a href="#" class="link-dark rounded">matching</a></li>
+							<li><a href="/Project_tLOL/Boards/board.do?board_num=1" class="link-dark rounded text-white">공지사항</a></li>
+							<li><a href="/Project_tLOL/Boards/board.do?board_num=2" class="link-dark rounded text-white">뉴스</a></li>
 						</ul>
 					</div>
 				</li>
 				<li class="border-top my-3"></li>
 				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed"
-						data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">blah blah</button>
+					<button class="btn btn-toggle align-items-center rounded collapsed text-white"
+						data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">커뮤니티</button>
+					<div class="collapse show" id="dashboard-collapse">
+						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+							<li><a href="/Project_tLOL/Boards/board.do?board_num=3" class="link-dark rounded text-white">자유게시판</a></li>
+							<li><a href="/Project_tLOL/Boards/board.do?board_num=6" class="link-dark rounded text-white">팁/노하우</a></li>
+							<li><a href="/Project_tLOL/Boards/board.do?board_num=5" class="link-dark rounded text-white">이미지/영상</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="border-top my-3"></li>
+				<li class="mb-1">
+					<button class="btn btn-toggle align-items-center rounded collapsed text-white"
+						data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">매칭</button>
+					<div class="collapse show" id="orders-collapse">
+						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+							<li><a href="/Project_tLOL/Boards/board.do?board_num=4" class="link-dark rounded text-white">매칭게시판</a></li>
+							<li><a href="#" class="link-dark rounded text-white">matching</a></li>
+							<li><a href="#" class="link-dark rounded text-white">matching</a></li>
+							<li><a href="#" class="link-dark rounded text-white">matching</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="border-top my-3"></li>
+				<li class="mb-1">
+					<button class="btn btn-toggle align-items-center rounded collapsed text-white"
+						data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="true">blah blah</button>
 					<div class="collapse show" id="account-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="#" class="link-dark rounded">blah...</a></li>
-							<li><a href="#" class="link-dark rounded">blah</a></li>
-							<li><a href="#" class="link-dark rounded">blah</a></li>
-							<li><a href="#" class="link-dark rounded">blah</a></li>
+							<li><a href="#" class="link-dark rounded text-white">blah...</a></li>
+							<li><a href="#" class="link-dark rounded text-white">blah</a></li>
+							<li><a href="#" class="link-dark rounded text-white">blah</a></li>
+							<li><a href="#" class="link-dark rounded text-white">blah</a></li>
 						</ul>
 					</div>
 				</li>
 			</ul>
-		</div> 
+		</div>
 		<!-- sidebar end -->
 		<!-- content -->
 		
 			<deco:body></deco:body>
 			
 	     <!-- content end -->
-	</div>
+	</aside>
+	<footer class="bg-dark text-white">
+		<div class="container">
+			<ul class="nav">
+				<li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Active</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+			</ul>
+		</div>
+	</footer>
 	
 	<script src="/Project_tLOL/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 	<script src="/Project_tLOL/bootstrap/js/sidebar.js"></script>	
