@@ -49,7 +49,7 @@ public class MyComment implements CommandProcess {
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totalPage", totalPage);
-		return "boardMyComment";
+		return "myComment";
 	}
 
 }

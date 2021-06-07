@@ -67,7 +67,7 @@
 									data-bs-display="static" aria-expanded="false">내정보</button>
 									<ul class="dropdown-menu dropdown-menu-end">
 										<li><a class="dropdown-item" href="/Project_tLOL/Accounts/updateForm.do">회원정보 수정</a></li>
-										<li><a class="dropdown-item" href="/Project_tLOL/Boards/board.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Boards/myArticle.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>
 										<li><a class="dropdown-item" href="/Project_tLOL/Boards/myComment.do?account_num=${sessionScope.account_num }">내 댓글 보기</a></li>
 										<li><hr class="dropdown-divider"></li>
 										<li><a class="dropdown-item" href="/Project_tLOL/Accounts/logout.do">로그아웃</a></li>
@@ -82,7 +82,7 @@
 										<li><a class="dropdown-item" href="#">회원관리</a></li>
 										<li><a class="dropdown-item" href="#">게시글 관리</a></li>
 										<li><hr class="dropdown-divider"></li>
-										<li><a class="dropdown-item" href="/Project_tLOL/Boards/board.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Boards/myArticle.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>
 										<li><a class="dropdown-item" href="/Project_tLOL/Boards/myComment.do?account_num=${sessionScope.account_num }">내 댓글 보기</a></li>
 										<li><hr class="dropdown-divider"></li>
 										<li><a class="dropdown-item" href="/Project_tLOL/Accounts/logout.do">로그아웃</a></li>
@@ -100,7 +100,11 @@
 	<div class="row flex-nowrap">
 		<!-- Sidebar -->
 		<div class="col-2 flex-shrink-0 p-3 bg-white" style="width: 210px;">
-			<input type="search" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
+			<!-- 검색용 임시 태그. 삭제 요망 -->
+			<form action="/Project_tLOL/Boards/serachArticle.do" method="post"> 
+				<input type="search" name="keyword" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
+				<input type="submit">
+			</form>
 			<span class="fs-5 fw-semibold">멀티서치??</span>
 			<ul class="list-unstyled ps-0">
 				<li class="border-top my-3"></li>

@@ -8,14 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<div class="col-10 bd-content">
 	<h2>${board_name }</h2>
 	<table class="table table-hover">
 		<tr class="table-primary">
-			<c:if test="${board_num eq 0 }">
-				<th>게시판</th>
-			</c:if>
 			<th>글번호</th>
 			<th>글제목</th>
 			<th>작성자</th>
@@ -52,20 +48,31 @@
 		</c:if>
 	</table>
 	<div align="center">
+		<c:if test="${not empty keyword }">
+			<c:set var="boardAndKey" value="board_num=${board_num }&keyword=${keyword }"></c:set>
+		</c:if>
+		<c:if test="${empty keyword }">
+			<c:set var="boardAndKey" value="board_num=${board_num }"></c:set>
+		</c:if>
 		<c:if test="${startPage > PAGE_PER_BLOCK}">
-			<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${startPage - 1}'">이전</button>
+			<button onclick="location.href='board.do?${boardAndKey }&pageNum=${startPage - 1}'">이전</button>
 		</c:if>
 		<c:forEach var="i" begin="${startPage}" end="${endPage}">
-			<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${i}'">${i }</button>
+			<button onclick="location.href='board.do?${boardAndKey }&pageNum=${i}'">${i }</button>
 		</c:forEach>
 		<c:if test="${endPage < totalPage}">
-			<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${endPage + 1}'">다음</button>
+			<button onclick="location.href='board.do?${boardAndKey }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
 		<br>
 		<c:if test="${not empty account_id }">
 			<button onclick="location.href='writeForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
 		</c:if>
-		
+		<br>
+		<form action="board.do" method="get">
+			<input type="hidden" name="board_num" value="${board_num }">
+			<input type="search" name="keyword" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
+			<input type="submit">
+		</form>
 	</div>
 	
 	</div>
