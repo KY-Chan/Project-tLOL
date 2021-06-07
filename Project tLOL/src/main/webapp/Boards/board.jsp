@@ -50,7 +50,7 @@
 	
 		<div class="row flex-nowrap">
 		<div class="col-2 flex-shrink-0 p-3 bg-white" style="width: 215px;">
-			<input type="search" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
+			<input type="search" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search"> 
 			<span class="fs-5 fw-semibold">멀티서치??</span>
 			<ul class="list-unstyled ps-0">
 				<li class="border-top my-3"></li>
@@ -147,17 +147,17 @@
 	</table>
 	<div align="center">
 		<c:if test="${startPage > PAGE_PER_BLOCK}">
-			<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${startPage - 1}'">이전</button>
+			<button type="button" class="btn btn-primary" onclick="location.href='board.do?board_num=${board_num }&pageNum=${startPage - 1}'">이전</button>
 		</c:if>
 		<c:forEach var="i" begin="${startPage}" end="${endPage}">
-			<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${i}'">${i }</button>
+			<button type="button" class="btn btn-primary" onclick="location.href='board.do?board_num=${board_num }&pageNum=${i}'">${i }</button>
 		</c:forEach>
 		<c:if test="${endPage < totalPage}">
-			<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${endPage + 1}'">다음</button>
+			<button type="button" class="btn btn-primary" onclick="location.href='board.do?board_num=${board_num }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
-		<br>
+		<div class="mt-2 border-bottom bg-dark text-white"></div><br>
 		<c:if test="${not empty account_id }">
-			<button onclick="location.href='writeForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
+			<button type="button" class="btn btn-primary" onclick="location.href='writeForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
 		</c:if>
 		
 	</div>

@@ -138,13 +138,13 @@
 	</table>
 	<div align="center">
 		<c:if test="${startPage > PAGE_PER_BLOCK}">
-			<button onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${startPage - 1}'">이전</button>
+			<button type="button" class="btn btn-primary" onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${startPage - 1}'">이전</button>
 		</c:if>
 		<c:forEach var="i" begin="${startPage}" end="${endPage}">
-			<button onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${i}'">${i }</button>
+			<button type="button" class="btn btn-primary" onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${i}'">${i }</button>
 		</c:forEach>
 		<c:if test="${endPage < totalPage}">
-			<button onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${endPage + 1}'">다음</button>
+			<button type="button" class="btn btn-primary" onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
 	</div>
 	</div>
