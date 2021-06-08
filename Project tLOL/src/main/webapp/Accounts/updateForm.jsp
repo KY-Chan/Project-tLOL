@@ -32,7 +32,7 @@
 		}
 		function del() {
 			var con = confirm("정말로 탈퇴하시겠습니까?");
-			if (con) location.href = "delete.do";
+			if (con) location.href = "memberDelete.do";
 			else alert("회원 탈퇴가 취소되었습니다")
 		}
 	</script>
@@ -40,7 +40,7 @@
 
 <body class="text-center">
 	<div class="container">
-		<form method="post" action="update.do" name="frm" onsubmit="return chk()">	
+		<form method="post" action="memberUpdate.do" name="frm" onsubmit="return chk()">	
 			<div class="row mb-3 align-items-center">
 				<div class="col form-floating">
 					<div class="mb-5"><img src="../images/logo.png" alt=""></div>

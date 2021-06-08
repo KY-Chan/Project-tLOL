@@ -5,7 +5,7 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8">
 <title>Insert title here</title>
 </head><body>
-<form action="updateBoard.do" method="post" name="frm">
+<form action="articleUpdateForm.do" method="post" name="frm">
 	<input type="hidden" name="board_num" value="${article.board_num }">
 	<input type="hidden" name="article_num" value="${article.article_num }">
 	<input type="hidden" name="pageNum" value="${pageNum}">

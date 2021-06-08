@@ -8,7 +8,7 @@ import tLOL.dao.MemberDao;
 import tLOL.model.Member;
 import tLOL.service.CommandProcess;
 
-public class UpdateForm implements CommandProcess {
+public class MemberUpdateForm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 				HttpSession session = request.getSession();
 				String account_id = (String)session.getAttribute("account_id");

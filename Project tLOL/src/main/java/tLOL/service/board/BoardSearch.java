@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import tLOL.service.CommandProcess;
 
-public class SearchArticle implements CommandProcess {
+public class BoardSearch implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {

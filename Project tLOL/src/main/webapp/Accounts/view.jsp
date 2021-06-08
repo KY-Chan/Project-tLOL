@@ -26,10 +26,10 @@
 
 <body class="text-center">
 	<div class="container">
-		<form method="post" action="update.do" name="frm" onsubmit="return chk()">	
+		<form method="post" action="memberUpdate.do" name="frm" onsubmit="return chk()">	
 			<div class="row mb-3 align-items-center">
 				<div class="col form-floating">
-					<div class="mb-5" onclick="location.href='../main.do'"><img src="../images/logo.png" alt=""></div>
+					<div class="mb-5" onclick="location.href='../main.jsp'"><img src="../images/logo.png" alt=""></div>
 				</div>
 			</div>
 			<div class="row align-items-center">

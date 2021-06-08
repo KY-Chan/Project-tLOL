@@ -84,7 +84,7 @@
 									<button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" 
 									data-bs-display="static" aria-expanded="false">내정보</button>
 									<ul class="dropdown-menu dropdown-menu-end">
-										<li><a class="dropdown-item" href="/Project_tLOL/Accounts/updateForm.do">회원정보 수정</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Accounts/memberUpdateForm.do">회원정보 수정</a></li>
 										<li><a class="dropdown-item" href="/Project_tLOL/Boards/board.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>
 										<li><a class="dropdown-item" href="/Project_tLOL/Boards/myComment.do?account_num=${sessionScope.account_num }">내 댓글 보기</a></li>
 										<li><hr class="dropdown-divider"></li>
@@ -98,7 +98,7 @@
 									<button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" 
 									data-bs-display="static" aria-expanded="false">관리메뉴</button>
 									<ul class="dropdown-menu dropdown-menu-end">
-										<li><a class="dropdown-item" href="/Project_tLOL/Manager/manageForm.do">회원관리</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Manager/memberManage.do">회원관리</a></li>
 										<li><a class="dropdown-item" href="#">게시글 관리</a></li>
 										<li><hr class="dropdown-divider"></li>
 										<li><a class="dropdown-item" href="/Project_tLOL/Boards/board.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>

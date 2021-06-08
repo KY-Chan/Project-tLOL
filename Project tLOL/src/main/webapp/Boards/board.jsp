@@ -65,7 +65,7 @@
 		</c:if>
 		<br><br>
 		<c:if test="${not empty account_id }">
-			<button class="btn btn-primary" onclick="location.href='writeForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
+			<button class="btn btn-primary" onclick="location.href='articleWriteForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
 		</c:if>
 		<br>
 		<form action="board.do" method="get">

@@ -5,12 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 import tLOL.dao.MemberDao;
 import tLOL.model.Member;
 import tLOL.service.CommandProcess;
-public class JoinAction implements CommandProcess {
+public class MemberUpdate implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		   String account_id = request.getParameter("account_id");
-		   String account_pw = request.getParameter("account_pw");
-		   String account_nickname = request.getParameter("account_nickname");
-		   String account_email = request.getParameter("account_email");
+		String account_id = request.getParameter("account_id");
+		String account_pw = request.getParameter("account_pw");
+		String account_nickname = request.getParameter("account_nickname");
+		String account_email = request.getParameter("account_email");
 		
 		Member member = new Member();
 		member.setAccount_id(account_id);
@@ -18,11 +18,9 @@ public class JoinAction implements CommandProcess {
 		member.setAccount_nickname(account_nickname);
 		member.setAccount_email(account_email);
 		MemberDao md = MemberDao.getInstance();
-		Member mem = md.select(account_id);
-		int result = 0;
-		if (mem == null) result = md.insert(member);
-		else result = -1;
+		int result = md.update(member);
 		request.setAttribute("result", result);
-		return "join";
+		
+		return "update";
 	}
 }

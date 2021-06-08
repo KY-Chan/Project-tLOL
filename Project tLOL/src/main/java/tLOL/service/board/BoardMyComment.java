@@ -10,7 +10,7 @@ import tLOL.dao.CommentDao;
 import tLOL.model.Comment;
 import tLOL.service.CommandProcess;
 
-public class MyComment implements CommandProcess {
+public class BoardMyComment implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -19,17 +19,16 @@ public class MyComment implements CommandProcess {
 	    	return "../sessionChk";
 	    } 
 	    
-		int account_num = Integer.parseInt(request.getParameter("account_num"));
 		CommentDao cd = CommentDao.getInstance();
 		
 		final int ROW_PER_PAGE = 10;
 		final int PAGE_PER_BLOCK = 10;
-		
+
+		int account_num = Integer.parseInt(request.getParameter("account_num"));
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals(""))
 			pageNum = "1";
 		int currentPage = Integer.parseInt(pageNum);
-		
 		int total = cd.getMyTotal(account_num);
 		
 		int startRow = (currentPage - 1) * ROW_PER_PAGE + 1;
@@ -50,6 +49,7 @@ public class MyComment implements CommandProcess {
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totalPage", totalPage);
+		
 		return "myComment";
 	}
 

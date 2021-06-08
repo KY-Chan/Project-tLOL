@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import tLOL.service.CommandProcess;
 
-public class LogOut implements CommandProcess {
+public class MemberLogOut implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {

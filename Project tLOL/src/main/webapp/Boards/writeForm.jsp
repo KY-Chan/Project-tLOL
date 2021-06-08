@@ -13,7 +13,7 @@
 			frm.password.value = "";			return false;		}
 	}
 </script></head><body>
-<form action="writeAction.do" method="post" name="frm" onsubmit="return chk()">
+<form action="articleWrite.do" method="post" name="frm" onsubmit="return chk()">
 	<input type="hidden" name="board_num" value="${board_num}"> 
 	<input type="hidden" name="account_num" value="${sessionScope.account_num}"> 			
 	<input type="hidden" name="pageNum" value="${pageNum}"> 

@@ -7,7 +7,7 @@
 <script type="text/javascript">
 	function article_delete() {
 		if(confirm("정말 삭제하시겠습니까?") == true) {
-			location.href='deleteBoard.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}';
+			location.href='articleDelete.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}';
 		} else {
 			return;
 		}
@@ -25,14 +25,14 @@
 	</table>
 	<div align="center"><br>
 		<c:if test="${not empty account_id }">
-			<button onclick="location.href='updateBoardForm.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">수정</button> 
+			<button onclick="location.href='articleUpdateForm.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">수정</button> 
 			<button onclick="article_delete()">삭제</button> 
 		</c:if>
 		<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${pageNum}'">게시글 목록</button>
 	</div>
 	<br><br>
 	<div id="disp"></div>
-	<form action="commentAction.do" method="post">
+	<form action="commentWrite.do" method="post">
 		<input type="hidden" name="account_num" value="${sessionScope.account_num }">
 		<input type="hidden" name="board_num" value="${board_num }">
 		<input type="hidden" name="article_num" value="${article_num }">

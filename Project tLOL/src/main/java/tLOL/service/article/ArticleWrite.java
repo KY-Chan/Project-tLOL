@@ -23,13 +23,13 @@ public class ArticleWrite implements CommandProcess {
 		String article_content = request.getParameter("article_content");
 		int account_num = Integer.parseInt(request.getParameter("account_num"));
 		
-		ArticleDao ad = ArticleDao.getInstance();
 		Article article = new Article();
 		article.setBoard_num(board_num);
 		article.setArticle_title(article_title);
 		article.setArticle_content(article_content);
 		article.setAccount_num(account_num);
-		
+
+		ArticleDao ad = ArticleDao.getInstance();
 		int result = ad.insert(article);
 		
 		request.setAttribute("result", result);
