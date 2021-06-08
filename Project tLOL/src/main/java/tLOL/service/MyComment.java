@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import tLOL.dao.CommentDao;
 import tLOL.model.Comment;
@@ -13,11 +12,6 @@ public class MyComment implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		HttpSession session = request.getSession();
-	    if (session == null || session.getAttribute("account_num") == null ) {
-	    	return "../sessionChk";
-	    } 
-	    
 		int account_num = Integer.parseInt(request.getParameter("account_num"));
 		CommentDao cd = CommentDao.getInstance();
 		
@@ -49,7 +43,7 @@ public class MyComment implements CommandProcess {
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totalPage", totalPage);
-		return "myComment";
+		return "boardMyComment";
 	}
 
 }

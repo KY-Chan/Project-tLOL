@@ -44,11 +44,8 @@
 		</div>
 		</div>
 	</header>
-	
-	<!-- Sidebar -->
 
-	
-		<div class="row flex-nowrap">
+<div class="row flex-nowrap">
 		<div class="col-2 flex-shrink-0 p-3 bg-white" style="width: 215px;">
 			<input type="search" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
 			<span class="fs-5 fw-semibold">멀티서치??</span>
@@ -102,17 +99,13 @@
 				</li>
 			</ul>
 		</div>
-		
-	<div class="col-10 bd-content">
-	<h2>${board_name }</h2>
+<div class="col-10 bd-content">
+	<h2>내가 쓴 글</h2>
 	<table class="table table-hover">
 		<tr class="table-primary">
-			<c:if test="${board_num eq 0 }">
-				<th>게시판</th>
-			</c:if>
+			<th>게시판</th>
 			<th>글번호</th>
 			<th>글제목</th>
-			<th>작성자</th>
 			<th>조회수</th>
 			<th>추천수</th>
 			<th>작성일</th>
@@ -125,18 +118,16 @@
 		<c:if test="${not empty list }">
 			<c:forEach var="article" items="${list }">
 				<tr>
+					<td>${article.board_name }</td>
 					<td>${article.article_num }</td>
 					<c:if test="${article.article_del == 'y' }">
-						<th colspan="6">삭제된 게시글 입니다</th>
+						<th colspan="5">삭제된 게시글 입니다</th>
 					</c:if>
 					<c:if test="${article.article_del != 'y' }">
-						<td title="${article.article_title }">
-						<a href="content.do?article_num=${article.article_num}&board_num=${article.board_num}&pageNum=${currentPage }">
+						<td>
+							<a href="content.do?article_num=${article.article_num}&board_num=${article.board_num}&pageNum=${currentPage }">
 								${article.article_title}</a>
-						<c:if test="${article.article_read > 50 }">
-							<img alt="" src="images/hot.gif">
-						</c:if></td>
-						<td>${article.account_nickname }</td>
+						</td>
 						<td>${article.article_read}</td>
 						<td>${article.article_recom}</td>
 						<td>${article.article_date}</td>
@@ -147,23 +138,17 @@
 	</table>
 	<div align="center">
 		<c:if test="${startPage > PAGE_PER_BLOCK}">
-			<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${startPage - 1}'">이전</button>
+			<button onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${startPage - 1}'">이전</button>
 		</c:if>
 		<c:forEach var="i" begin="${startPage}" end="${endPage}">
-			<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${i}'">${i }</button>
+			<button onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${i}'">${i }</button>
 		</c:forEach>
 		<c:if test="${endPage < totalPage}">
-			<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${endPage + 1}'">다음</button>
+			<button onclick="location.href='boardMyArticle.do?account_num=${account_num }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
-		<br>
-		<c:if test="${not empty account_id }">
-			<button onclick="location.href='writeForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
-		</c:if>
-		
-	</div>
-	
 	</div>
 	</div>
+</div>
 </body>
 
 <script src="../bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>

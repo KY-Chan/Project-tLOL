@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../sessionChk.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +8,11 @@
 <script type="text/javascript" src="../bootstrap/js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#myArticle").load("board.do?pageNum=${param.pageNum}&account_num=${sessionScope.account_num }")
+		$("#notice").load("board.do?board_num=1&pageNum=${param.pageNum}")
 	});	
 </script>
 </head>
 <body>
-<div id="myArticle"></div>
+<div id="notice"></div>
 </body>
 </html>
