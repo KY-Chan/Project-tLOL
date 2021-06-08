@@ -25,6 +25,9 @@ insert into board values(4, '매칭게시판');
 insert into board values(5, '갤러리/영상');
 insert into board values(6, '팁/노하우');
 
+update comments set comment_del='y' where article_num=1 and board_num=1;
+update article set article_del='n';
+select * from comments;
 update comments set comment_del='y' where article_num=20 and board_num=20;
 select * from (select rowNum rn, e.* from (select a.*, null, b.board_name from article a, board b where member_num=1 and a.board_num = b.board_num order by article_date desc) e) where rn between 0 and 100;
 

@@ -1,7 +1,5 @@
 package tLOL.model;
 
-import java.sql.Date;
-
 public class Comment {
 	private int board_num;
 	private int article_num;
@@ -9,7 +7,7 @@ public class Comment {
 	private int member_num;
 	private String comment_content;
 	private int comment_recom;
-	private Date comment_date;
+	private String comment_date;
 	private String comment_del;
 	// additional data
 	private String member_nickname;
@@ -51,10 +49,10 @@ public class Comment {
 	public void setComment_recom(int comment_recom) {
 		this.comment_recom = comment_recom;
 	}
-	public Date getComment_date() {
+	public String getComment_date() {
 		return comment_date;
 	}
-	public void setComment_date(Date comment_date) {
+	public void setComment_date(String comment_date) {
 		this.comment_date = comment_date;
 	}
 	public String getComment_del() {

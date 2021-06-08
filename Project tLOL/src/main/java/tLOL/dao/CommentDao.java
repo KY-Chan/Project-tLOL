@@ -54,4 +54,10 @@ public class CommentDao {
 	public int delete(int comment_num) {
 		return (int) session.update("commentns.delete", comment_num);
 	}
+	public int deleteArticle(int article_num, int board_num) {	
+		Map<String, Integer> parms = new HashMap<String, Integer>();
+		parms.put("board_num", board_num);
+		parms.put("article_num", article_num);
+		return (int) session.update("commentns.deleteArticle", parms);
+	}
 }
