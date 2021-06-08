@@ -54,5 +54,4 @@ public class CommentDao {
 	public int delete(int comm_num) {
 		return (int) session.update("commentns.delete", comm_num);
 	}
-
 }

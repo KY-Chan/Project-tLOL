@@ -34,7 +34,7 @@
 
 <body class="text-center">
 		<form class="form-signin" method="post" action="join.do" name="frm">	
-			<div class="mb-4 nav justify-content-center" onclick="location.href='../main.do'"><img src="../images/logo.png" alt=""></div>
+			<div class="mb-4 nav justify-content-center" onclick="location.href='../main.jsp'"><img src="../images/logo.png" alt=""></div>
 			<h1 class="h3 mb-4 mt-5 fw-normal">회원가입</h1>
 			<div class="form-floating">
 				<input type="text" class="form-control" placeholder="아이디" name="account_id" required="required" autofocus="autofocus" maxlength="20">

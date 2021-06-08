@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import tLOL.dao.ArticleDao;
 import tLOL.dao.BoardDao;
@@ -21,12 +22,18 @@ public class BoardAction implements CommandProcess {
 		final int PAGE_PER_BLOCK = 10;
 		
 		String tmp_board_num = request.getParameter("board_num");
+		String keyword = request.getParameter("keyword");
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals(""))
 			pageNum = "1";
 		int currentPage = Integer.parseInt(pageNum);
 		
 		if(tmp_board_num == null || tmp_board_num.equals("")) { // 내가 쓴 글
+			HttpSession session = request.getSession();
+		    if (session == null || session.getAttribute("account_num") == null ) {
+		    	return "../sessionChk";
+		    } 
+			
 			int account_num = Integer.parseInt(request.getParameter("account_num"));
 			int total = ad.getMyTotal(account_num);
 			
@@ -48,7 +55,7 @@ public class BoardAction implements CommandProcess {
 			request.setAttribute("startPage", startPage);
 			request.setAttribute("endPage", endPage);
 			request.setAttribute("totalPage", totalPage);
-			return "boardMyArticle";
+			return "myArticle";
 			
 		} else { // 일반 게시판
 			int board_num = Integer.parseInt(tmp_board_num);
@@ -67,7 +74,7 @@ public class BoardAction implements CommandProcess {
 			request.setAttribute("list", list);
 			String board_name = bd.getName(board_num);
 			request.setAttribute("board_name", board_name);
-			
+			request.setAttribute("keyword", keyword);
 			request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);
 			request.setAttribute("number", number);
 			request.setAttribute("currentPage", currentPage);

@@ -45,5 +45,4 @@
    		update article set article_del = 'y'
    		where article_num = ${article_num} and board_num = ${board_num}
    	</update>
-
 </mapper> 

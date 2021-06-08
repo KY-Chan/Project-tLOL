@@ -12,7 +12,7 @@
 <body>
 	<script type="text/javascript">
 		alert("로그아웃 되었습니다");
-		location.href="../main.do";
+		location.href="${referer}";
 	</script>
 </body>
 </html>

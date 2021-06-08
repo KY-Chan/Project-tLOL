@@ -20,7 +20,4 @@
 	<update id="delete" parameterType="int">
 		update comments set comm_del='y' where comm_num=#{comm_num}
 	</update>
-	<update id="update" parameterType="map">
-   		update comments set comm_del='y' where article_num=${article_num} and board_num=${board_num} 
-   	</update>
 </mapper> 

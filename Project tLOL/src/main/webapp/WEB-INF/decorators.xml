@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorator">
+	<decorator name="main" page="tLOL_decorator.jsp">
+		<pattern>/Boards/*</pattern>
+		<pattern>/main.jsp</pattern>
+	</decorator>
+	<excludes>
+		<pattern>/Boards/board.jsp</pattern>
+	</excludes>
+</decorators>

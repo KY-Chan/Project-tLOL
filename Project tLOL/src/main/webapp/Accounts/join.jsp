@@ -16,7 +16,7 @@
 	</c:if>
 	<c:if test="${result == 0 }">
 		<script type="text/javascript">
-			alert("아이디 비밀번호를 맞지 않습니다");
+			alert("아이디 비밀번호가 맞지 않습니다");
 			history.go(-1);
 		</script>
 	</c:if>
