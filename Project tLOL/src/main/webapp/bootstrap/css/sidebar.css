@@ -3,6 +3,7 @@
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
+  font-family: 'Jua', sans-serif;
 }
 
 html {
@@ -59,7 +60,7 @@ main {
 .btn-toggle::before {
   width: 1.25em;
   line-height: 0;
-  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='rgb(255,255,255)' class='bi bi-caret-right' viewBox='0 0 16 16'%3E%3Cpath d='M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z'/%3E%3C/svg%3E");
   transition: transform .35s ease;
   transform-origin: .5em 50%;
 }
