@@ -1,5 +1,5 @@
 select * from accounts;
-insert into member values(1,'master','master','마왕', TO_CHAR(SYSDATE, 'RRRR.MM.DD HH24:MI:SS'), 'aaa@nav.com', 'n', '1');
+insert into member values(1,'master','master','마왕', sysdate, 'aaa@nav.com', 'n', '1');
 select * from article;
 insert into article values(1, 1, 1, '첫글', '첫글이다', sysdate, 0, 0, 'n');
 insert into article values(2, 1, 1, '뉴스첫글', '첫글이다', sysdate, 0, 0, 'n');
