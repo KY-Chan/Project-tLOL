@@ -1,5 +1,5 @@
 select * from accounts;
-insert into accounts values(1,'master','master','마왕', sysdate, 'aaa@nav.com', 'n', '1');
+insert into member values(1,'master','master','마왕', sysdate, 'aaa@nav.com', 'n', '1');
 select * from article;
 insert into article values(1, 1, 1, '첫글', '첫글이다', sysdate, 0, 0, 'n');
 insert into article values(2, 1, 1, '뉴스첫글', '첫글이다', sysdate, 0, 0, 'n');
@@ -17,13 +17,13 @@ insert into article values(2, 12, 1, '더미', '더미', sysdate, 0, 0, 'n');
 insert into article values(2, 14, 1, '더미', '더미', sysdate, 0, 0, 'y');
 select * from (select rowNum rn from article e) where rn between ? and ?
 select * from board;
+
 insert into board values(1, '공지사항');
 insert into board values(2, '뉴스');
 insert into board values(3, '자유게시판');
 insert into board values(4, '매칭게시판');
 insert into board values(5, '갤러리/영상');
 insert into board values(6, '팁/노하우');
-
 
 update comments set comm_del='y' where article_num=20 and board_num=20;
 select * from (select rowNum rn, e.* from (select a.*, null, b.board_name from article a, board b where account_num=1 and a.board_num = b.board_num order by article_date desc) e) where rn between 0 and 100;

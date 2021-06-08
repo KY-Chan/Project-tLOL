@@ -23,6 +23,6 @@ public class MemberDelete implements CommandProcess {
 			if (result > 0) session.invalidate();
 			request.setAttribute("result", result);
 		}
-		return "delete";
+		return "memberDelete";
 	}
 }

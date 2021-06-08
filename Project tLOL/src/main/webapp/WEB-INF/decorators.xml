@@ -6,7 +6,6 @@
 		<pattern>/Manager/*</pattern>
 	</decorator>
 	<excludes>
-		<pattern>/Boards/board.jsp</pattern>
 		<pattern>/Manager/manageForm.jsp</pattern>
 	</excludes>
 </decorators>

@@ -15,6 +15,6 @@ public class MemberView implements CommandProcess {
 		Member member  = md.select(account_id);
 		request.setAttribute("member", member);
 		
-		return "view"; //view.jsp에 member값 전달
+		return "memberView"; //view.jsp에 member값 전달
 	}
 }

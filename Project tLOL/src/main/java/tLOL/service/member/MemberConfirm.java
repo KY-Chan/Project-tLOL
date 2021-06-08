@@ -18,6 +18,6 @@ public class MemberConfirm implements CommandProcess {
 		
 		request.setAttribute("msg", msg);
 		
-		return "confirm";
+		return "memberConfirm";
 	}
 }

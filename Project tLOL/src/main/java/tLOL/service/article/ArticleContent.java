@@ -29,7 +29,7 @@ public class ArticleContent implements CommandProcess {
 		request.setAttribute("article", article);	
 		request.setAttribute("list", list);
 		
-		return "content"; //jsp만들고 
+		return "articleContent"; //jsp만들고 
 	}
 
 }

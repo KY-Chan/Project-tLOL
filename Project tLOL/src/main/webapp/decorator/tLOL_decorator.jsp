@@ -10,13 +10,13 @@
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Hugo 0.83.1">
 	<title>롤 전적 검색 - tLOL</title>
-	<link rel="icon" href="./images/icon.png">
+	<link rel="icon" href="/Project_tLOL/images/icon.png">
 	
 	<!-- Bootstrap core CSS -->
 	<link href="/Project_tLOL/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-	<link href="/Project_tLOL/bootstrap/css/headers.css?ver.2" rel="stylesheet">
-	<link href="/Project_tLOL/bootstrap/css/sidebar.css?ver.1" rel="stylesheet">
+	<link href="/Project_tLOL/bootstrap/css/header.css" rel="stylesheet">
+	<link href="/Project_tLOL/bootstrap/css/sidebar.css" rel="stylesheet">
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
 	<!-- Custom styles for this template -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@
 	</style>    
 </head>
 
-<body style="background-image: url('./images/background.png')">
+<body style="background-image: url('/Project_tLOL/images/background.png')">
 	<header class="bg-dark text-white">
 		<div class="container">
 			<div class="d-flex flex-nowrap align-items-center justify-content-between">
@@ -71,7 +71,7 @@
 				<c:choose>
 					<c:when test="${sessionScope.account_id == null }">
 						<div class="dropdown text-end">
-							<button type="button" class="btn btn-outline-secondary text-white me-2" onclick="location.href='/Project_tLOL/Accounts/loginForm.do'">Login</button>
+							<button type="button" class="btn btn-outline-secondary text-white me-2" onclick="location.href='/Project_tLOL/Member/loginForm.do'">Login</button>
 						</div>
 					</c:when>
 					<c:when test="${sessionScope.account_id != null }">
@@ -84,11 +84,11 @@
 									<button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" 
 									data-bs-display="static" aria-expanded="false">내정보</button>
 									<ul class="dropdown-menu dropdown-menu-end">
-										<li><a class="dropdown-item" href="/Project_tLOL/Accounts/memberUpdateForm.do">회원정보 수정</a></li>
-										<li><a class="dropdown-item" href="/Project_tLOL/Boards/board.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>
-										<li><a class="dropdown-item" href="/Project_tLOL/Boards/myComment.do?account_num=${sessionScope.account_num }">내 댓글 보기</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Member/memberUpdateForm.do">회원정보 수정</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Board/board.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Board/myComment.do?account_num=${sessionScope.account_num }">내 댓글 보기</a></li>
 										<li><hr class="dropdown-divider"></li>
-										<li><a class="dropdown-item" href="/Project_tLOL/Accounts/logout.do">로그아웃</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Member/logout.do">로그아웃</a></li>
 									</ul>
 								</c:when>
 								<c:when test="${sessionScope.account_admin == 1 }">
@@ -101,10 +101,10 @@
 										<li><a class="dropdown-item" href="/Project_tLOL/Manager/memberManage.do">회원관리</a></li>
 										<li><a class="dropdown-item" href="#">게시글 관리</a></li>
 										<li><hr class="dropdown-divider"></li>
-										<li><a class="dropdown-item" href="/Project_tLOL/Boards/board.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>
-										<li><a class="dropdown-item" href="/Project_tLOL/Boards/myComment.do?account_num=${sessionScope.account_num }">내 댓글 보기</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Board/board.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Board/myComment.do?account_num=${sessionScope.account_num }">내 댓글 보기</a></li>
 										<li><hr class="dropdown-divider"></li>
-										<li><a class="dropdown-item" href="/Project_tLOL/Accounts/logout.do">로그아웃</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Member/logout.do">로그아웃</a></li>
 									</ul>
 								</c:when>
 							</c:choose>
@@ -135,8 +135,8 @@
 						data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">뉴스&정보</button>
 					<div class="collapse show" id="home-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/Project_tLOL/Boards/board.do?board_num=1" class="link-dark rounded text-white">공지사항</a></li>
-							<li><a href="/Project_tLOL/Boards/board.do?board_num=2" class="link-dark rounded text-white">뉴스</a></li>
+							<li><a href="/Project_tLOL/Board/board.do?board_num=1" class="link-dark rounded text-white">공지사항</a></li>
+							<li><a href="/Project_tLOL/Board/board.do?board_num=2" class="link-dark rounded text-white">뉴스</a></li>
 						</ul>
 					</div>
 				</li>
@@ -146,9 +146,9 @@
 						data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">커뮤니티</button>
 					<div class="collapse show" id="dashboard-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/Project_tLOL/Boards/board.do?board_num=3" class="link-dark rounded text-white">자유게시판</a></li>
-							<li><a href="/Project_tLOL/Boards/board.do?board_num=6" class="link-dark rounded text-white">팁/노하우</a></li>
-							<li><a href="/Project_tLOL/Boards/board.do?board_num=5" class="link-dark rounded text-white">이미지/영상</a></li>
+							<li><a href="/Project_tLOL/Board/board.do?board_num=3" class="link-dark rounded text-white">자유게시판</a></li>
+							<li><a href="/Project_tLOL/Board/board.do?board_num=6" class="link-dark rounded text-white">팁/노하우</a></li>
+							<li><a href="/Project_tLOL/Board/board.do?board_num=5" class="link-dark rounded text-white">이미지/영상</a></li>
 						</ul>
 					</div>
 				</li>
@@ -158,7 +158,7 @@
 						data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">매칭</button>
 					<div class="collapse show" id="orders-collapse">
 						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/Project_tLOL/Boards/board.do?board_num=4" class="link-dark rounded text-white">매칭게시판</a></li>
+							<li><a href="/Project_tLOL/Board/board.do?board_num=4" class="link-dark rounded text-white">매칭게시판</a></li>
 							<li><a href="#" class="link-dark rounded text-white">matching</a></li>
 							<li><a href="#" class="link-dark rounded text-white">matching</a></li>
 							<li><a href="#" class="link-dark rounded text-white">matching</a></li>

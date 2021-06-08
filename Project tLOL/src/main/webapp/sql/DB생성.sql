@@ -1,27 +1,19 @@
-CREATE TABLE Accounts
-(
-    account_num    NUMBER NOT NULL,
-    account_id    VARCHAR2(20) NOT NULL,
-    account_pw    VARCHAR2(24) NOT NULL,
-    account_nickname    VARCHAR2(20) NOT NULL,
-    account_reg_date    DATE NOT NULL,
-    account_email    VARCHAR2(30),
-    account_del    CHAR(1) DEFAULT 'n' NOT NULL,
-    account_admin	NUMBER DEFAULT 0 NOT NULL
-);
-
-ALTER TABLE Accounts
- ADD CONSTRAINT Accounts_PK PRIMARY KEY ( account_num );
-
+DROP TABLE accounts;
+DROP TABLE article;
+DROP TABLE board;
+DROP TABLE comments;
+DROP TABLE FavoriteID;
+DROP TABLE RecentID;
+DROP TABLE member;
 
 CREATE TABLE Article
 (
     board_num    NUMBER NOT NULL,
     article_num    NUMBER NOT NULL,
-    account_num    NUMBER NOT NULL,
+    member_num    NUMBER NOT NULL,
     article_title    VARCHAR2(50) NOT NULL,
     article_content    VARCHAR2(500) NOT NULL,
-    article_date    DATE NOT NULL,
+    article_date    VARCHAR2(20) NOT NULL,
     article_read    NUMBER DEFAULT 0 NOT NULL,
     article_recom    NUMBER DEFAULT 0 NOT NULL,
     article_del    CHAR(1) DEFAULT 'n' NOT NULL
@@ -45,36 +37,59 @@ CREATE TABLE Comments
 (
     board_num    NUMBER NOT NULL,
     article_num    NUMBER NOT NULL,
-    comm_num    NUMBER NOT NULL,
-    account_num    NUMBER NOT NULL,
-    comm_content    VARCHAR2(200) NOT NULL,
-    comm_recom    NUMBER DEFAULT 0 NOT NULL,
-    comm_date    DATE NOT NULL,
-    comm_del    CHAR(1) DEFAULT 'n' NOT NULL
+    comment_num    NUMBER NOT NULL,
+    member_num    NUMBER,
+    comment_content    VARCHAR2(200) NOT NULL,
+    comment_recom    NUMBER DEFAULT 0 NOT NULL,
+    comment_date    VARCHAR2(20) NOT NULL,
+    comment_del    CHAR(1) DEFAULT 'n' NOT NULL
 );
 
 ALTER TABLE Comments
- ADD CONSTRAINT Comment_PK PRIMARY KEY ( board_num,article_num,comm_num );
+ ADD CONSTRAINT Comment_PK PRIMARY KEY ( board_num,article_num,comment_num );
 
 
 CREATE TABLE FavoriteID
 (
-    account_num    NUMBER NOT NULL,
-    account_favor_id    VARCHAR2(20) NOT NULL
+    member_num    NUMBER NOT NULL,
+    member_favor_id    VARCHAR2(20) NOT NULL
 );
 
 ALTER TABLE FavoriteID
- ADD CONSTRAINT FavoriteID_PK PRIMARY KEY ( account_num );
+ ADD CONSTRAINT FavoriteID_PK PRIMARY KEY ( member_num );
+
+
+CREATE TABLE Member
+(
+    member_num    NUMBER NOT NULL,
+    member_id    VARCHAR2(20) NOT NULL,
+    member_pw    VARCHAR2(24) NOT NULL,
+    member_nickname    VARCHAR2(20) NOT NULL,
+    member_reg_date    VARCHAR2(20) NOT NULL,
+    member_email    VARCHAR2(30),
+    member_del    CHAR(1) DEFAULT 'n' NOT NULL,
+    member_admin    CHAR(1) DEFAULT '0' NOT NULL
+);
+
+ALTER TABLE Member
+ ADD CONSTRAINT Accounts_PK PRIMARY KEY ( member_num );
 
 
 CREATE TABLE RecentID
 (
-    account_num    NUMBER NOT NULL,
-    account_recent_date    DATE NOT NULL,
-    account_recent_id    VARCHAR2(20) NOT NULL
+    member_num    NUMBER NOT NULL,
+    member_recent_date    VARCHAR2(20) NOT NULL,
+    member_recent_id    VARCHAR2(20) NOT NULL
 );
 
 ALTER TABLE RecentID
- ADD CONSTRAINT RecentID_PK PRIMARY KEY ( account_num );
+ ADD CONSTRAINT RecentID_PK PRIMARY KEY ( member_num );
 
+
+insert into board values(1, '공지사항');
+insert into board values(2, '뉴스');
+insert into board values(3, '자유게시판');
+insert into board values(4, '매칭게시판');
+insert into board values(5, '갤러리/영상');
+insert into board values(6, '팁/노하우');
 

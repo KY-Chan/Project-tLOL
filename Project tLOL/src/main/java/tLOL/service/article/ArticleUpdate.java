@@ -29,7 +29,7 @@ public class ArticleUpdate implements CommandProcess {
 		request.setAttribute("board_num", board_num);
 		request.setAttribute("article_num", article_num);
 		
-		return "updateBoard";
+		return "articleUpdate";
 		
 	}
 

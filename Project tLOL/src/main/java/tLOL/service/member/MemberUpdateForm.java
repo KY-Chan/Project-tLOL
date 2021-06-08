@@ -18,6 +18,6 @@ public class MemberUpdateForm implements CommandProcess {
 				Member member = md.select(account_id);
 				request.setAttribute("member", member);
 				}
-		return "updateForm"; //updateForm.jsp에 member값 전달
+		return "memberUpdateForm"; //updateForm.jsp에 member값 전달
 	}
 }

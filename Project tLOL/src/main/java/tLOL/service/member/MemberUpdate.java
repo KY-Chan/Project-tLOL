@@ -21,6 +21,6 @@ public class MemberUpdate implements CommandProcess {
 		int result = md.update(member);
 		request.setAttribute("result", result);
 		
-		return "update";
+		return "memberUpdate";
 	}
 }
