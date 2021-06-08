@@ -17,7 +17,7 @@
 <form action="articleWrite.do" method="post" name="frm"
 	onsubmit="return chk()">
 	<input type="hidden" name="board_num" value="${board_num}"> <input
-		type="hidden" name="account_num" value="${sessionScope.account_num}">
+		type="hidden" name="member_num" value="${sessionScope.member_num}">
 	<input type="hidden" name="pageNum" value="${pageNum}">
 	<!-- WriteForm.java에서 받은 값들. -->
 	<table>

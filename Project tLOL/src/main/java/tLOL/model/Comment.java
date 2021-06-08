@@ -1,19 +1,19 @@
 package tLOL.model;
 
-import java.sql.Date;
-
 public class Comment {
 	private int board_num;
 	private int article_num;
-	private int comm_num;
-	private int account_num;
-	private String comm_content;
-	private int comm_recom;
-	private Date comm_date;
-	private String comm_del;
-	private String account_nickname;
+	private int comment_num;
+	private int member_num;
+	private String comment_content;
+	private int comment_recom;
+	private String comment_date;
+	private String comment_del;
+	// additional data
+	private String member_nickname;
 	private String board_name;
 	private String article_title;
+	
 	public int getBoard_num() {
 		return board_num;
 	}
@@ -26,47 +26,47 @@ public class Comment {
 	public void setArticle_num(int article_num) {
 		this.article_num = article_num;
 	}
-	public int getComm_num() {
-		return comm_num;
+	public int getComment_num() {
+		return comment_num;
 	}
-	public void setComm_num(int comm_num) {
-		this.comm_num = comm_num;
+	public void setComment_num(int comment_num) {
+		this.comment_num = comment_num;
 	}
-	public int getAccount_num() {
-		return account_num;
+	public int getMember_num() {
+		return member_num;
 	}
-	public void setAccount_num(int account_num) {
-		this.account_num = account_num;
+	public void setMember_num(int member_num) {
+		this.member_num = member_num;
 	}
-	public String getAccount_nickname() {
-		return account_nickname;
+	public String getComment_content() {
+		return comment_content;
 	}
-	public void setAccount_nickname(String account_nickname) {
-		this.account_nickname = account_nickname;
+	public void setComment_content(String comment_content) {
+		this.comment_content = comment_content;
 	}
-	public String getComm_content() {
-		return comm_content;
+	public int getComment_recom() {
+		return comment_recom;
 	}
-	public void setComm_content(String comm_content) {
-		this.comm_content = comm_content;
+	public void setComment_recom(int comment_recom) {
+		this.comment_recom = comment_recom;
 	}
-	public int getComm_recom() {
-		return comm_recom;
+	public String getComment_date() {
+		return comment_date;
 	}
-	public void setComm_recom(int comm_recom) {
-		this.comm_recom = comm_recom;
+	public void setComment_date(String comment_date) {
+		this.comment_date = comment_date;
 	}
-	public Date getComm_date() {
-		return comm_date;
+	public String getComment_del() {
+		return comment_del;
 	}
-	public void setComm_date(Date comm_date) {
-		this.comm_date = comm_date;
+	public void setComment_del(String comment_del) {
+		this.comment_del = comment_del;
 	}
-	public String getComm_del() {
-		return comm_del;
+	public String getMember_nickname() {
+		return member_nickname;
 	}
-	public void setComm_del(String comm_del) {
-		this.comm_del = comm_del;
+	public void setMember_nickname(String member_nickname) {
+		this.member_nickname = member_nickname;
 	}
 	public String getBoard_name() {
 		return board_name;
@@ -80,5 +80,4 @@ public class Comment {
 	public void setArticle_title(String article_title) {
 		this.article_title = article_title;
 	}
-	
 }

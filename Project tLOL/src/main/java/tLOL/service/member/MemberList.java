@@ -45,12 +45,12 @@ public class MemberList {
 			while(rs.next()){
 				Member memberlist = new Member();
 		
-				memberlist.setAccount_num(rs.getInt("account_num"));
-				memberlist.setAccount_id(rs.getString("account_id"));
-				memberlist.setAccount_nickname(rs.getString("account_nickname"));
-				memberlist.setAccount_reg_date(rs.getDate("account_reg_date"));
-				memberlist.setAccount_email(rs.getString("account_email"));
-				memberlist.setAccount_del(rs.getString("account_del"));
+				memberlist.setmember_num(rs.getInt("member_num"));
+				memberlist.setmember_id(rs.getString("member_id"));
+				memberlist.setmember_nickname(rs.getString("member_nickname"));
+				memberlist.setmember_reg_date(rs.getDate("member_reg_date"));
+				memberlist.setmember_email(rs.getString("member_email"));
+				memberlist.setmember_del(rs.getString("member_del"));
 		
 				list.add(memberlist);
 			}

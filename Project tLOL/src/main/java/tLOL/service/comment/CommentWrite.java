@@ -13,22 +13,22 @@ public class CommentWrite implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-	    if (session == null || session.getAttribute("account_num") == null ) {
+	    if (session == null || session.getAttribute("member_num") == null ) {
 	    	int result = 0;
 			request.setAttribute("result", result);
 	    } else {
-	    	int account_num = Integer.parseInt(request.getParameter("account_num"));
+	    	int member_num = Integer.parseInt(request.getParameter("member_num"));
 			int board_num = Integer.parseInt(request.getParameter("board_num"));
 			int article_num = Integer.parseInt(request.getParameter("article_num"));
 			String pageNum = request.getParameter("pageNum");
 			
-			String comm_content = request.getParameter("comm_content");
+			String comment_content = request.getParameter("comment_content");
 			
 			Comment comment = new Comment();
-			comment.setAccount_num(account_num);
+			comment.setmember_num(member_num);
 			comment.setBoard_num(board_num);
 			comment.setArticle_num(article_num);
-			comment.setComm_content(comm_content);
+			comment.setcomment_content(comment_content);
 
 			CommentDao cd = CommentDao.getInstance();
 			int result = cd.insert(comment);

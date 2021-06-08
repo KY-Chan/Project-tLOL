@@ -93,3 +93,4 @@ insert into board values(4, '매칭게시판');
 insert into board values(5, '갤러리/영상');
 insert into board values(6, '팁/노하우');
 
+insert into member values(1,'master','master','마왕', TO_CHAR(SYSDATE, 'RRRR.MM.DD HH24:MI:SS'), 'aaa@nav.com', 'n', '1');

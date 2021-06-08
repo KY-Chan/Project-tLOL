@@ -10,9 +10,9 @@ import tLOL.service.CommandProcess;
 public class MemberView implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		String account_id = (String)session.getAttribute("account_id");
+		String member_id = (String)session.getAttribute("member_id");
 		MemberDao md = MemberDao.getInstance();
-		Member member  = md.select(account_id);
+		Member member  = md.select(member_id);
 		request.setAttribute("member", member);
 		
 		return "memberView"; //view.jsp에 member값 전달
