@@ -25,6 +25,7 @@ insert into board values(5, '갤러리/영상');
 insert into board values(6, '팁/노하우');
 
 
+update comments set comm_del='y' where article_num=20 and board_num=20;
 select * from (select rowNum rn, e.* from (select a.*, null, b.board_name from article a, board b where account_num=1 and a.board_num = b.board_num order by article_date desc) e) where rn between 0 and 100;
 
 select * from (select rowNum rn, e.* from (select c.*, b.board_name, a.article_title from comments c, board b, article a where c.account_num=1 and c.board_num=b.board_num and c.article_num = a.article_num order by comm_date desc) e) where rn between 0 and 1111;

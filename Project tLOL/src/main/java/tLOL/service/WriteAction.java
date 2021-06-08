@@ -2,12 +2,17 @@ package tLOL.service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import tLOL.dao.ArticleDao;
 import tLOL.model.Article;
 
 public class WriteAction implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
+	    if (session == null || session.getAttribute("account_num") == null ) {
+	    	return "../sessionChk";
+	    }
 		// getParameter로 writeForm.jsp에서 정보를 받는다
 		// mybatis 구현하고 -> content, boardAction 참고
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
