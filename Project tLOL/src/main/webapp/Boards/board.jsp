@@ -55,17 +55,17 @@
 			<c:set var="boardAndKey" value="board_num=${board_num }"></c:set>
 		</c:if>
 		<c:if test="${startPage > PAGE_PER_BLOCK}">
-			<button onclick="location.href='board.do?${boardAndKey }&pageNum=${startPage - 1}'">이전</button>
+			<button class="btn btn-primary" onclick="location.href='board.do?${boardAndKey }&pageNum=${startPage - 1}'">이전</button>
 		</c:if>
 		<c:forEach var="i" begin="${startPage}" end="${endPage}">
-			<button onclick="location.href='board.do?${boardAndKey }&pageNum=${i}'">${i }</button>
+			<button class="btn btn-primary" onclick="location.href='board.do?${boardAndKey }&pageNum=${i}'">${i }</button>
 		</c:forEach>
 		<c:if test="${endPage < totalPage}">
-			<button onclick="location.href='board.do?${boardAndKey }&pageNum=${endPage + 1}'">다음</button>
+			<button class="btn btn-primary" onclick="location.href='board.do?${boardAndKey }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
-		<br>
+		<br><br>
 		<c:if test="${not empty account_id }">
-			<button onclick="location.href='writeForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
+			<button class="btn btn-primary" onclick="location.href='writeForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
 		</c:if>
 		<br>
 		<form action="board.do" method="get">
