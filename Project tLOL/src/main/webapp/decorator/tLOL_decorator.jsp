@@ -15,9 +15,11 @@
 	<!-- Bootstrap core CSS -->
 	<link href="/Project_tLOL/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-	<link href="/Project_tLOL/bootstrap/css/headers.css" rel="stylesheet">
-	<link href="/Project_tLOL/bootstrap/css/sidebar.css" rel="stylesheet">
+	<link href="./bootstrap/css/headers.css?ver.2" rel="stylesheet">
+	<link href="./bootstrap/css/sidebar.css?ver.1" rel="stylesheet">
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
+	<!-- Custom styles for this template -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<style>
 		.bd-placeholder-img {
@@ -33,13 +35,11 @@
 				font-size: 3.5rem;
 			}
 		}
-		
 		.form-control-dark {
 		  color: #fff;
 		  background-color: var(--bs-dark);
 		  border-color: var(--bs-gray);
 		}
-	
 		.form-control-dark:focus {
 		  color: #fff;
 		  background-color: var(--bs-dark);
@@ -47,21 +47,12 @@
 		  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
 		}
 		
-				.btn-toggle:hover,
-		.btn-toggle:focus {
-		  color: rgba(0, 0, 0, .85);
-		  background-color: #0d6efd;
+		.footer_copyright {
+		    margin-top: 10px;
+		    line-height: 1.5;
+		    font-size: 11px;
 		}
-		
-				.btn-toggle-nav a:hover,
-		.btn-toggle-nav a:focus {
-		  background-color: #0d6efd;
-		}
-	</style>
-	
-	<!-- Custom styles for this template -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    
+	</style>    
 </head>
 
 <body style="background-image: url('./images/background.png')">
@@ -107,7 +98,7 @@
 									<button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" 
 									data-bs-display="static" aria-expanded="false">관리메뉴</button>
 									<ul class="dropdown-menu dropdown-menu-end">
-										<li><a class="dropdown-item" href="#">회원관리</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Manager/manageForm.do">회원관리</a></li>
 										<li><a class="dropdown-item" href="#">게시글 관리</a></li>
 										<li><hr class="dropdown-divider"></li>
 										<li><a class="dropdown-item" href="/Project_tLOL/Boards/board.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>
@@ -199,10 +190,16 @@
 	<footer class="bg-dark text-white">
 		<div class="container">
 			<ul class="nav">
-				<li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Active</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+				<li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="#">About Project-Tlol</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="#">도움말</a></li>
 			</ul>
+			<div class="footer_copyright text-center">
+			© 2012-2021 tLOL.GG. tLOL.GG isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing
+                            League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.                                 
+			</div>
+			<div></div>
 		</div>
+		
 	</footer>
 	
 	<script src="/Project_tLOL/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
