@@ -38,7 +38,7 @@
 						<c:if test="${article.article_read > 50 }">
 							<img alt="" src="images/hot.gif">
 						</c:if></td>
-						<td>${article.account_nickname }</td>
+						<td>${article.member_nickname }</td>
 						<td>${article.article_read}</td>
 						<td>${article.article_recom}</td>
 						<td>${article.article_date}</td>
@@ -64,7 +64,7 @@
 			<button class="btn btn-primary" onclick="location.href='board.do?${boardAndKey }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
 		<br><br>
-		<c:if test="${not empty account_id }">
+		<c:if test="${not empty member_id }">
 			<button class="btn btn-primary" onclick="location.href='articleWriteForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
 		</c:if>
 		<br>

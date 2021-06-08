@@ -10,11 +10,11 @@
 <title>Project.tLOL.gg</title>
 </head>
 <body>
-<c:set var="account_id" value="${sessionScope.account_id }"></c:set>
-<c:if test="${empty account_id }">
+<c:set var="member_id" value="${sessionScope.member_id }"></c:set>
+<c:if test="${empty member_id }">
 	<script type="text/javascript">
 		alert("로그인 해주세요")
-		location.href="/Project_tLOL/Accounts/loginForm.do";
+		location.href="/Project_tLOL/Member/loginForm.do";
 	</script>
 </c:if>
 </body>

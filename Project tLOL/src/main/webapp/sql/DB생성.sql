@@ -1,4 +1,4 @@
-DROP TABLE accounts;
+DROP TABLE member;
 DROP TABLE article;
 DROP TABLE board;
 DROP TABLE comments;
@@ -72,7 +72,7 @@ CREATE TABLE Member
 );
 
 ALTER TABLE Member
- ADD CONSTRAINT Accounts_PK PRIMARY KEY ( member_num );
+ ADD CONSTRAINT member_PK PRIMARY KEY ( member_num );
 
 
 CREATE TABLE RecentID
@@ -93,3 +93,4 @@ insert into board values(4, '매칭게시판');
 insert into board values(5, '갤러리/영상');
 insert into board values(6, '팁/노하우');
 
+insert into member values(1,'master','master','마왕', to_char(sysdate, 'RRRR.MM.DD HH24:MI:SS'), 'aaa@nav.com', 'n', '1');

@@ -48,14 +48,14 @@
 				<input type="search" class="form-control" placeholder="소환사명 검색..." aria-label="Search">
 			</form>
 			<div class="dropdown text-end">
-				<button type="button" class="btn btn-light text-dark me-2" onclick="location.href='Accounts/loginForm.do'">Login</button>
+				<button type="button" class="btn btn-light text-dark me-2" onclick="location.href='Member/loginForm.do'">Login</button>
 				<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" 
 				data-bs-display="static" aria-expanded="false">회원</button>
 				<ul class="dropdown-menu dropdown-menu-end">
-					<li><a class="dropdown-item" href="Accounts/updateForm.do">회원정보 수정</a></li>
+					<li><a class="dropdown-item" href="Member/updateForm.do">회원정보 수정</a></li>
 					<li><a class="dropdown-item" href="/Project_tLOL/Boards/myArticle.jsp">내글보기 & 내댓글보기</a></li>
 					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" href="Accounts/logout.do">로그아웃</a></li>
+					<li><a class="dropdown-item" href="Member/logout.do">로그아웃</a></li>
 				</ul>
 			</div>
 		</div>

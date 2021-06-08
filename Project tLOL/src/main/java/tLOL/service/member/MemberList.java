@@ -33,7 +33,7 @@ public class MemberList {
 	
 	public ArrayList<Member> getMemberAll() {
 		ArrayList<Member> list = new ArrayList<Member>();
-		String sql = "select * from ACCOUNTS";
+		String sql = "select * from member";
 		Connection conn = getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -45,12 +45,12 @@ public class MemberList {
 			while(rs.next()){
 				Member memberlist = new Member();
 		
-				memberlist.setAccount_num(rs.getInt("account_num"));
-				memberlist.setAccount_id(rs.getString("account_id"));
-				memberlist.setAccount_nickname(rs.getString("account_nickname"));
-				memberlist.setAccount_reg_date(rs.getDate("account_reg_date"));
-				memberlist.setAccount_email(rs.getString("account_email"));
-				memberlist.setAccount_del(rs.getString("account_del"));
+				memberlist.setMember_num(rs.getInt("member_num"));
+				memberlist.setMember_id(rs.getString("member_id"));
+				memberlist.setMember_nickname(rs.getString("member_nickname"));
+				memberlist.setMember_reg_date(rs.getString("member_reg_date"));
+				memberlist.setMember_email(rs.getString("member_email"));
+				memberlist.setMember_del(rs.getString("member_del"));
 		
 				list.add(memberlist);
 			}
