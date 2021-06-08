@@ -13,13 +13,13 @@
 	<c:if test="${result == 2 }">
 		<script type="text/javascript">
 			alert("관리자 계정 접속 성공!");
-			location.href = "${referer}";
+			location.href = "../main.do";
 		</script>
 	</c:if>
 	<c:if test="${result == 1 }">
 		<script type="text/javascript">
 			alert("환영합니다");
-			location.href = "${referer}";
+			location.href = "../main.do";
 		</script>
 	</c:if>
 	<c:if test="${result == 0 }">

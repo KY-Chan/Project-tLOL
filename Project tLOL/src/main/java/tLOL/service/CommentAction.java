@@ -13,7 +13,7 @@ public class CommentAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
 	    if (session == null || session.getAttribute("account_num") == null ) {
 	    	int result = 0;
 			request.setAttribute("result", result);
