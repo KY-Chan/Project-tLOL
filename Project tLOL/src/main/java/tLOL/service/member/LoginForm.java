@@ -1,6 +1,8 @@
-package tLOL.service;
+package tLOL.service.member;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import tLOL.service.CommandProcess;
 public class LoginForm implements CommandProcess{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		String referer = request.getHeader("REFERER"); // 이전 페이지

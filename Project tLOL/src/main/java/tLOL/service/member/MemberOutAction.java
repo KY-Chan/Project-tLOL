@@ -1,4 +1,4 @@
-package tLOL.service;
+package tLOL.service.member;
 
 import java.io.Reader;
 import java.sql.Connection;

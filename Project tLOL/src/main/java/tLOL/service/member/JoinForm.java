@@ -1,9 +1,10 @@
-package tLOL.service;
+package tLOL.service.member;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-public class ManageForm implements CommandProcess {
-	@Override
+
+import tLOL.service.CommandProcess;
+public class JoinForm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		return "manageForm";
-	}	
+		return "joinForm";
+	}
 }

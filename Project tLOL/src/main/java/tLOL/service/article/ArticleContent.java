@@ -1,4 +1,4 @@
-package tLOL.service;
+package tLOL.service.article;
 
 import java.util.List;
 
@@ -8,12 +8,13 @@ import tLOL.dao.ArticleDao;
 import tLOL.dao.CommentDao;
 import tLOL.model.Article;
 import tLOL.model.Comment;
+import tLOL.service.CommandProcess;
 
-public class Content implements CommandProcess {
+public class ArticleContent implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		String pageNum = request.getParameter("pageNum");
-		int article_num = Integer.parseInt(request.getParameter("article_num"));
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
+		int article_num = Integer.parseInt(request.getParameter("article_num"));
+		String pageNum = request.getParameter("pageNum");
 		
 		ArticleDao ad = ArticleDao.getInstance();
 		ad.readcountUpdate(article_num, board_num); // 조회수 증가 

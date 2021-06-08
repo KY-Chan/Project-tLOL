@@ -1,9 +1,10 @@
-package tLOL.service;
+package tLOL.service.member;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import tLOL.dao.MemberDao;
 import tLOL.model.Member;
+import tLOL.service.CommandProcess;
 public class Confirm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		String account_id = request.getParameter("account_id");

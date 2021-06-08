@@ -1,7 +1,9 @@
-package tLOL.service;
+package tLOL.service.board;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import tLOL.service.CommandProcess;
 
 public class SearchArticle implements CommandProcess {
 

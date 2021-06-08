@@ -1,4 +1,4 @@
-package tLOL.service;
+package tLOL.service.comment;
 
 import java.security.interfaces.DSAKeyPairGenerator;
 
@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import tLOL.dao.CommentDao;
 import tLOL.model.Comment;
+import tLOL.service.CommandProcess;
 
 public class CommentAction implements CommandProcess {
 

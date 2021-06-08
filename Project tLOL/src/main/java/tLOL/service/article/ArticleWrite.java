@@ -1,35 +1,42 @@
-package tLOL.service;
-
-import java.io.UnsupportedEncodingException;
+package tLOL.service.article;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import tLOL.service.UpdateBoardForm;
 import tLOL.dao.ArticleDao;
 import tLOL.model.Article;
+import tLOL.service.CommandProcess;
 
-public class UpdateBoard implements CommandProcess {
+public class ArticleWrite implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 	    if (session == null || session.getAttribute("account_num") == null ) {
 	    	return "../sessionChk";
 	    }
+		// getParameter로 writeForm.jsp에서 정보를 받는다
+		// mybatis 구현하고 -> content, boardAction 참고
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
-		int article_num = Integer.parseInt(request.getParameter("article_num"));
 		String pageNum = request.getParameter("pageNum");
+		
 		String article_title = request.getParameter("article_title");
 		String article_content = request.getParameter("article_content");
+		int account_num = Integer.parseInt(request.getParameter("account_num"));
 		
 		ArticleDao ad = ArticleDao.getInstance();
-		int result = ad.update(article_num, board_num, article_title, article_content);
+		Article article = new Article();
+		article.setBoard_num(board_num);
+		article.setArticle_title(article_title);
+		article.setArticle_content(article_content);
+		article.setAccount_num(account_num);
+		
+		int result = ad.insert(article);
+		
 		request.setAttribute("result", result);
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("board_num", board_num);
-		request.setAttribute("article_num", article_num);
-		return "updateBoard";
 		
+		return "writeAction";
 	}
 
 }

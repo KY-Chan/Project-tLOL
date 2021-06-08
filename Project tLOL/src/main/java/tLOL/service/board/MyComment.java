@@ -1,4 +1,4 @@
-package tLOL.service;
+package tLOL.service.board;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import tLOL.dao.CommentDao;
 import tLOL.model.Comment;
+import tLOL.service.CommandProcess;
 
 public class MyComment implements CommandProcess {
 

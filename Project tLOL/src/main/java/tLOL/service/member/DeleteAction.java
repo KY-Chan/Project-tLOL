@@ -1,10 +1,11 @@
-package tLOL.service;
+package tLOL.service.member;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import tLOL.dao.MemberDao;
+import tLOL.service.CommandProcess;
 
 public class DeleteAction implements CommandProcess {
 

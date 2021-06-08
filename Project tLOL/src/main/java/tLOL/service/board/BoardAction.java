@@ -1,4 +1,4 @@
-package tLOL.service;
+package tLOL.service.board;
 
 import java.util.List;
 
@@ -10,13 +10,13 @@ import tLOL.dao.ArticleDao;
 import tLOL.dao.BoardDao;
 import tLOL.dao.CommentDao;
 import tLOL.model.Article;
+import tLOL.service.CommandProcess;
 
 public class BoardAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		ArticleDao ad = ArticleDao.getInstance();
-		BoardDao bd = BoardDao.getInstance();
 		
 		final int ROW_PER_PAGE = 10;
 		final int PAGE_PER_BLOCK = 10;
@@ -47,20 +47,24 @@ public class BoardAction implements CommandProcess {
 				endPage = totalPage;
 			
 			List<Article> list = ad.myList(startRow, endRow, account_num);
-			request.setAttribute("list", list);
 			
+			request.setAttribute("list", list);
 			request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);
 			request.setAttribute("number", number);
 			request.setAttribute("currentPage", currentPage);
 			request.setAttribute("startPage", startPage);
 			request.setAttribute("endPage", endPage);
 			request.setAttribute("totalPage", totalPage);
+			
 			return "myArticle";
 			
 		} else { // 일반 게시판
 			int board_num = Integer.parseInt(tmp_board_num);
 			int total = ad.getTotal(board_num);
 
+			BoardDao bd = BoardDao.getInstance();
+			String board_name = bd.getName(board_num);
+			
 			int startRow = (currentPage - 1) * ROW_PER_PAGE + 1;
 			int endRow = startRow + ROW_PER_PAGE - 1;
 			int number = total - startRow + 1;
@@ -71,8 +75,8 @@ public class BoardAction implements CommandProcess {
 				endPage = totalPage;
 
 			List<Article> list = ad.list(startRow, endRow, board_num);
+
 			request.setAttribute("list", list);
-			String board_name = bd.getName(board_num);
 			request.setAttribute("board_name", board_name);
 			request.setAttribute("keyword", keyword);
 			request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);
