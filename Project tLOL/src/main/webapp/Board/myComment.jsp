@@ -23,16 +23,16 @@
 				<tr>
 					<td>${comment.board_name }</td>
 					<td>${comment.article_num }</td>
-					<c:if test="${comment.comment_del == 'y' }">
+					<c:if test="${comment.comm_del == 'y' }">
 						<th colspan="5">삭제된 댓글 입니다</th>
 					</c:if>
-					<c:if test="${comment.comment_del != 'y' }">
+					<c:if test="${comment.comm_del != 'y' }">
 						<td>
 							<a href="content.do?article_num=${comment.article_num}&board_num=${comment.board_num}">
 								${comment.article_title}</a>
 						</td>
-						<td>${comment.comment_content}</td>
-						<td>${comment.comment_date}</td>
+						<td>${comment.comm_content}</td>
+						<td>${comment.comm_date}</td>
 					</c:if>
 				</tr>
 			</c:forEach>
@@ -40,13 +40,13 @@
 	</table>
 	<div align="center">
 		<c:if test="${startPage > PAGE_PER_BLOCK}">
-			<button onclick="location.href='myComment.do?member_num=${member_num }&pageNum=${startPage - 1}'">이전</button>
+			<button onclick="location.href='myComment.do?account_num=${account_num }&pageNum=${startPage - 1}'">이전</button>
 		</c:if>
 		<c:forEach var="i" begin="${startPage}" end="${endPage}">
-			<button onclick="location.href='myComment.do?member_num=${member_num }&pageNum=${i}'">${i }</button>
+			<button onclick="location.href='myComment.do?account_num=${account_num }&pageNum=${i}'">${i }</button>
 		</c:forEach>
 		<c:if test="${endPage < totalPage}">
-			<button onclick="location.href='myComment.do?member_num=${member_num }&pageNum=${endPage + 1}'">다음</button>
+			<button onclick="location.href='myComment.do?account_num=${account_num }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
 	</div>
 </div>

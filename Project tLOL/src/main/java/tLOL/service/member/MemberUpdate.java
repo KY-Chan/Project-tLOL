@@ -7,16 +7,16 @@ import tLOL.model.Member;
 import tLOL.service.CommandProcess;
 public class MemberUpdate implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		String member_id = request.getParameter("member_id");
-		String member_pw = request.getParameter("member_pw");
-		String member_nickname = request.getParameter("member_nickname");
-		String member_email = request.getParameter("member_email");
+		String account_id = request.getParameter("account_id");
+		String account_pw = request.getParameter("account_pw");
+		String account_nickname = request.getParameter("account_nickname");
+		String account_email = request.getParameter("account_email");
 		
 		Member member = new Member();
-		member.setmember_id(member_id);
-		member.setmember_pw(member_pw);
-		member.setmember_nickname(member_nickname);
-		member.setmember_email(member_email);
+		member.setAccount_id(account_id);
+		member.setAccount_pw(account_pw);
+		member.setAccount_nickname(account_nickname);
+		member.setAccount_email(account_email);
 		MemberDao md = MemberDao.getInstance();
 		int result = md.update(member);
 		request.setAttribute("result", result);

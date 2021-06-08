@@ -30,12 +30,12 @@ public class BoardAction implements CommandProcess {
 		
 		if(tmp_board_num == null || tmp_board_num.equals("")) { // 내가 쓴 글
 			HttpSession session = request.getSession();
-		    if (session == null || session.getAttribute("member_num") == null ) {
+		    if (session == null || session.getAttribute("account_num") == null ) {
 		    	return "../sessionChk";
 		    } 
 			
-			int member_num = Integer.parseInt(request.getParameter("member_num"));
-			int total = ad.getMyTotal(member_num);
+			int account_num = Integer.parseInt(request.getParameter("account_num"));
+			int total = ad.getMyTotal(account_num);
 			
 			int startRow = (currentPage - 1) * ROW_PER_PAGE + 1;
 			int endRow = startRow + ROW_PER_PAGE - 1;
@@ -46,7 +46,7 @@ public class BoardAction implements CommandProcess {
 			if (endPage > totalPage)
 				endPage = totalPage;
 			
-			List<Article> list = ad.myList(startRow, endRow, member_num);
+			List<Article> list = ad.myList(startRow, endRow, account_num);
 			
 			request.setAttribute("list", list);
 			request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);

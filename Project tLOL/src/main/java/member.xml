@@ -4,25 +4,25 @@
 <mapper namespace="memberns">
 	<!-- 로그인 -->
 	<select id="select" parameterType="string" resultType="member">
-		select * from member where member_id=#{member_id}
+		select * from Accounts where account_id=#{account_id}
 	</select>
 	
 	<!-- 회원가입 -->
 	<insert id="insert" parameterType="member">
 		<!-- 회원가입시 회원번호 1씩 증가 -->
-		<selectKey keyProperty="member_num" resultType="integer" order="BEFORE">
-			select nvl(max(member_num),0) + 1 member_num from member 
+		<selectKey keyProperty="account_num" resultType="integer" order="BEFORE">
+			select nvl(max(account_num),0) + 1 account_num from Accounts 
 		</selectKey>
-		insert into member values (#{member_num}, #{member_id}, #{member_pw}, #{member_nickname}, sysdate, #{member_email}, 'n', '0')
+		insert into Accounts values (#{account_num}, #{account_id}, #{account_pw}, #{account_nickname}, sysdate, #{account_email}, 'n', '0')
 	</insert>
 	
 	<!-- 수정 -->
 	<update id="update" parameterType="member">
-		update member set member_pw=#{member_pw}, member_nickname=#{member_nickname}, member_email=#{member_email} where member_id=#{member_id}
+		update Accounts set account_pw=#{account_pw}, account_nickname=#{account_nickname}, account_email=#{account_email} where account_id=#{account_id}
 	</update>
 	
 	<!-- delete, 진짜 삭제하지않고 del컬럼 값을 y로 수정 y=탈퇴한회원, n=탈퇴하지않은회원 -->
 	<update id="delete" parameterType="string">
-		update member set member_del='y' where member_id=#{member_id}
+		update Accounts set account_del='y' where account_id=#{account_id}
 	</update>
 </mapper> 

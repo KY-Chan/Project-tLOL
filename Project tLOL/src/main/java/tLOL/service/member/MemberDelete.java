@@ -11,15 +11,15 @@ public class MemberDelete implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-	    if (session == null || session.getAttribute("member_num") == null ) {
+	    if (session == null || session.getAttribute("account_num") == null ) {
 	    	return "../sessionChk";
 	    }
 	 
-		String member_id = (String)session.getAttribute("member_id");
+		String account_id = (String)session.getAttribute("account_id");
 		
 		MemberDao md = MemberDao.getInstance();
-		if (member_id != null) {
-			int result = md.delete(member_id);
+		if (account_id != null) {
+			int result = md.delete(account_id);
 			if (result > 0) session.invalidate();
 			request.setAttribute("result", result);
 		}

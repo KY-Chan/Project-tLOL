@@ -37,12 +37,12 @@
 					<h2>회원 정보 확인</h2>
 				</div>
 			</div>	
-			<input type="hidden" name="member_id" value="${member.member_id}">
+			<input type="hidden" name="account_id" value="${member.account_id}">
 			<div class="row mb-2 align-items-center">
 				<div class="col-sm-3"></div>
 				<label for="inputId" class="col-sm-2 col-form-label">아이디</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" readonly class="form-control-plaintext" id="inputId" value="${member.member_id }">
+					<input type="text" readonly class="form-control-plaintext" id="inputId" value="${member.account_id }">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
@@ -50,7 +50,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputNickname" class="col-sm-2 col-form-label">닉네임</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" readonly class="form-control-plaintext" id="inputNickname" value="${member.member_nickname }">
+					<input type="text" readonly class="form-control-plaintext" id="inputNickname" value="${member.account_nickname }">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
@@ -58,7 +58,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputEmail" class="col-sm-2 col-form-label">이메일</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" readonly class="form-control-plaintext" id="inputEmail" value="${member.member_email }">
+					<input type="text" readonly class="form-control-plaintext" id="inputEmail" value="${member.account_email }">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
@@ -66,7 +66,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputDate" class="col-sm-2 col-form-label">등록일</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" readonly class="form-control-plaintext" id="inputDate" value="${member.member_reg_date}">
+					<input type="text" readonly class="form-control-plaintext" id="inputDate" value="${member.account_reg_date}">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>

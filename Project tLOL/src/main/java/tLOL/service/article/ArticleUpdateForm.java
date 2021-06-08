@@ -12,7 +12,7 @@ import tLOL.service.article.ArticleUpdateForm;
 public class ArticleUpdateForm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		if (session == null || session.getAttribute("member_num") == null ) {
+		if (session == null || session.getAttribute("account_num") == null ) {
 	    	return "../sessionChk";
 	    }
 		

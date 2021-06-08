@@ -9,7 +9,7 @@ import tLOL.service.CommandProcess;
 public class ArticleWriteForm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		if (session == null || session.getAttribute("member_num") == null ) {
+		if (session == null || session.getAttribute("account_num") == null ) {
 	    	return "../sessionChk";
 	    } 
 		int board_num = Integer.parseInt(request.getParameter("board_num"));

@@ -11,7 +11,7 @@ import tLOL.service.CommandProcess;
 public class ArticleWrite implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-	    if (session == null || session.getAttribute("member_num") == null ) {
+	    if (session == null || session.getAttribute("account_num") == null ) {
 	    	return "../sessionChk";
 	    }
 		// getParameter로 writeForm.jsp에서 정보를 받는다
@@ -21,13 +21,13 @@ public class ArticleWrite implements CommandProcess {
 		
 		String article_title = request.getParameter("article_title");
 		String article_content = request.getParameter("article_content");
-		int member_num = Integer.parseInt(request.getParameter("member_num"));
+		int account_num = Integer.parseInt(request.getParameter("account_num"));
 		
 		Article article = new Article();
 		article.setBoard_num(board_num);
 		article.setArticle_title(article_title);
 		article.setArticle_content(article_content);
-		article.setmember_num(member_num);
+		article.setAccount_num(account_num);
 
 		ArticleDao ad = ArticleDao.getInstance();
 		int result = ad.insert(article);

@@ -1,61 +1,62 @@
 package tLOL.model;
-
+import java.sql.Date;
 public class Member {
-	private int member_num;
-	private String member_id;
-	private String member_pw;
-	private String member_nickname;
-	private String member_reg_date;
-	private String member_email;
-	private String member_del;
-	private int member_admin;
+	private int account_num;
+	private String account_id;
+	private String account_pw;
+	private String account_nickname;
+	private Date account_reg_date;
+	private String account_email;
+	private String account_del;
+	private int account_admin;
 	
-	public int getMember_num() {
-		return member_num;
+	public int getAccount_num() {
+		return account_num;
 	}
-	public void setMember_num(int member_num) {
-		this.member_num = member_num;
+	public void setAccount_num(int account_num) {
+		this.account_num = account_num;
 	}
-	public String getMember_id() {
-		return member_id;
+	public String getAccount_id() {
+		return account_id;
 	}
-	public void setMember_id(String member_id) {
-		this.member_id = member_id;
+	public void setAccount_id(String account_id) {
+		this.account_id = account_id;
 	}
-	public String getMember_pw() {
-		return member_pw;
+	public String getAccount_pw() {
+		return account_pw;
 	}
-	public void setMember_pw(String member_pw) {
-		this.member_pw = member_pw;
+	public void setAccount_pw(String account_pw) {
+		this.account_pw = account_pw;
 	}
-	public String getMember_nickname() {
-		return member_nickname;
+	public String getAccount_nickname() {
+		return account_nickname;
 	}
-	public void setMember_nickname(String member_nickname) {
-		this.member_nickname = member_nickname;
+	public void setAccount_nickname(String account_nickname) {
+		this.account_nickname = account_nickname;
 	}
-	public String getMember_reg_date() {
-		return member_reg_date;
+	public Date getAccount_reg_date() {
+		return account_reg_date;
 	}
-	public void setMember_reg_date(String member_reg_date) {
-		this.member_reg_date = member_reg_date;
+	public void setAccount_reg_date(Date account_reg_date) {
+		this.account_reg_date = account_reg_date;
 	}
-	public String getMember_email() {
-		return member_email;
+	public String getAccount_email() {
+		return account_email;
 	}
-	public void setMember_email(String member_email) {
-		this.member_email = member_email;
+	public void setAccount_email(String account_email) {
+		this.account_email = account_email;
 	}
-	public String getMember_del() {
-		return member_del;
+	public String getAccount_del() {
+		return account_del;
 	}
-	public void setMember_del(String member_del) {
-		this.member_del = member_del;
+	public void setAccount_del(String account_del) {
+		this.account_del = account_del;
 	}
-	public int getMember_admin() {
-		return member_admin;
+	public int getAccount_admin() {
+		return account_admin;
 	}
-	public void setMember_admin(int member_admin) {
-		this.member_admin = member_admin;
+	public void setAccount_admin(int account_admin) {
+		this.account_admin = account_admin;
 	}
+
 }

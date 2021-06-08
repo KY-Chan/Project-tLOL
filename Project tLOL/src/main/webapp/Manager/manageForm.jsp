@@ -49,12 +49,12 @@
 			<c:forEach var="i" items="${memberList}" begin="0" end="2" varStatus="status">
 				<tr>
 					<td></td>
-					<td>${i.getmember_num() }</td>
-					<td>${i.getmember_id() }</td>
-					<td>${i.getmember_nickname() }</td>
-					<td>${i.getmember_reg_date() }</td>
-					<td>${i.getmember_email() }</td>
-					<td>${i.getmember_del() }</td>
+					<td>${i.getAccount_num() }</td>
+					<td>${i.getAccount_id() }</td>
+					<td>${i.getAccount_nickname() }</td>
+					<td>${i.getAccount_reg_date() }</td>
+					<td>${i.getAccount_email() }</td>
+					<td>${i.getAccount_del() }</td>
 				<tr>
 			</c:forEach>
 			<tr>

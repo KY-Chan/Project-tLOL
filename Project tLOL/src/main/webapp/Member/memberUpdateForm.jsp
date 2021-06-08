@@ -24,9 +24,9 @@
 	
 	<script type="text/javascript">
 		function chk() {
-			if (frm.member_pw.value != frm.member_pw2.value) {
+			if (frm.account_pw.value != frm.account_pw2.value) {
 			alert("암호를 다시 확인해주세요");
-			frm.member_pw.focus();
+			frm.account_pw.focus();
 			return false;
 			}
 		}
@@ -52,11 +52,11 @@
 				</div>
 			</div>
 			<div class="row mb-2 align-items-center">
-			<input type="hidden" name="member_id" value="${member.member_id}">
+			<input type="hidden" name="account_id" value="${member.account_id}">
 				<div class="col-sm-3"></div>
 				<label for="inputId" class="col-sm-2 col-form-label">아이디</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" readonly class="form-control-plaintext" id="inputId" value="${member.member_id }">
+					<input type="text" readonly class="form-control-plaintext" id="inputId" value="${member.account_id }">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>	
@@ -64,7 +64,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputPassword" class="col-sm-2 col-form-label">비밀번호</label>
 				<div class="col-sm-4 form-floating">
-					<input type="password" class="w-100 form-control" id="inputPassword" placeholder="비밀번호" name="member_pw" required="required" maxlength="20">
+					<input type="password" class="w-100 form-control" id="inputPassword" placeholder="비밀번호" name="account_pw" required="required" maxlength="20">
 					<label for="floatingInput">Password</label>	
 				</div>
 				<div class="col-sm-3"></div>
@@ -73,7 +73,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputPassword2" class="col-sm-2 col-form-label">비밀번호 확인</label>
 				<div class="col-sm-4 form-floating">
-					<input type="password" class="form-control" id="inputPassword2" placeholder="비밀번호" name="member_pw2" required="required" maxlength="20">
+					<input type="password" class="form-control" id="inputPassword2" placeholder="비밀번호" name="account_pw2" required="required" maxlength="20">
 					<label for="floatingInput">Password Check</label>	
 				</div>
 				<div class="col-sm-3"></div>
@@ -82,7 +82,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputNickname" class="col-sm-2 col-form-label">닉네임</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" class="form-control" id="inputNickname" placeholder="닉네임" name="member_nickname" required="required" maxlength="20">
+					<input type="text" class="form-control" id="inputNickname" placeholder="닉네임" name="account_nickname" required="required" maxlength="20">
 					<label for="floatingInput">Nickname</label>	
 				</div>
 				<div class="col-sm-3"></div>
@@ -91,7 +91,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputEmail" class="col-sm-2 col-form-label">이메일</label>
 				<div class="col-sm-4 form-floating">
-					<input type="email" class="form-control" id="inputEmail" placeholder="e-mail" name="member_email" required="required" maxlength="30">
+					<input type="email" class="form-control" id="inputEmail" placeholder="e-mail" name="account_email" required="required" maxlength="30">
 					<label for="floatingInput">e-mail</label>
 				</div>
 				<div class="col-sm-3"></div>
@@ -100,7 +100,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputDate" class="col-sm-2 col-form-label">등록일</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" readonly class="form-control-plaintext" id="inputDate" value="${member.member_reg_date}">
+					<input type="text" readonly class="form-control-plaintext" id="inputDate" value="${member.account_reg_date}">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>

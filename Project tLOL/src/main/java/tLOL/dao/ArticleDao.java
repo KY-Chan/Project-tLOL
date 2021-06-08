@@ -39,9 +39,9 @@ public class ArticleDao {
 		return session.selectList("articlens.selectList", parms);
 	}
 	@SuppressWarnings("unchecked") // 내가 쓴 글 불러오기
-	public List<Article> myList(int startRow, int endRow, int member_num) {
+	public List<Article> myList(int startRow, int endRow, int account_num) {
 		Map<String, Integer> parms = new HashMap<String, Integer>();
-		parms.put("member_num", member_num);
+		parms.put("account_num", account_num);
 		parms.put("startRow", startRow);
 		parms.put("endRow", endRow);
 		return session.selectList("articlens.selectMyList", parms);
@@ -62,8 +62,8 @@ public class ArticleDao {
 		parms.put("article_num", article_num);
 		return (Article) session.selectOne("articlens.select", parms);	
 	}
-	public int getMyTotal(int member_num) {
-		return (int) session.selectOne("articlens.myTotal", member_num);
+	public int getMyTotal(int account_num) {
+		return (int) session.selectOne("articlens.myTotal", account_num);
 	}
 
 	public int insert(Article article) {

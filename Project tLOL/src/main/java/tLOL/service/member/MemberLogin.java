@@ -9,28 +9,28 @@ import tLOL.service.CommandProcess;
 public class MemberLogin implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		String referer = request.getParameter("referer"); // 이전 페이지
-		String member_id = request.getParameter("member_id");
-		String member_pw = request.getParameter("member_pw");
+		String account_id = request.getParameter("account_id");
+		String account_pw = request.getParameter("account_pw");
 		
 		MemberDao md = MemberDao.getInstance();
-		Member member = md.select(member_id);
+		Member member = md.select(account_id);
 		
 		int result = 0;
 		// Accounts 테이블 del컬럼 값이 y일때도 포함하기, y=yes n=no
-		if (member == null || member.getmember_del().equals("y")) {
+		if (member == null || member.getAccount_del().equals("y")) {
 			result = -1;
 		}
 		else {
-			if (member.getmember_pw().equals(member_pw)) {
+			if (member.getAccount_pw().equals(account_pw)) {
 				HttpSession session = request.getSession();
-				session.setAttribute("member_id", member_id);
-				session.setAttribute("member_num", member.getmember_num());
-				session.setAttribute("member_nickname", member.getmember_nickname());
-				session.setAttribute("member_admin", member.getmember_admin());
+				session.setAttribute("account_id", account_id);
+				session.setAttribute("account_num", member.getAccount_num());
+				session.setAttribute("account_nickname", member.getAccount_nickname());
+				session.setAttribute("account_admin", member.getAccount_admin());
 				
-				if(member.getmember_admin() == 0) {
+				if(member.getAccount_admin() == 0) {
 					result = 1;
-				} else if(member.getmember_admin() == 1 ) {
+				} else if(member.getAccount_admin() == 1 ) {
 					result = 2;
 				}
 			}

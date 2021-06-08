@@ -69,29 +69,29 @@
 				    </form>
 			    </div>
 				<c:choose>
-					<c:when test="${sessionScope.member_id == null }">
+					<c:when test="${sessionScope.account_id == null }">
 						<div class="dropdown text-end">
 							<button type="button" class="btn btn-outline-secondary text-white me-2" onclick="location.href='/Project_tLOL/Member/loginForm.do'">Login</button>
 						</div>
 					</c:when>
-					<c:when test="${sessionScope.member_id != null }">
+					<c:when test="${sessionScope.account_id != null }">
 						<div class="dropdown text-end">
 							<c:choose>
-								<c:when test="${sessionScope.member_admin == 0 }">
-									<span class="textUserNick">${sessionScope.member_nickname }</span>
+								<c:when test="${sessionScope.account_admin == 0 }">
+									<span class="textUserNick">${sessionScope.account_nickname }</span>
 									<span class="textUserEnd">님 환영합니다!</span>
 									<span style="padding: 10px"></span>
 									<button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" 
 									data-bs-display="static" aria-expanded="false">내정보</button>
 									<ul class="dropdown-menu dropdown-menu-end">
 										<li><a class="dropdown-item" href="/Project_tLOL/Member/memberUpdateForm.do">회원정보 수정</a></li>
-										<li><a class="dropdown-item" href="/Project_tLOL/Board/board.do?member_num=${sessionScope.member_num }">내 글 보기</a></li>
-										<li><a class="dropdown-item" href="/Project_tLOL/Board/myComment.do?member_num=${sessionScope.member_num }">내 댓글 보기</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Board/board.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Board/myComment.do?account_num=${sessionScope.account_num }">내 댓글 보기</a></li>
 										<li><hr class="dropdown-divider"></li>
 										<li><a class="dropdown-item" href="/Project_tLOL/Member/logout.do">로그아웃</a></li>
 									</ul>
 								</c:when>
-								<c:when test="${sessionScope.member_admin == 1 }">
+								<c:when test="${sessionScope.account_admin == 1 }">
 									<span class="textUserNick">관리자</span>
 									<span class="textUserEnd">님 환영합니다!</span>
 									<span style="padding: 10px"></span>
@@ -101,8 +101,8 @@
 										<li><a class="dropdown-item" href="/Project_tLOL/Manager/memberManage.do">회원관리</a></li>
 										<li><a class="dropdown-item" href="#">게시글 관리</a></li>
 										<li><hr class="dropdown-divider"></li>
-										<li><a class="dropdown-item" href="/Project_tLOL/Board/board.do?member_num=${sessionScope.member_num }">내 글 보기</a></li>
-										<li><a class="dropdown-item" href="/Project_tLOL/Board/myComment.do?member_num=${sessionScope.member_num }">내 댓글 보기</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Board/board.do?account_num=${sessionScope.account_num }">내 글 보기</a></li>
+										<li><a class="dropdown-item" href="/Project_tLOL/Board/myComment.do?account_num=${sessionScope.account_num }">내 댓글 보기</a></li>
 										<li><hr class="dropdown-divider"></li>
 										<li><a class="dropdown-item" href="/Project_tLOL/Member/logout.do">로그아웃</a></li>
 									</ul>
