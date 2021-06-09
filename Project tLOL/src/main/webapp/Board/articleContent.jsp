@@ -24,7 +24,7 @@
 		<tr class="table-info"><th>내용</th><td><pre>${article.article_content }</pre></td></tr>
 	</table>
 	<div align="center"><br>
-		<c:if test="${not empty member_id }">
+		<c:if test="${member_num eq article.member_num or member_admin eq 1}">
 			<button onclick="location.href='articleUpdateForm.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">수정</button> 
 			<button onclick="article_delete()">삭제</button> 
 		</c:if>
@@ -33,7 +33,7 @@
 	<br><br>
 	<div id="disp"></div>
 	<form action="commentWrite.do" method="post">
-		<input type="hidden" name="member_num" value="${sessionScope.member_num }">
+		<input type="hidden" name="member_num" value="${member_num }">
 		<input type="hidden" name="board_num" value="${board_num }">
 		<input type="hidden" name="article_num" value="${article_num }">
 		<input type="hidden" name="pageNum" value="${pageNum }">
@@ -62,7 +62,7 @@
 								<td>${comment.comment_content}</td>
 								<td>${comment.comment_recom}</td>
 								<td>${comment.comment_date}</td>
-								<c:if test="${member_num eq comment.member_num}">
+								<c:if test="${member_num eq comment.member_num or member_admin eq 1}">
 									<td><a href="commentDelete.do?comment_num=${comment.comment_num }&article_num=${article_num }&board_num=${board_num}&pageNum=${pageNum }">삭제</a></td>
 								</c:if>
 							</c:if>
@@ -77,7 +77,7 @@
 			</c:if>
 			<c:if test="${not empty member_id }">
 				<tr>
-					<th>${sessionScope.member_nickname }</th>
+					<th>${member_nickname }</th>
 					<th colspan="3"><textarea style="resize: none; box-sizing: border-box; width: 100%" name="comment_content" required="required"></textarea></th>
 					<th><input type="submit" value="확인"></th>
 				</tr>

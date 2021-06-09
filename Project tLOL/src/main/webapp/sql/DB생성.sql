@@ -1,4 +1,4 @@
-DROP TABLE member;
+DROP TABLE accounts;
 DROP TABLE article;
 DROP TABLE board;
 DROP TABLE comments;

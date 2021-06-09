@@ -46,7 +46,16 @@ public class ArticleDao {
 		parms.put("endRow", endRow);
 		return session.selectList("articlens.selectMyList", parms);
 	}
-	
+
+	@SuppressWarnings("unchecked")
+	public List<Article> searchList(int startRow, int endRow, int board_num, String keyword) {
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("board_num", board_num);
+		parms.put("keyword", keyword);
+		parms.put("startRow", startRow);
+		parms.put("endRow", endRow);
+		return session.selectList("articlens.selectSearchList", parms);
+	}
 	public int getTotal(int board_num) {
 		return (int) session.selectOne("articlens.total", board_num);
 	}
@@ -66,6 +75,12 @@ public class ArticleDao {
 		return (int) session.selectOne("articlens.myTotal", member_num);
 	}
 
+	public int getSearchTotal(int board_num, String keyword) {
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("board_num", board_num);
+		parms.put("keyword", keyword);
+		return (int) session.selectOne("articlens.searchTotal", parms);
+	}
 	public int insert(Article article) {
     return session.insert("articlens.insert", article);
   }

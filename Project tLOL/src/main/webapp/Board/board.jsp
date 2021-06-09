@@ -64,12 +64,13 @@
 			<button class="btn btn-primary" onclick="location.href='board.do?${boardAndKey }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
 		<br><br>
-		<c:if test="${not empty member_id }">
+		<c:if test="${not empty member_id and board_num ne 1 or member_admin eq 1}">
 			<button class="btn btn-primary" onclick="location.href='articleWriteForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
 		</c:if>
 		<br>
-		<form action="board.do" method="get">
+		<form action="boardSearch.do" method="get">
 			<input type="hidden" name="board_num" value="${board_num }">
+			<input type="hidden" name="board_name" value="${board_name }">
 			<input type="search" name="keyword" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
 			<input type="submit">
 		</form>
