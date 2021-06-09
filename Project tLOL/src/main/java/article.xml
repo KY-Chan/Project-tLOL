@@ -29,7 +29,7 @@
 		board_num=${board_num} and
 		ar.member_num =
 		ac.member_num and
-		(article_title like %${keyword}% or article_content like %${keyword}%)
+		(article_title like ${keyword} or article_content like ${keyword})
 		order by article_num desc) e) where rn
 		between
 		${startRow} and ${endRow}
@@ -42,10 +42,10 @@
 		select
 		count(*) from article where member_num=#{member_num}
 	</select>
-	<select id="searchTotal" parameterType="parms" resultType="int">
+	<select id="searchTotal" parameterType="map" resultType="int">
 		select
 		count(*) from article where member_num=${member_num} and
-		(article_title like %${keyword}% or article_content like %${keyword}%)
+		(article_title like ${keyword} or article_content like ${keyword})
 	</select>
 	<update id="readcount" parameterType="map">
 		update article set

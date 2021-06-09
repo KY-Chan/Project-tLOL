@@ -51,7 +51,7 @@ public class ArticleDao {
 	public List<Article> searchList(int startRow, int endRow, int board_num, String keyword) {
 		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("board_num", board_num);
-		parms.put("keyword", keyword);
+		parms.put("keyword", "'%" + keyword + "%'");
 		parms.put("startRow", startRow);
 		parms.put("endRow", endRow);
 		return session.selectList("articlens.selectSearchList", parms);
@@ -78,7 +78,7 @@ public class ArticleDao {
 	public int getSearchTotal(int board_num, String keyword) {
 		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("board_num", board_num);
-		parms.put("keyword", keyword);
+		parms.put("keyword", "'%" + keyword + "%'");
 		return (int) session.selectOne("articlens.searchTotal", parms);
 	}
 	public int insert(Article article) {
