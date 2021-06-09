@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="tLOL.service.member.MemberList" %>
-<%@ page import="tLOL.model.Member" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%
-	ArrayList<Member> list = MemberList.getInstance().getMemberAll();
-%>
-<c:set var="memberList" value="<%= list %>" />
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -27,38 +20,47 @@
 	<link href="../bootstrap/css/login.css" rel="stylesheet">	
 	
 	<script type="text/javascript">
-		function del() {
-			var con = confirm("정말로 탈퇴시키시겠습니까?");
-			if (con) location.href = "memberOut.do";
-			else alert("회원 탈퇴처리가 취소되었습니다")
+		function chk() {
+			if (frm.del.value == 1) {
+				var con = confirm("정말로 탈퇴시키시겠습니까?");
+				if (con) return true;
+				else {
+					alert("회원 탈퇴처리가 취소되었습니다")
+					return false;
+				}	
+			}
 		}
 	</script>
 </head>
 <body>
 	<div class="col-10 bd-content">
-		<table class="table table-hover">
-			<tr class="table-primary">
-				<th>선택</th>
-				<th>회원번호</th>
-				<th>ID</th>
-				<th>닉네임</th>
-				<th>가입일</th>
-				<th>이메일</th>
-				<th>탈퇴여부</th>
-			</tr>
-			<c:forEach var="i" items="${memberList}" begin="0" end="2" varStatus="status">
-				<tr>
-					<td></td>
-					<td>${i.getMember_num() }</td>
-					<td>${i.getMember_id() }</td>
-					<td>${i.getMember_nickname() }</td>
-					<td>${i.getMember_reg_date() }</td>
-					<td>${i.getMember_email() }</td>
-					<td>${i.getMember_del() }</td>
-				<tr>
-			</c:forEach>
-			<tr>
-		</table>
+		<form action="memberOut.do" method="post" name="frm" onsubmit="return chk()">
+			<table class="table table-hover text-white">
+				<tr class="table-primary">
+					<th>선택</th>
+					<th>회원번호</th>
+					<th>ID</th>
+					<th>닉네임</th>
+					<th>가입일</th>
+					<th>이메일</th>
+					<th>탈퇴여부</th>
+				</tr>
+			
+				<c:forEach var="member" items="${memberlist}">
+					<tr>
+						<td><input type="checkbox" name="member_id" value="${member.member_id }"></td>
+						<td>${member.member_num }</td>
+						<td>${member.member_id }</td>
+						<td>${member.member_nickname }</td>
+						<td>${member.member_reg_date }</td>
+						<td>${member.member_email }</td>
+						<td>${member.member_del }</td>
+					<tr>	
+				</c:forEach>
+			</table>
+			<button class="mt-2 btn btn-danger btn-sm"  type="submit">회원삭제</button>
+			<button class="mt-2 btn btn-primary btn-sm" type="submit">회원복구</button>
+		</form>
 	</div>
 </body>
 </html>

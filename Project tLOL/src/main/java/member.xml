@@ -25,4 +25,9 @@
 	<update id="delete" parameterType="string">
 		update member set member_del='y' where member_id=#{member_id}
 	</update>
+	
+	<!-- list, 회원전체 리스트 -->
+	<select id="memberList" resultType="member">
+		select * from member
+	</select>
 </mapper> 

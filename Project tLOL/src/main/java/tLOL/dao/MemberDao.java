@@ -1,10 +1,15 @@
 package tLOL.dao;
 import java.io.Reader;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import tLOL.model.Article;
 import tLOL.model.Member;
 public class MemberDao {
 	// singleton
@@ -28,7 +33,7 @@ public class MemberDao {
 		return (Member) session.selectOne("memberns.select", member_id);
 	}
 	public int insert(Member member) {
-		return session.insert("memberns.insert", member);	
+		return session.insert("memberns.insert", member);
 	}
 	public int update(Member member) {
 		return session.update("memberns.update", member);
@@ -36,6 +41,9 @@ public class MemberDao {
 	public int delete(String member_id) {
 		return session.update("memberns.delete", member_id);
 	}
-
+	@SuppressWarnings("unchecked")
+	public List<Member> memberlist() {
+		return session.selectList("memberns.memberList");
+	}
 }
 
