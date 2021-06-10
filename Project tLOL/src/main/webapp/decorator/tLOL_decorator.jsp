@@ -62,6 +62,7 @@
 				<a class="navbar-brand" href="/Project_tLOL/main.jsp">
 					<img src="/Project_tLOL/images/logo-remove.png" alt="" width="230" height="100">
 				</a>
+				
 				<div class="p-2 bd-highlight">
 				    <form class="input-group">
 				      <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">

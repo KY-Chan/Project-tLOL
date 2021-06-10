@@ -24,7 +24,7 @@
 	<link href="../bootstrap/css/login.css" rel="stylesheet">	
 </head>
 
-<body class="text-center">
+<body class="text-center bg-dark">
 	<div class="container">
 		<form method="post" action="memberUpdate.do" name="frm" onsubmit="return chk()">	
 			<div class="row mb-3 align-items-center">

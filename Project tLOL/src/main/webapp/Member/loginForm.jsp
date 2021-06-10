@@ -18,7 +18,7 @@
 	<link href="../bootstrap/css/login.css" rel="stylesheet">	
 	
 </head>
-<body class="text-center">
+<body class="text-center bg-dark">
 	<main class="form-signin">
 		<form method="post" action="login.do">
 		<input type="hidden" name="referer" value="${referer }">
