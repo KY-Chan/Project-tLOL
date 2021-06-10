@@ -10,12 +10,7 @@ import tLOL.service.CommandProcess;
 public class MemberResAction implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		HttpSession session = request.getSession();
-		if (session == null || session.getAttribute("member_admin") == "0" ) {
-	    	return "../sessionChk";
-	    }
-		
-		String[] member_id = request.getParameterValues("member_id");
+		String[] member_id = request.getParameterValues("chk_member_id");
 		MemberDao md = MemberDao.getInstance();
 		int result = 0;
 		for(String m : member_id) {
