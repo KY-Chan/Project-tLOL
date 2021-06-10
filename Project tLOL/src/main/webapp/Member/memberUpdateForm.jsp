@@ -33,7 +33,7 @@
 		function del() {
 			var con = confirm("정말로 탈퇴하시겠습니까?");
 			if (con) location.href = "memberDelete.do";
-			else alert("회원 탈퇴가 취소되었습니다")
+			else alert("회원 탈퇴가 취소되었습니다");
 		}
 	</script>
 </head>

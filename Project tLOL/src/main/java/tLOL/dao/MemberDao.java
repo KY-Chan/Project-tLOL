@@ -41,9 +41,18 @@ public class MemberDao {
 	public int delete(String member_id) {
 		return session.update("memberns.delete", member_id);
 	}
+	public int restore(String member_id) {
+		return session.update("memberns.restore", member_id);
+	}
+	public int getTotal() {
+		return (int) session.selectOne("memberns.total");
+	}
 	@SuppressWarnings("unchecked")
-	public List<Member> memberlist() {
-		return session.selectList("memberns.memberList");
+	public List<Member> memberlist(int startRow, int endRow) {
+		Map<String, Integer> parms = new HashMap<String, Integer>();
+		parms.put("startRow", startRow);
+		parms.put("endRow", endRow);
+		return session.selectList("memberns.memberList", parms);
 	}
 }
 

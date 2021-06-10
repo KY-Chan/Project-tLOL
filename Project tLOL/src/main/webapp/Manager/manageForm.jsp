@@ -20,21 +20,28 @@
 	<link href="../bootstrap/css/login.css" rel="stylesheet">	
 	
 	<script type="text/javascript">
-		function chk() {
-			if (frm.del.value == 1) {
-				var con = confirm("정말로 탈퇴시키시겠습니까?");
-				if (con) return true;
-				else {
-					alert("회원 탈퇴처리가 취소되었습니다")
-					return false;
-				}	
+		function del() {
+			var con = confirm("정말로 탈퇴 처리 하시겠습니까?");
+			if (con) location.href = "memberOut.do";
+			else {
+				alert("회원 탈퇴 처리가 취소되었습니다");
+				return;
+			}
+		}
+		
+		function res() {
+			var con = confirm("정말로 복구 처리 하시겠습니까?");
+			if (con) location.href = "memberRes.do";
+			else {
+				alert("회원 복구 처리가 취소되었습니다");
+				return;
 			}
 		}
 	</script>
 </head>
 <body>
 	<div class="col-10 bd-content">
-		<form action="memberOut.do" method="post" name="frm" onsubmit="return chk()">
+		<form method="post">
 			<table class="table table-hover text-white">
 				<tr class="table-primary">
 					<th>선택</th>
@@ -43,23 +50,28 @@
 					<th>닉네임</th>
 					<th>가입일</th>
 					<th>이메일</th>
-					<th>탈퇴여부</th>
+					<th>ID상태</th>
 				</tr>
 			
 				<c:forEach var="member" items="${memberlist}">
 					<tr>
-						<td><input type="checkbox" name="member_id" value="${member.member_id }"></td>
+						<td><c:if test="${member.member_admin eq 0}">
+							<input type="checkbox" name="member_id" value="${member.member_id }"></c:if></td>
 						<td>${member.member_num }</td>
 						<td>${member.member_id }</td>
 						<td>${member.member_nickname }</td>
 						<td>${member.member_reg_date }</td>
 						<td>${member.member_email }</td>
-						<td>${member.member_del }</td>
+						<td><c:choose>
+							<c:when test="${member.member_del eq 'y'}">탈퇴</c:when>
+							<c:when test="${member.member_del eq 'n'}">가입</c:when></c:choose></td>
 					<tr>	
 				</c:forEach>
 			</table>
-			<button class="mt-2 btn btn-danger btn-sm"  type="submit">회원삭제</button>
-			<button class="mt-2 btn btn-primary btn-sm" type="submit">회원복구</button>
+			<!--  <input type="submit" value="회원탈퇴"> -->
+
+		    <button class="mt-2 btn btn-danger btn-sm" onclick="del()">회원삭제</button>
+			<button class="mt-2 btn btn-primary btn-sm" onclick="res()">회원복구</button>
 		</form>
 	</div>
 </body>

@@ -6,13 +6,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Project.tLOL.gg memberRes</title>
 </head>
 <body>
 	<c:if test="${result > 0  }">
 		<script type="text/javascript">
 			alert(${result } + "명의 회원 복구 처리가 완료되었습니다.");
-			history.back();
+			location.href = document.referrer
 		</script>
 	</c:if>
 	<c:if test="${result == 0  }">
