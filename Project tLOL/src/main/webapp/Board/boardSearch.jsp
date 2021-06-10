@@ -9,9 +9,11 @@
 </head>
 <body>
 	<div class="col-10 bd-content">
-	<h2>${board_name }</h2>
+	<div class="mt-5 mb-5">
+		<font color="white"><h2>${board_name }</h2></font>
+	</div>
 	<table class="table table-hover">
-		<tr class="table-primary">
+		<tr class="table-dark">
 			<th>글번호</th>
 			<th>글제목</th>
 			<th>작성자</th>
@@ -21,15 +23,15 @@
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
-				<th colspan="6">게시글이 없습니다</th>
+				<th colspan="6"><font color="white">게시글이 없습니다</font></th>
 			</tr>
 		</c:if>
 		<c:if test="${not empty list }">
 			<c:forEach var="article" items="${list }">
 				<tr>
-					<td>${article.article_num }</td>
+					<td><font color="white">${article.article_num }</font></td>
 					<c:if test="${article.article_del == 'y' }">
-						<th colspan="6">삭제된 게시글 입니다</th>
+						<th colspan="6"><font color="white">삭제된 게시글 입니다</font></th>
 					</c:if>
 					<c:if test="${article.article_del != 'y' }">
 						<td title="${article.article_title }">
@@ -38,10 +40,10 @@
 						<c:if test="${article.article_read > 50 }">
 							<img alt="" src="images/hot.gif">
 						</c:if></td>
-						<td>${article.member_nickname }</td>
-						<td>${article.article_read}</td>
-						<td>${article.article_recom}</td>
-						<td>${article.article_date}</td>
+						<td><font color="white">${article.member_nickname }</font></td>
+						<td><font color="white">${article.article_read}</font></td>
+						<td><font color="white">${article.article_recom}</font></td>
+						<td><font color="white">${article.article_date}</font></td>
 					</c:if>
 				</tr>
 			</c:forEach>
@@ -65,14 +67,14 @@
 		</c:if>
 		<br><br>
 		<c:if test="${not empty member_id and board_num ne 1 or member_admin eq 1}">
-			<button class="btn btn-primary" onclick="location.href='articleWriteForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
+			<button class="btn btn-primary mb-3" onclick="location.href='articleWriteForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
 		</c:if>
 		<br>
 		<form action="boardSearch.do" method="get">
 			<input type="hidden" name="board_num" value="${board_num }">
 			<input type="hidden" name="board_name" value="${board_name }">
 			<input type="search" name="keyword" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
-			<input type="submit">
+			<input type="submit" class="btn btn-primary">
 		</form>
 	</div>
 	

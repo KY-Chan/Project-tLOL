@@ -22,8 +22,8 @@
 	<main class="form-signin">
 		<form method="post" action="login.do">
 		<input type="hidden" name="referer" value="${referer }">
-			<div class="mb-4 nav justify-content-center" onclick="location.href='../main.jsp'"><img src="../images/logo.png" alt=""></div>
-			<h1 class="h3 mb-3 mt-5 fw-normal">로그인</h1>
+			<div class="mb-4 nav justify-content-center" onclick="location.href='../main.jsp'"><img src="../images/logo-remove.png" alt=""></div>
+			<font color="white"><h1 class="h3 mb-3 mt-5 fw-normal">로그인</h1></font>
 			<div class="form-floating">
 				<input type="text" class="form-control" placeholder="아이디" name="member_id" required="required" autofocus="autofocus" maxlength="20">
 				<label for="floatingInput">ID</label>

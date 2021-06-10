@@ -17,10 +17,11 @@
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link href="/Project_tLOL/bootstrap/css/header.css" rel="stylesheet">
 	<link href="/Project_tLOL/bootstrap/css/sidebar.css" rel="stylesheet">
+	<link href="/Project_tLOL/bootstrap/css/darkmode.css" rel="stylesheet">
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
 	<!-- Custom styles for this template -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
+	<script src="https://kit.fontawesome.com/6cd41253e5.js" crossorigin="anonymous"></script>
 	<style>
 		.bd-placeholder-img {
 			font-size: 1.125rem;
@@ -62,7 +63,6 @@
 				<a class="navbar-brand" href="/Project_tLOL/main.jsp">
 					<img src="/Project_tLOL/images/logo-remove.png" alt="" width="230" height="100">
 				</a>
-				
 				<div class="p-2 bd-highlight">
 				    <form class="input-group">
 				      <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
@@ -128,7 +128,6 @@
 				<input type="search" class="mb-4 form-control form-control-dark" placeholder="게시판 검색..." aria-label="Search">
 				<button class="mb-4 btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
 			</form>
-			<div class="fs-5 fw-semibold">멀티서치??</div>
 			<ul class="list-unstyled ps-0">
 				<li class="border-top my-3"></li>
 				<li class="mb-1">
@@ -163,19 +162,6 @@
 							<li><a href="#" class="link-dark rounded text-white">matching</a></li>
 							<li><a href="#" class="link-dark rounded text-white">matching</a></li>
 							<li><a href="#" class="link-dark rounded text-white">matching</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="border-top my-3"></li>
-				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed text-white"
-						data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="true">blah blah</button>
-					<div class="collapse show" id="account-collapse">
-						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="#" class="link-dark rounded text-white">blah...</a></li>
-							<li><a href="#" class="link-dark rounded text-white">blah</a></li>
-							<li><a href="#" class="link-dark rounded text-white">blah</a></li>
-							<li><a href="#" class="link-dark rounded text-white">blah</a></li>
 						</ul>
 					</div>
 				</li>

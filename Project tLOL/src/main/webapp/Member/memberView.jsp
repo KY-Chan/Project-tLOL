@@ -22,6 +22,12 @@
 	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
 	<link href="../bootstrap/css/login.css" rel="stylesheet">	
+	<style>
+		label,
+		h2 {
+			color: white;
+		}
+	</style>
 </head>
 
 <body class="text-center bg-dark">
@@ -29,7 +35,7 @@
 		<form method="post" action="memberUpdate.do" name="frm" onsubmit="return chk()">	
 			<div class="row mb-3 align-items-center">
 				<div class="col form-floating">
-					<div class="mb-5" onclick="location.href='../main.jsp'"><img src="../images/logo.png" alt=""></div>
+					<div class="mb-5" onclick="location.href='../main.jsp'"><img src="../images/logo-remove.png" alt=""></div>
 				</div>
 			</div>
 			<div class="row align-items-center">
@@ -42,7 +48,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputId" class="col-sm-2 col-form-label">아이디</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" readonly class="form-control-plaintext" id="inputId" value="${member.member_id }">
+					<input type="text" readonly class="form-control" id="inputId" value="${member.member_id }">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
@@ -50,7 +56,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputNickname" class="col-sm-2 col-form-label">닉네임</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" readonly class="form-control-plaintext" id="inputNickname" value="${member.member_nickname }">
+					<input type="text" readonly class="form-control" id="inputNickname" value="${member.member_nickname }">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
@@ -58,7 +64,7 @@
 				<div class="col-sm-3"></div>
 				<label for="inputEmail" class="col-sm-2 col-form-label">이메일</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" readonly class="form-control-plaintext" id="inputEmail" value="${member.member_email }">
+					<input type="text" readonly class="form-control" id="inputEmail" value="${member.member_email }">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
@@ -66,11 +72,13 @@
 				<div class="col-sm-3"></div>
 				<label for="inputDate" class="col-sm-2 col-form-label">등록일</label>
 				<div class="col-sm-4 form-floating">
-					<input type="text" readonly class="form-control-plaintext" id="inputDate" value="${member.member_reg_date}">
+					<input type="text" readonly class="form-control" id="inputDate" value="${member.member_reg_date}">
 				</div>
 				<div class="col-sm-3"></div>
 			</div>
-			<div class="d-grid gap-2 col-5 mx-auto"><button class="btn btn-lg btn-primary" type="submit" onclick="location.href='../main.do'">메인화면으로 돌아가기</button></div><br>
+			<div class="d-grid gap-2 col-5 mx-auto">
+				<button class="btn btn-lg btn-primary" onclick="location.href='../main.jsp'">메인화면으로 돌아가기</button>
+			</div><br>
 			<p class="mt-2 text-muted">&copy; Project.tLOL.gg</p>
 		</form>
 	</div>	
