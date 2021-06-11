@@ -3,14 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<div class="col-10 bd-content">
+<div class="col-10 bd-content">
 	<div class="mt-5 mb-5">
-		<font color="white"><h2>${board_name }</h2></font>
+		<font color="white" size="6">${board_name }</font>
 	</div>
 	<table class="table table-hover">
 		<tr class="table-dark">
@@ -70,17 +65,15 @@
 			<button class="btn btn-primary mb-3" onclick="location.href='articleWriteForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
 		</c:if>
 		<br>
-		<form action="boardSearch.do" method="get">
-			<input type="hidden" name="board_num" value="${board_num }">
-			<input type="hidden" name="board_name" value="${board_name }">
-			<input type="search" name="keyword" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
-			<input type="submit" class="btn btn-primary mb-3">
-		</form>
+		<div class="p-2 bd-highlight" style="width:30%; min-width:20%;">
+			<form action="boardSearch.do" method="get" class="input-group">
+				<input type="hidden" name="board_num" value="${board_num }">
+				<input type="hidden" name="board_name" value="${board_name }">
+				<input type="search" pattern=".{2,}" required title="2 글자 이상 입력해주세요" name="keyword" class="form-control form-control-dark" placeholder="게시글 검색..." aria-label="Search">
+				<button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+			</form>
+		</div>
 	</div>
 	
-	</div>
-</body>
-
-<script src="../bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<script src="../bootstrap/js/sidebar.js"></script>	
+</div>
 </html>

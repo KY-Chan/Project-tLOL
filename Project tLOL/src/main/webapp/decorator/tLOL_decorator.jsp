@@ -124,9 +124,9 @@
 	<aside class="row flex-nowrap">
 		<!-- Sidebar -->
 		<div class="col-2 flex-shrink-0 p-3 bg-dark text-white" style="width: 220px; height: 1080px;">
-			<form class="input-group">
-				<input type="search" class="mb-4 form-control form-control-dark" placeholder="게시판 검색..." aria-label="Search">
-				<button class="mb-4 btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+			<form action="/Project_tLOL/Board/boardSearchAll.do" method="get" class="input-group">
+				 <input type="search" pattern=".{2,}" required title="2 글자 이상 입력해주세요" name="keyword" class="form-control form-control-dark" placeholder="전체 검색..." aria-label="Search">
+				 <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
 			</form>
 			<ul class="list-unstyled ps-0">
 				<li class="border-top my-3"></li>

@@ -5,7 +5,7 @@
 <html>
 <div class="col-10 bd-content">
 	<div class="mt-5 mb-5">
-		<font color="white"><h2>내가 쓴 댓글</h2></font>
+		<font color="white" size="6">내가 쓴 댓글</font>
 	</div>
 	<table class="table table-hover">
 		<tr class="table-dark">

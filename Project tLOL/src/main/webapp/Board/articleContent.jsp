@@ -3,8 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-<head>
-
 <script type="text/javascript" src="../bootstrap/js/jquery.js"></script>
 <script type="text/javascript">
 	function article_delete() {
@@ -16,11 +14,9 @@
 	}
 </script>
 
-</head>
-<body>
 <div class="col-10 bd-content">
 <div class="mt-5 mb-5">
-	<font color="white"><h2>${article.board_name }</h2></font>
+	<font color="white" size="6">${article.board_name }</font>
 </div>
 	<table class="table table-hover">
 		<tr class="table-dark"><th width="100">제목</th><td>${article.article_title }</td></tr>
@@ -93,5 +89,4 @@
 
 	</form>
 </div>
-</body>
 </html>

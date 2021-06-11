@@ -4,12 +4,14 @@
 <!DOCTYPE html>
 <html>
 	<div class="col-10 bd-content text-white">
-	<br>
-	<h2>전체 게시글 검색 결과</h2>
-	총 ${total } 개
-	<br>
-	<table id="board">
-		<tr class="table-primary">
+	<div class="mt-5 mb-5">
+		<font color="white" size="6">
+			전체 게시글 검색 결과
+		총 ${total } 건
+		</font>
+	</div>
+	<table class="table table-hover">
+		<tr class="table-dark">
 			<th style="width:10%;">게시판</th>
 			<th style="width:10%;">글번호</th>
 			<th style="width:30%;">글제목</th>
@@ -76,7 +78,4 @@
 	
 	</div>
 </body>
-
-<script src="../bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<script src="../bootstrap/js/sidebar.js"></script>	
 </html>
