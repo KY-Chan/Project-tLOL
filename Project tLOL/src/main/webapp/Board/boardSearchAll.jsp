@@ -6,8 +6,8 @@
 	<div class="col-10 bd-content text-white">
 	<div class="mt-5 mb-5">
 		<font color="white" size="6">
-			전체 게시글 검색 결과
-		총 ${total } 건
+			전체 게시글 검색 결과<br>
+			총 ${total } 건
 		</font>
 	</div>
 	<table class="table table-hover">
@@ -22,16 +22,16 @@
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
-				<td colspan="6">게시글이 없습니다</td>
+				<td colspan="6"><font color="white">게시글이 없습니다</font></td>
 			</tr>
 		</c:if>
 		<c:if test="${not empty list }">
 			<c:forEach var="article" items="${list }">
 				<tr>
-					<td>${article.board_name }</td>
-					<td>${article.article_num }</td>
+					<td><font color="white">${article.board_name }</font></td>
+					<td><font color="white">${article.article_num }</font></td>
 					<c:if test="${article.article_del == 'y' }">
-						<td colspan="6">삭제된 게시글 입니다</td>
+						<td colspan="6"><font color="white">삭제된 게시글 입니다</font></td>
 					</c:if>
 					<c:if test="${article.article_del != 'y' }">
 						<td title="${article.article_title }">
@@ -40,10 +40,10 @@
 						<c:if test="${article.article_read > 50 }">
 							<img alt="" src="images/hot.gif">
 						</c:if></td>
-						<td>${article.member_nickname }</td>
-						<td>${article.article_read}</td>
-						<td>${article.article_recom}</td>
-						<td>${article.article_date}</td>
+						<td><font color="white">${article.member_nickname }</font></td>
+						<td><font color="white">${article.article_read}</font></td>
+						<td><font color="white">${article.article_recom}</font></td>
+						<td><font color="white">${article.article_date}</font></td>
 					</c:if>
 				</tr>
 			</c:forEach>

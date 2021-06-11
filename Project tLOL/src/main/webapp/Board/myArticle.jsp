@@ -9,12 +9,12 @@
 	</div>
 	<table class="table table-hover">
 		<tr class="table-dark">
-			<th>게시판</th>
-			<th>글번호</th>
-			<th>글제목</th>
-			<th>조회수</th>
-			<th>추천수</th>
-			<th>작성일</th>
+			<th style="width:10%;">게시판</th>
+			<th style="width:10%;">글번호</th>
+			<th style="width:40%;">글제목</th>
+			<th style="width:10%;">조회수</th>
+			<th style="width:10%;">추천수</th>
+			<th style="width:20%;">작성일</th>
 		</tr>
 		<c:if test="${empty list }">
 			<tr>

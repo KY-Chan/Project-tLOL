@@ -9,11 +9,11 @@
 	</div>
 	<table class="table table-hover">
 		<tr class="table-dark">
-			<th>게시판</th>
-			<th>글번호</th>
-			<th>글제목</th>
-			<th>댓글내용</th>
-			<th>작성일</th>
+			<th style="width:10%;">게시판</th>
+			<th style="width:10%;">글번호</th>
+			<th style="width:20%;">글제목</th>
+			<th style="width:40%;">댓글내용</th>
+			<th style="width:20%;">작성일</th>
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
@@ -26,12 +26,13 @@
 					<td><font color="white">${comment.board_name }</font></td>
 					<td><font color="white">${comment.article_num }</font></td>
 					<c:if test="${comment.comment_del == 'y' }">
-						<th colspan="5"><font color="white">삭제된 댓글 입니다</font></th>
+						<th colspan="3"><font color="white">삭제된 댓글 입니다</font></th>
 					</c:if>
 					<c:if test="${comment.comment_del != 'y' }">
 						<td>
 							<a href="content.do?article_num=${comment.article_num}&board_num=${comment.board_num}">
-								${comment.article_title}</a>
+								${comment.article_title}
+							</a>
 						</td>
 						<td><font color="white">${comment.comment_content}</font></td>
 						<td><font color="white">${comment.comment_date}</font></td>

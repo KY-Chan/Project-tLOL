@@ -75,7 +75,7 @@
 			</tr>
 			<c:if test="${empty member_id }">
 				<tr>
-					<th colspan="5">로그인 후 댓글을 작성할 수 있습니다</th>
+					<th colspan="5"><font color="white">로그인 후 댓글을 작성할 수 있습니다</font></th>
 				</tr>
 			</c:if>
 			<c:if test="${not empty member_id }">
