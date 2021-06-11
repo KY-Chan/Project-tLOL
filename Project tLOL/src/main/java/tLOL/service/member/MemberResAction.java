@@ -7,17 +7,17 @@ import javax.servlet.http.HttpSession;
 import tLOL.dao.MemberDao;
 import tLOL.service.CommandProcess;
 
-public class MemberOutAction implements CommandProcess {
+public class MemberResAction implements CommandProcess {
 	@Override
-	public String requestPro(HttpServletRequest request, HttpServletResponse response) {		
+	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		String[] member_id = request.getParameterValues("chk_member_id");
 		MemberDao md = MemberDao.getInstance();
 		int result = 0;
 		for(String m : member_id) {
-			md.delete(m);
+			md.restore(m);
 			result += 1;
 		}
 		request.setAttribute("result", result);
-		return "memberOut";
+		return "memberRes";
 	}
 }

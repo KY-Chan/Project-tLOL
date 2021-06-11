@@ -1,5 +1,15 @@
 select * from member;
 insert into member values(1,'master','master','마왕', sysdate, 'aaa@nav.com', 'n', '1');
+insert into member values(4,'member3','1234','멤버3', sysdate, 'member3@aaa.com', 'n', '0');
+insert into member values(5,'member4','1234','멤버4', sysdate, 'member4@aaa.com', 'n', '0');
+insert into member values(6,'member5','1234','멤버5', sysdate, 'member5@aaa.com', 'n', '0');
+insert into member values(7,'member6','1234','멤버6', sysdate, 'member6@aaa.com', 'n', '0');
+insert into member values(8,'member7','1234','멤버7', sysdate, 'member7@aaa.com', 'n', '0');
+insert into member values(9,'member8','1234','멤버8', sysdate, 'member8@aaa.com', 'n', '0');
+insert into member values(10,'member9','1234','멤버9', sysdate, 'member9@aaa.com', 'n', '0');
+insert into member values(11,'member10','1234','멤버10', sysdate, 'member10@aaa.com', 'n', '0');
+insert into member values(12,'member11','1234','멤버11', sysdate, 'member11@aaa.com', 'n', '0');
+
 select * from article;
 insert into article values(1, 1, 1, '첫글', '첫글이다', sysdate, 0, 0, 'n');
 insert into article values(2, 1, 1, '뉴스첫글', '첫글이다', sysdate, 0, 0, 'n');

@@ -12,7 +12,7 @@
 				<input type="search" class="mb-4 form-control form-control-dark" placeholder="소환사명 검색..." aria-label="Search">	
 	    	</div>
 	    </div>
-	    <div class="row">
+	    <div class="row text-white">
 	    	 <h1 class="text-center">HOT 게시글</h1>
 	    </div>
 	</div> <!-- content end -->

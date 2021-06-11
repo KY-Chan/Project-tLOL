@@ -25,4 +25,21 @@
 	<update id="delete" parameterType="string">
 		update member set member_del='y' where member_id=#{member_id}
 	</update>
+	
+	<!-- restore, del컬럼 값을 n로 수정 y=탈퇴한회원, n=탈퇴하지않은회원 -->
+	<update id="restore" parameterType="string">
+		update member set member_del='n' where member_id=#{member_id}
+	</update>
+	
+	<!-- 회원 총 수 -->
+	<select id="total" resultType="int">
+		select count(*) from member
+	</select>
+	
+	<!-- list, 회원전체 리스트 -->
+	<select id="memberList" parameterType="map" resultType="member">
+		select * from (select rowNum rn, a.* from
+		(select * from member order by member_num desc) a)
+		where rn between ${startRow} and ${endRow}
+	</select>
 </mapper> 

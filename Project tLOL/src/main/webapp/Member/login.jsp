@@ -18,7 +18,7 @@
 	</c:if>
 	<c:if test="${result == 1 }">
 		<script type="text/javascript">
-			alert("환영합니다");
+			alert("환영합니다!");
 			location.href = "${referer}";
 		</script>
 	</c:if>
