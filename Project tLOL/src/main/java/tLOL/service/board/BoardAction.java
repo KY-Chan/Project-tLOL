@@ -16,26 +16,25 @@ public class BoardAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		ArticleDao ad = ArticleDao.getInstance();
-		
 		final int ROW_PER_PAGE = 10;
 		final int PAGE_PER_BLOCK = 10;
 		
 		String tmp_board_num = request.getParameter("board_num");
-		String keyword = request.getParameter("keyword");
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals(""))
 			pageNum = "1";
 		int currentPage = Integer.parseInt(pageNum);
 		
+		ArticleDao ad = ArticleDao.getInstance();
+		
 		if(tmp_board_num == null || tmp_board_num.equals("")) { // 내가 쓴 글
 			HttpSession session = request.getSession();
-		    if (session == null || session.getAttribute("account_num") == null ) {
+		    if (session == null || session.getAttribute("member_num") == null ) {
 		    	return "../sessionChk";
 		    } 
 			
-			int account_num = Integer.parseInt(request.getParameter("account_num"));
-			int total = ad.getMyTotal(account_num);
+			int member_num = Integer.parseInt(request.getParameter("member_num"));
+			int total = ad.getMyTotal(member_num);
 			
 			int startRow = (currentPage - 1) * ROW_PER_PAGE + 1;
 			int endRow = startRow + ROW_PER_PAGE - 1;
@@ -46,7 +45,7 @@ public class BoardAction implements CommandProcess {
 			if (endPage > totalPage)
 				endPage = totalPage;
 			
-			List<Article> list = ad.myList(startRow, endRow, account_num);
+			List<Article> list = ad.myList(startRow, endRow, member_num);
 			
 			request.setAttribute("list", list);
 			request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);
@@ -78,7 +77,6 @@ public class BoardAction implements CommandProcess {
 
 			request.setAttribute("list", list);
 			request.setAttribute("board_name", board_name);
-			request.setAttribute("keyword", keyword);
 			request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);
 			request.setAttribute("number", number);
 			request.setAttribute("currentPage", currentPage);

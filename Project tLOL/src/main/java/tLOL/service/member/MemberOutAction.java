@@ -32,7 +32,7 @@ public class MemberOutAction {
 	MemberDao md = MemberDao.getInstance();
 /*	
 	while() {
-		int result = md.delete(account_id);
+		int result = md.delete(member_id);
 	}
 	*/
 }

@@ -4,13 +4,35 @@
 <mapper namespace="articlens">
 	<select id="selectList" parameterType="map" resultType="article">
 		select *
-		from (select rowNum rn, e.* from (select ar.*, ac.account_nickname
-		from article ar, accounts ac where board_num=${board_num} and
-		ar.account_num = ac.account_num order by article_num desc) e) where rn
-		between ${startRow} and ${endRow}
+		from (select rowNum rn, e.* from (select ar.*, ac.member_nickname
+		from
+		article ar, member ac where board_num=${board_num} and
+		ar.member_num =
+		ac.member_num order by article_num desc) e) where rn
+		between
+		${startRow} and ${endRow}
 	</select>
-	<select id="selectMyList" parameterType="map" resultType="article">
-		select * from (select rowNum rn, e.* from (select a.*, null, b.board_name from article a, board b where account_num=${account_num} and a.board_num = b.board_num order by article_date desc) e) where rn between ${startRow} and ${endRow}
+	<select id="selectMyList" parameterType="map"
+		resultType="article">
+		select * from (select rowNum rn, e.* from (select a.*,
+		null, b.board_name from article a, board b where
+		member_num=${member_num} and a.board_num = b.board_num order by
+		article_date desc) e) where rn between ${startRow} and ${endRow}
+	</select>
+	<select id="selectSearchList" parameterType="map"
+		resultType="article">
+		select *
+		from (select rowNum rn, e.* from (select ar.*,
+		ac.member_nickname
+		from
+		article ar, member ac where
+		board_num=${board_num} and
+		ar.member_num =
+		ac.member_num and
+		(article_title like ${keyword} or article_content like ${keyword})
+		order by article_num desc) e) where rn
+		between
+		${startRow} and ${endRow}
 	</select>
 	<select id="total" parameterType="int" resultType="int">
 		select
@@ -18,7 +40,12 @@
 	</select>
 	<select id="myTotal" parameterType="int" resultType="int">
 		select
-		count(*) from article where account_num=#{account_num}
+		count(*) from article where member_num=#{member_num}
+	</select>
+	<select id="searchTotal" parameterType="map" resultType="int">
+		select
+		count(*) from article where member_num=${member_num} and
+		(article_title like ${keyword} or article_content like ${keyword})
 	</select>
 	<update id="readcount" parameterType="map">
 		update article set
@@ -26,23 +53,33 @@
 		article_num = ${ article_num}
 	</update>
 	<select id="select" parameterType="map" resultType="article">
-
-		select ar.*, ac.account_nickname, b.board_name from article ar, accounts ac, board b where ar.board_num = ${ board_num} and ar.article_num = ${ article_num} and ac.account_num = ar.account_num and ar.board_num = b.board_num
+		select ar.*,
+		ac.member_nickname, b.board_name from article ar, member ac, board b
+		where ar.board_num = ${ board_num} and ar.article_num = ${
+		article_num} and ac.member_num = ar.member_num and ar.board_num =
+		b.board_num
 	</select>
-	<insert id="insert" parameterType="article" >
-		<selectKey keyProperty="article_num" order="BEFORE" resultType="integer">
-			select nvl(max(article_num), 0) + 1 article_num from article where board_num=#{board_num}
+	<insert id="insert" parameterType="article">
+		<selectKey keyProperty="article_num" order="BEFORE"
+			resultType="integer">
+			select nvl(max(article_num), 0) + 1 article_num from
+			article where board_num=#{board_num}
 		</selectKey>
 		insert into article values(#{board_num}, #{article_num},
-		#{account_num}, #{article_title}, #{article_content}, sysdate, 0, 0
+		#{member_num}, #{article_title}, #{article_content}, to_char(sysdate,
+		'RRRR.MM.DD HH24:MI:SS'), 0, 0
 		,'n')
 	</insert>
-   	<update id="update" parameterType="map">
-   		update article set article_title = '${article_title}', article_content = '${article_content}'
-   		where article_num = ${article_num} and board_num = ${board_num}
-   	</update>
-   	<update id="delete" parameterType="map">
-   		update article set article_del = 'y'
-   		where article_num = ${article_num} and board_num = ${board_num}
-   	</update>
+	<update id="update" parameterType="map">
+		update article set
+		article_title = '${article_title}', article_content =
+		'${article_content}'
+		where article_num = ${article_num} and board_num =
+		${board_num}
+	</update>
+	<update id="delete" parameterType="map">
+		update article set article_del
+		= 'y'
+		where article_num = ${article_num} and board_num = ${board_num}
+	</update>
 </mapper> 
