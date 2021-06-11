@@ -17,14 +17,12 @@
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link href="/Project_tLOL/bootstrap/css/header.css" rel="stylesheet">
 	<link href="/Project_tLOL/bootstrap/css/sidebar.css" rel="stylesheet">
+	<link href="/Project_tLOL/bootstrap/css/darkmode.css" rel="stylesheet">
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
 	<!-- Custom styles for this template -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
+	<script src="https://kit.fontawesome.com/6cd41253e5.js" crossorigin="anonymous"></script>
 	<style>
-		.table-hover tr:hover td {
-  		  background: #CCCCCC;
-		}
 		.bd-placeholder-img {
 			font-size: 1.125rem;
 			text-anchor: middle;
@@ -55,7 +53,7 @@
 		    line-height: 1.5;
 		    font-size: 11px;
 		}
-	</style>
+	</style>    
 </head>
 
 <body style="background-image: url('/Project_tLOL/images/background.png')">
@@ -126,11 +124,10 @@
 	<aside class="row flex-nowrap">
 		<!-- Sidebar -->
 		<div class="col-2 flex-shrink-0 p-3 bg-dark text-white" style="width: 220px; height: 1080px;">
-				<form action="/Project_tLOL/Board/boardSearchAll.do" method="get" class="input-group">
-				   	<input type="search" pattern=".{2,}" required title="2 글자 이상 입력해주세요" name="keyword" class="form-control form-control-dark" placeholder="전체 검색..." aria-label="Search">
-				    <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
-				</form>
-			<div class="fs-5 fw-semibold">멀티서치??</div>
+			<form class="input-group">
+				<input type="search" class="mb-4 form-control form-control-dark" placeholder="게시판 검색..." aria-label="Search">
+				<button class="mb-4 btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+			</form>
 			<ul class="list-unstyled ps-0">
 				<li class="border-top my-3"></li>
 				<li class="mb-1">
@@ -168,19 +165,6 @@
 						</ul>
 					</div>
 				</li>
-				<li class="border-top my-3"></li>
-				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed text-white"
-						data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="true">blah blah</button>
-					<div class="collapse show" id="account-collapse">
-						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="#" class="link-dark rounded text-white">blah...</a></li>
-							<li><a href="#" class="link-dark rounded text-white">blah</a></li>
-							<li><a href="#" class="link-dark rounded text-white">blah</a></li>
-							<li><a href="#" class="link-dark rounded text-white">blah</a></li>
-						</ul>
-					</div>
-				</li>
 			</ul>
 		</div>
 		<!-- sidebar end -->
@@ -188,9 +172,6 @@
 		
 			<deco:body></deco:body>
 			
-			<script type="text/javascript">
-				document.getElementById("board").className = "table table-hover text-white";
-			</script>
 	     <!-- content end -->
 	</aside>
 	<footer class="bg-dark text-white">
