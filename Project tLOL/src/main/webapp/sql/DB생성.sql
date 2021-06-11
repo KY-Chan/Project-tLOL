@@ -85,6 +85,29 @@ CREATE TABLE RecentID
 ALTER TABLE RecentID
  ADD CONSTRAINT RecentID_PK PRIMARY KEY ( member_num );
 
+CREATE TABLE ArticleRecom
+(
+    member_num    NUMBER NOT NULL,
+    board_num    NUMBER NOT NULL,
+    article_num    NUMBER NOT NULL
+);
+
+ALTER TABLE ArticleRecom
+ ADD CONSTRAINT 엔터티1_PK PRIMARY KEY ( member_num,board_num,article_num );
+
+
+CREATE TABLE CommentsRecom
+(
+    member_num    NUMBER NOT NULL,
+    board_num    NUMBER NOT NULL,
+    article_num    NUMBER NOT NULL,
+    comment_num    NUMBER NOT NULL
+);
+
+ALTER TABLE CommentsRecom
+ ADD CONSTRAINT 엔터티1_PK1 PRIMARY KEY ( member_num,board_num,article_num,comment_num );
+
+
 
 insert into board values(1, '공지사항');
 insert into board values(2, '뉴스');

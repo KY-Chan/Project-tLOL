@@ -28,6 +28,7 @@
 	</table>
 	<div align="center"><br>
 		<c:if test="${member_num eq article.member_num or member_admin eq 1}">
+			<button class="btn btn-primary" onclick="location.href='articleRecom.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">추천</button>
 			<button class="btn btn-primary" onclick="location.href='articleUpdateForm.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">수정</button> 
 			<button class="btn btn-primary" onclick="article_delete()">삭제</button> 
 		</c:if>
@@ -67,6 +68,9 @@
 								<td><font color="white">${comment.comment_date}</font></td>
 								<c:if test="${member_num eq comment.member_num or member_admin eq 1}">
 									<td><a href="commentDelete.do?comment_num=${comment.comment_num }&article_num=${article_num }&board_num=${board_num}&pageNum=${pageNum }">삭제</a></td>
+								</c:if>
+								<c:if test="${member_num ne comment.member_num and member_admin ne 1}">
+									<td></td>
 								</c:if>
 							</c:if>
 						</tr>
