@@ -111,4 +111,14 @@ public class ArticleDao {
 		parms.put("endRow", endRow);
 		return session.selectList("articlens.selectSearchAllList", parms);
 	}
+	public int getManageTotal() {
+		return (int) session.selectOne("articlens.manageTotal");
+	}
+	@SuppressWarnings("unchecked")
+	public List<Article> manageList(int startRow, int endRow) {
+		Map<String, Integer> parms = new HashMap<String, Integer>();
+		parms.put("startRow", startRow);
+		parms.put("endRow", endRow);
+		return session.selectList("articlens.selectManageList", parms);
+	}	
 }
