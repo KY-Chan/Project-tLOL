@@ -5,13 +5,14 @@
 <html>
 	<div class="col-10 bd-content text-white">
 	<br>
-	<h2>${board_name } 검색 결과</h2>
+	<h2>전체 게시글 검색 결과</h2>
 	총 ${total } 개
 	<br>
 	<table id="board">
 		<tr class="table-primary">
+			<th style="width:10%;">게시판</th>
 			<th style="width:10%;">글번호</th>
-			<th style="width:40%;">글제목</th>
+			<th style="width:30%;">글제목</th>
 			<th style="width:10%;">작성자</th>
 			<th style="width:10%;">조회수</th>
 			<th style="width:10%;">추천수</th>
@@ -25,6 +26,7 @@
 		<c:if test="${not empty list }">
 			<c:forEach var="article" items="${list }">
 				<tr>
+					<td>${article.board_name }</td>
 					<td>${article.article_num }</td>
 					<c:if test="${article.article_del == 'y' }">
 						<td colspan="6">삭제된 게시글 입니다</td>
@@ -53,24 +55,20 @@
 			<c:set var="boardAndKey" value="board_num=${board_num }"></c:set>
 		</c:if>
 		<c:if test="${startPage > PAGE_PER_BLOCK}">
-			<button class="btn btn-primary" onclick="location.href='boardSearch.do?${boardAndKey }&pageNum=${startPage - 1}'">이전</button>
+			<button class="btn btn-primary" onclick="location.href='boardSearchAll.do?${boardAndKey }&pageNum=${startPage - 1}'">이전</button>
 		</c:if>
 		<c:forEach var="i" begin="${startPage}" end="${endPage}">
-			<button class="btn btn-primary" onclick="location.href='boardSearch.do?${boardAndKey }&pageNum=${i}'">${i }</button>
+			<button class="btn btn-primary" onclick="location.href='boardSearchAll.do?${boardAndKey }&pageNum=${i}'">${i }</button>
 		</c:forEach>
 		<c:if test="${endPage < totalPage}">
-			<button class="btn btn-primary" onclick="location.href='boardSearch.do?${boardAndKey }&pageNum=${endPage + 1}'">다음</button>
-		</c:if>
-		<br><br>
-		<c:if test="${not empty member_id and board_num ne 1 or member_admin eq 1}">
-			<button class="btn btn-primary" onclick="location.href='articleWriteForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
+			<button class="btn btn-primary" onclick="location.href='boardSearchAll.do?${boardAndKey }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
 		<br>	
 		<div class="p-2 bd-highlight" style="width:30%; min-width:20%;">
-			<form action="boardSearch.do" method="get" class="input-group">
+			<form action="boardSearchAll.do" method="get" class="input-group">
 				<input type="hidden" name="board_num" value="${board_num }">
 				<input type="hidden" name="board_name" value="${board_name }">
-				<input type="search" pattern=".{2,}" required title="2 글자 이상 입력해주세요" name="keyword" class="form-control form-control-dark" placeholder="게시글 검색..." aria-label="Search">
+				<input type="search" pattern=".{2,}" required title="2 글자 이상 입력해주세요" name="keyword" class="form-control form-control-dark" placeholder="전체 게시글 검색..." aria-label="Search">
 				<button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
 			</form>
 		</div>

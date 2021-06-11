@@ -13,7 +13,8 @@
 		}
 	}
 </script>
-<div class="col-10 bd-content">
+<div class="col-10 bd-content text-white">
+	<br>
 	<h2>${article.board_name }</h2>
 	<table class="table table-hover">
 		<tr class="table-primary"><th width="100">제목</th><td>${article.article_title }</td></tr>
@@ -25,10 +26,10 @@
 	</table>
 	<div align="center"><br>
 		<c:if test="${member_num eq article.member_num or member_admin eq 1}">
-			<button onclick="location.href='articleUpdateForm.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">수정</button> 
-			<button onclick="article_delete()">삭제</button> 
+			<button class="btn btn-primary" onclick="location.href='articleUpdateForm.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">수정</button> 
+			<button class="btn btn-primary" onclick="article_delete()">삭제</button> 
 		</c:if>
-		<button onclick="location.href='board.do?board_num=${board_num }&pageNum=${pageNum}'">게시글 목록</button>
+		<button class="btn btn-primary" onclick="location.href='board.do?board_num=${board_num }&pageNum=${pageNum}'">게시글 목록</button>
 	</div>
 	<br><br>
 	<div id="disp"></div>
@@ -37,13 +38,13 @@
 		<input type="hidden" name="board_num" value="${board_num }">
 		<input type="hidden" name="article_num" value="${article_num }">
 		<input type="hidden" name="pageNum" value="${pageNum }">
-		<table class="table table-hover">
+		<table class="table text-white">
 			<tr class="table-primary">
-				<th style="width: 10%">작성자</th>
-				<th style="width: 50%">내용</th>
-				<th style="width: 10%">추천수</th>
-				<th style="width: 20%">작성일</th>
-				<th style="width: 10%"></th>
+				<th style="width: 10%;">작성자</th>
+				<th style="width: 50%;">내용</th>
+				<th style="width: 10%;">추천수</th>
+				<th style="width: 20%;">작성일</th>
+				<th style="width: 10%;"></th>
 			</tr>
 			<tr>
 				<c:if test="${empty list }">
@@ -55,7 +56,7 @@
 					<c:forEach var="comment" items="${list }">
 						<tr>
 							<c:if test="${comment.comment_del == 'y' }">
-								<th colspan="5">삭제된 댓글 입니다</th>
+								<td colspan="5">삭제된 댓글 입니다</td>
 							</c:if>
 							<c:if test="${comment.comment_del != 'y' }">
 								<td>${comment.member_nickname }</td>
@@ -78,8 +79,8 @@
 			<c:if test="${not empty member_id }">
 				<tr>
 					<th>${member_nickname }</th>
-					<th colspan="3"><textarea style="resize: none; box-sizing: border-box; width: 100%" name="comment_content" required="required"></textarea></th>
-					<th><input type="submit" value="확인"></th>
+					<th colspan="3"><textarea style="box-sizing: border-box; width: 100%" name="comment_content" required="required"></textarea></th>
+					<th><input class="btn btn-primary" type="submit" value="확인"></th>
 				</tr>
 			</c:if>
 		</table>

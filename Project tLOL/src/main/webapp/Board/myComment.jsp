@@ -3,19 +3,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<div class="col-10 bd-content">
+<div class="col-10 bd-content text-white">
+	<br>
 	<h2>내가 쓴 댓글</h2>
-	<table class="table table-hover">
+	<table id="board">
 		<tr class="table-primary">
-			<th>게시판</th>
-			<th>글번호</th>
-			<th>글제목</th>
-			<th>댓글내용</th>
-			<th>작성일</th>
+			<th style="width:10%;">게시판</th>
+			<th style="width:10%;">글번호</th>
+			<th style="width:20%;">글제목</th>
+			<th style="width:40%;">댓글내용</th>
+			<th style="width:20%;">작성일</th>
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
-				<th colspan="5">게시글이 없습니다</th>
+				<td colspan="5">게시글이 없습니다</td>
 			</tr>
 		</c:if>
 		<c:if test="${not empty list }">
@@ -24,7 +25,7 @@
 					<td>${comment.board_name }</td>
 					<td>${comment.article_num }</td>
 					<c:if test="${comment.comment_del == 'y' }">
-						<th colspan="5">삭제된 댓글 입니다</th>
+						<td colspan="5">삭제된 댓글 입니다</td>
 					</c:if>
 					<c:if test="${comment.comment_del != 'y' }">
 						<td>
@@ -40,13 +41,13 @@
 	</table>
 	<div align="center">
 		<c:if test="${startPage > PAGE_PER_BLOCK}">
-			<button onclick="location.href='myComment.do?member_num=${member_num }&pageNum=${startPage - 1}'">이전</button>
+			<button class="btn btn-primary" onclick="location.href='myComment.do?member_num=${member_num }&pageNum=${startPage - 1}'">이전</button>
 		</c:if>
 		<c:forEach var="i" begin="${startPage}" end="${endPage}">
-			<button onclick="location.href='myComment.do?member_num=${member_num }&pageNum=${i}'">${i }</button>
+			<button class="btn btn-primary" onclick="location.href='myComment.do?member_num=${member_num }&pageNum=${i}'">${i }</button>
 		</c:forEach>
 		<c:if test="${endPage < totalPage}">
-			<button onclick="location.href='myComment.do?member_num=${member_num }&pageNum=${endPage + 1}'">다음</button>
+			<button class="btn btn-primary" onclick="location.href='myComment.do?member_num=${member_num }&pageNum=${endPage + 1}'">다음</button>
 		</c:if>
 	</div>
 </div>

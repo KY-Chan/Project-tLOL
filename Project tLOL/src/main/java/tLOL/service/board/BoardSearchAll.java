@@ -10,24 +10,21 @@ import tLOL.dao.BoardDao;
 import tLOL.model.Article;
 import tLOL.service.CommandProcess;
 
-public class BoardSearch implements CommandProcess {
+public class BoardSearchAll implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		final int ROW_PER_PAGE = 10;
 		final int PAGE_PER_BLOCK = 10;
 
-		String tmp_board_num = request.getParameter("board_num");
-		String board_name = request.getParameter("board_name");
 		String keyword = request.getParameter("keyword");
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals(""))
 			pageNum = "1";
 		int currentPage = Integer.parseInt(pageNum);
-		int board_num = Integer.parseInt(tmp_board_num);
 		
 		ArticleDao ad = ArticleDao.getInstance();
-		int total = ad.getSearchTotal(board_num, keyword);
+		int total = ad.getSearchAllTotal(keyword);
 
 		int startRow = (currentPage - 1) * ROW_PER_PAGE + 1;
 		int endRow = startRow + ROW_PER_PAGE - 1;
@@ -38,8 +35,7 @@ public class BoardSearch implements CommandProcess {
 		if (endPage > totalPage)
 			endPage = totalPage;
 
-		List<Article> list = ad.searchList(startRow, endRow, board_num, keyword);
-
+		List<Article> list = ad.searchAllList(startRow, endRow, keyword);
 		request.setAttribute("list", list);
 		request.setAttribute("total", total);
 		request.setAttribute("keyword", keyword);
@@ -49,9 +45,7 @@ public class BoardSearch implements CommandProcess {
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totalPage", totalPage);
-		request.setAttribute("board_num", board_num);
-		request.setAttribute("board_name", board_name);
-		return "boardSearch";
+		return "boardSearchAll";
 	}
 
 }

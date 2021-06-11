@@ -27,8 +27,25 @@
 		from
 		article ar, member ac where
 		board_num=${board_num} and
+		article_del = 'n' and
 		ar.member_num =
 		ac.member_num and
+		(article_title like ${keyword} or article_content like ${keyword})
+		order by article_num desc) e) where rn
+		between
+		${startRow} and ${endRow}
+	</select>
+	<select id="selectSearchAllList" parameterType="map"
+		resultType="article">
+		select *
+		from (select rowNum rn, e.* from (select ar.*,
+		ac.member_nickname, b.board_name
+		from
+		article ar, member ac, board b where
+		ar.member_num =
+		ac.member_num and
+		article_del = 'n' and
+		ar.board_num = b.board_num and
 		(article_title like ${keyword} or article_content like ${keyword})
 		order by article_num desc) e) where rn
 		between
@@ -44,7 +61,12 @@
 	</select>
 	<select id="searchTotal" parameterType="map" resultType="int">
 		select
-		count(*) from article where member_num=${member_num} and
+		count(*) from article where board_num=${board_num} and article_del = 'n' and
+		(article_title like ${keyword} or article_content like ${keyword})
+	</select>
+	<select id="searchAllTotal" parameterType="map" resultType="int">
+		select
+		count(*) from article where article_del = 'n' and
 		(article_title like ${keyword} or article_content like ${keyword})
 	</select>
 	<update id="readcount" parameterType="map">

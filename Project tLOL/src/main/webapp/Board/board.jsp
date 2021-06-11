@@ -3,25 +3,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<div class="col-10 bd-content">
+	<div class="col-10 bd-content text-white">
+	<br>
 	<h2>${board_name }</h2>
-	<table class="table table-hover">
+	<table id="board">
 		<tr class="table-primary">
-			<th>글번호</th>
-			<th>글제목</th>
-			<th>작성자</th>
-			<th>조회수</th>
-			<th>추천수</th>
-			<th>작성일</th>
+			<th style="width:10%;">글번호</th>
+			<th style="width:40%;">글제목</th>
+			<th style="width:10%;">작성자</th>
+			<th style="width:10%;">조회수</th>
+			<th style="width:10%;">추천수</th>
+			<th style="width:20%;">작성일</th>
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
-				<th colspan="6">게시글이 없습니다</th>
+				<td colspan="6">게시글이 없습니다</td>
 			</tr>
 		</c:if>
 		<c:if test="${not empty list }">
@@ -29,7 +25,7 @@
 				<tr>
 					<td>${article.article_num }</td>
 					<c:if test="${article.article_del == 'y' }">
-						<th colspan="6">삭제된 게시글 입니다</th>
+						<td colspan="6">삭제된 게시글 입니다</td>
 					</c:if>
 					<c:if test="${article.article_del != 'y' }">
 						<td title="${article.article_title }">
@@ -68,16 +64,17 @@
 			<button class="btn btn-primary" onclick="location.href='articleWriteForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
 		</c:if>
 		<br>
-		<form action="boardSearch.do" method="get">
-			<input type="hidden" name="board_num" value="${board_num }">
-			<input type="hidden" name="board_name" value="${board_name }">
-			<input type="search" name="keyword" class="mb-4 form-control" placeholder="게시판 검색..." aria-label="Search">
-			<input type="submit">
-		</form>
+		<div class="p-2 bd-highlight" style="width:30%; min-width:20%;">
+			<form action="boardSearch.do" method="get" class="input-group">
+				<input type="hidden" name="board_num" value="${board_num }">
+				<input type="hidden" name="board_name" value="${board_name }">
+				<input type="search" pattern=".{2,}" required title="2 글자 이상 입력해주세요" name="keyword" class="form-control form-control-dark" placeholder="게시글 검색..." aria-label="Search">
+				<button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+			</form>
+		</div>
 	</div>
 	
 	</div>
-</body>
 
 <script src="../bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <script src="../bootstrap/js/sidebar.js"></script>	

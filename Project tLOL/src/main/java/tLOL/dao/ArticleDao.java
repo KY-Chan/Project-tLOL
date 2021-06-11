@@ -98,4 +98,17 @@ public class ArticleDao {
 		parms.put("article_num", article_num);
 		return session.update("articlens.delete", parms);
 	}
+	public int getSearchAllTotal(String keyword) {
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("keyword", "'%" + keyword + "%'");
+		return (int) session.selectOne("articlens.searchAllTotal", parms);
+	}
+	@SuppressWarnings("unchecked")
+	public List<Article> searchAllList(int startRow, int endRow, String keyword) {
+		Map<String, Object> parms = new HashMap<String, Object>();
+		parms.put("keyword", "'%" + keyword + "%'");
+		parms.put("startRow", startRow);
+		parms.put("endRow", endRow);
+		return session.selectList("articlens.selectSearchAllList", parms);
+	}
 }

@@ -22,6 +22,9 @@
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<style>
+		.table-hover tr:hover td {
+  		  background: #CCCCCC;
+		}
 		.bd-placeholder-img {
 			font-size: 1.125rem;
 			text-anchor: middle;
@@ -52,7 +55,7 @@
 		    line-height: 1.5;
 		    font-size: 11px;
 		}
-	</style>    
+	</style>
 </head>
 
 <body style="background-image: url('/Project_tLOL/images/background.png')">
@@ -123,10 +126,10 @@
 	<aside class="row flex-nowrap">
 		<!-- Sidebar -->
 		<div class="col-2 flex-shrink-0 p-3 bg-dark text-white" style="width: 220px; height: 1080px;">
-			<form class="input-group">
-				<input type="search" class="mb-4 form-control form-control-dark" placeholder="게시판 검색..." aria-label="Search">
-				<button class="mb-4 btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
-			</form>
+				<form action="/Project_tLOL/Board/boardSearchAll.do" method="get" class="input-group">
+				   	<input type="search" pattern=".{2,}" required title="2 글자 이상 입력해주세요" name="keyword" class="form-control form-control-dark" placeholder="전체 검색..." aria-label="Search">
+				    <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+				</form>
 			<div class="fs-5 fw-semibold">멀티서치??</div>
 			<ul class="list-unstyled ps-0">
 				<li class="border-top my-3"></li>
@@ -185,6 +188,9 @@
 		
 			<deco:body></deco:body>
 			
+			<script type="text/javascript">
+				document.getElementById("board").className = "table table-hover text-white";
+			</script>
 	     <!-- content end -->
 	</aside>
 	<footer class="bg-dark text-white">
