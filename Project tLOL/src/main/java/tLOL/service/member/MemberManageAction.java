@@ -12,9 +12,12 @@ public class MemberManageAction implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-	    if (session == null || session.getAttribute("member_admin") == null) {
+	    if (session == null || session.getAttribute("member_id") == null) {
 	    	return "../sessionChk";
-	    } 
+	    }
+	    if ((int)session.getAttribute("member_admin") == 0)
+	    	return "../sessionChk";
+	    
 		MemberDao md = MemberDao.getInstance();
 		final int ROW_PER_PAGE = 10;
 		final int PAGE_PER_BLOCK = 10;
