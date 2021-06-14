@@ -20,7 +20,6 @@ public class ArticleWrite implements CommandProcess {
 		// mybatis 구현하고 -> content, boardAction 참고
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		String pageNum = request.getParameter("pageNum");
-		File file = request.get
 		
 		
 		String article_title = request.getParameter("article_title");

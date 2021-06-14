@@ -6,18 +6,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
+<script type="text/javascript" src="../bootstrap/js/jquery.js"></script>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 <script type="text/javascript">
-	function chk() {
-		if (frm.password.value != frm.confirmPass.value) {
-			alert("암호와 암호 확인이 다릅니다");
-			frm.password.focus();
-			frm.password.value = "";
-			return false;
-		}
-	}
+	$(document).ready(function() {
+		  $('#summernote').summernote();
+	});
 </script>
-<body>
 <div class="col-sm-10 bd-content">
+<div id="summernote"></div> 
+
 <form action="articleWrite.do" method="post" name="frm"
 	onsubmit="return chk()">
 	<input type="hidden" name="board_num" value="${board_num}">
@@ -51,5 +50,4 @@
 	</table>
 </form>
 </div>
-</body>
 </html>

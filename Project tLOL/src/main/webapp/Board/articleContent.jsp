@@ -6,7 +6,6 @@
 <html>
 <jsp:useBean id="recom" class="tLOL.service.article.ArticleRecom" scope="session"/>
 <script type="text/javascript" src="../bootstrap/js/jquery.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 	function article_delete() {
 		if(confirm("정말 삭제하시겠습니까?") == true) {
