@@ -1,6 +1,7 @@
 package tLOL.service.board;
 
 import java.util.List;
+import java.util.regex.Matcher;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -74,7 +75,19 @@ public class BoardAction implements CommandProcess {
 				endPage = totalPage;
 
 			List<Article> list = ad.list(startRow, endRow, board_num);
-
+			
+			//for test thumbnail
+			for(Article ar : list) {
+				String content = ar.getArticle_content();
+				int s_start = content.indexOf("<img");
+				if(s_start >=0) {
+					int s_end = content.indexOf(">", s_start) + 1;
+					ar.setArticle_content(content.substring(s_start, s_end));
+				}
+				else
+					ar.setArticle_content("");
+			}
+			
 			request.setAttribute("list", list);
 			request.setAttribute("board_name", board_name);
 			request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);

@@ -10,7 +10,8 @@
 	<table class="table table-hover">
 		<tr class="table-dark">
 			<th style="width:10%;">글번호</th>
-			<th style="width:40%;">글제목</th>
+			<th style="width:10%;">썸네일</th>
+			<th style="width:30%;">글제목</th>
 			<th style="width:10%;">작성자</th>
 			<th style="width:10%;">조회수</th>
 			<th style="width:10%;">추천수</th>
@@ -29,6 +30,7 @@
 						<th colspan="6"><font color="white">삭제된 게시글 입니다</font></th>
 					</c:if>
 					<c:if test="${article.article_del != 'y' }">
+						<td><div style="max-height:100%">${article.article_content }</div></td>
 						<td title="${article.article_title }">
 						<a href="content.do?article_num=${article.article_num}&board_num=${article.board_num}&pageNum=${currentPage }">
 								${article.article_title}</a>
