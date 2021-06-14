@@ -15,7 +15,7 @@ CREATE TABLE Article
     article_num    NUMBER NOT NULL,
     member_num    NUMBER NOT NULL,
     article_title    VARCHAR2(50) NOT NULL,
-    article_content    VARCHAR2(500) NOT NULL,
+    article_content    CLOB NOT NULL,
     article_date    VARCHAR2(20) NOT NULL,
     article_read    NUMBER DEFAULT 0 NOT NULL,
     article_del    CHAR(1) DEFAULT 'n' NOT NULL
