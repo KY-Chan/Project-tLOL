@@ -25,7 +25,6 @@ public class MemberManageAction implements CommandProcess {
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals(""))
 			pageNum = "1";
-		System.out.println(pageNum);
 		int currentPage = Integer.parseInt(pageNum);
 		int total = md.getTotal();
 		

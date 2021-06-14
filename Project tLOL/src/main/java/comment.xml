@@ -4,15 +4,17 @@
 <mapper namespace="commentns">
 	<select id="selectList" parameterType="map" resultType="comment">
 		select
-		c.*, a.member_nickname from comments c, member a where
+		c.*, a.member_nickname, null, null, (select count(*) from commentsRecom cr where c.board_num = cr.board_num
+		and c.article_num = cr.article_num and c.comment_num = cr.comment_num) comment_recom from comments c, member a where
 		c.member_num=a.member_num and c.board_num=${board_num} and
 		c.article_num=${article_num}
 		order by comment_num
 	</select>
 	<select id="selectMyList" parameterType="map"
 		resultType="comment">
-		select * from (select rowNum rn, e.* from (select c.*,
-		b.board_name, a.article_title from comments c, board b, article a
+		select * from (select rowNum rn, e.* from (select c.*, null, 
+		b.board_name, a.article_title, (select count(*) from commentsRecom cr where c.board_num = cr.board_num
+		and c.article_num = cr.article_num and c.comment_num = cr.comment_num) comment_recom from comments c, board b, article a
 		where c.member_num=${member_num} and c.board_num=b.board_num and c.board_num=a.board_num and 
 		c.article_num = a.article_num order by comment_date desc) e) where rn
 		between ${startRow} and ${endRow}
@@ -24,7 +26,7 @@
 			comments where board_num=#{board_num} and article_num=#{article_num}
 		</selectKey>
 		insert into comments values(#{board_num}, #{article_num},
-		#{comment_num}, #{member_num}, #{comment_content}, 0, to_char(sysdate,
+		#{comment_num}, #{member_num}, #{comment_content}, to_char(sysdate,
 		'RRRR.MM.DD HH24:MI:SS'), 'n')
 	</insert>
 	<select id="myTotal" parameterType="int" resultType="int">
@@ -39,4 +41,13 @@
 		update comments set comment_del='y' where article_num=${article_num} and
 		board_num=${board_num}
 	</update>
+	<insert id="addRecom" parameterType="map">
+		insert into commentsRecom
+		values(${member_num}, ${board_num}, ${article_num}, ${comment_num})
+	</insert>
+	<select id="findRecom" parameterType="map" resultType="int">
+		select
+		member_num from commentsRecom where member_num=${member_num} and
+		board_num=${board_num} and article_num=${article_num} and comment_num=${comment_num}
+	</select>
 </mapper> 

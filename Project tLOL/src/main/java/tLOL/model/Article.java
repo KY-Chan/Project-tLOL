@@ -8,11 +8,11 @@ public class Article {
 	private String article_content;
 	private String article_date;
 	private int article_read;
-	private int article_recom;
 	private String article_del;
 	// additional data
 	private String member_nickname;
 	private String board_name;
+	private int article_recom;
 	private int comment_count;
 	
 	public int getBoard_num() {

@@ -60,4 +60,17 @@ public class CommentDao {
 		parms.put("article_num", article_num);
 		return (int) session.update("commentns.deleteArticle", parms);
 	}
+	public int addRecom(int board_num, int article_num, int comment_num, int member_num) {
+		Map<String, Integer> parms = new HashMap<String, Integer>();
+		parms.put("board_num", board_num);
+		parms.put("article_num", article_num);
+		parms.put("comment_num", comment_num);
+		parms.put("member_num", member_num);
+		if(session.selectOne("commentns.findRecom", parms) != null) {
+			return 0;
+		} else {
+			session.insert("commentns.addRecom", parms);
+			return 1;
+		}
+	}
 }

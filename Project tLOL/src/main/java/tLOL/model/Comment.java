@@ -6,13 +6,13 @@ public class Comment {
 	private int comment_num;
 	private int member_num;
 	private String comment_content;
-	private int comment_recom;
 	private String comment_date;
 	private String comment_del;
 	// additional data
 	private String member_nickname;
 	private String board_name;
 	private String article_title;
+	private int comment_recom;
 	public int getBoard_num() {
 		return board_num;
 	}

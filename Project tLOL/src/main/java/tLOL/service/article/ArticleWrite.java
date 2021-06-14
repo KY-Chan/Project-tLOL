@@ -1,5 +1,7 @@
 package tLOL.service.article;
 
+import java.io.File;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -18,6 +20,8 @@ public class ArticleWrite implements CommandProcess {
 		// mybatis 구현하고 -> content, boardAction 참고
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		String pageNum = request.getParameter("pageNum");
+		File file = request.get
+		
 		
 		String article_title = request.getParameter("article_title");
 		String article_content = request.getParameter("article_content");

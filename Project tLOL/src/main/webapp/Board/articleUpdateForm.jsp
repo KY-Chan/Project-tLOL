@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <div class="col-sm-10 bd-content">
-<form action="articleUpdateForm.do" method="post" name="frm">
+<form action="articleUpdate.do" method="post" name="frm">
 	<input type="hidden" name="board_num" value="${article.board_num }">
 	<input type="hidden" name="article_num" value="${article.article_num }">
 	<input type="hidden" name="pageNum" value="${pageNum}">
@@ -14,11 +14,11 @@
 	<table class="table table-hover">
 		<tr class="table-dark">
 			<th><font color="white">제목</font></th>
-			<td><input type="text" name="article_title" value="${article.article_title}" required="required" autofocus="autofocus"></td>
+			<td><input type="text" name="article_title" value="${article.article_title}" required="required" autofocus="autofocus" size="50"></td>
 		</tr>
 		<tr>
 			<th><font color="white">내용</font></th>
-			<td><textarea rows="5" cols="30" name="article_content" required="required">${article.article_content }</textarea></td>
+			<td><textarea rows="5" cols="80" name="article_content" required="required">${article.article_content }</textarea></td>
 		</tr>
 		<tr>
 			<th colspan="2"><input type="submit" class="col-4 btn btn-primary" value="확인"></th>

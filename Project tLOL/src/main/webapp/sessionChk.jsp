@@ -17,7 +17,7 @@
 		location.href="/Project_tLOL/Member/loginForm.do";
 	</script>
 </c:if>
-<c:if test="${not empty member_id }">
+<c:if test="${member_admin eq 0}">
 	<script type="text/javascript">
 		alert("접근 권한이 없습니다")
 		location.href="../main.jsp"

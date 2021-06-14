@@ -14,6 +14,13 @@ import tLOL.service.CommandProcess;
 public class BoardManage implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
+		if (session == null || session.getAttribute("member_id") == null) {
+	    	return "../sessionChk";
+	    }
+	    if ((int)session.getAttribute("member_admin") == 0)
+	    	return "../sessionChk";
+		
 		final int ROW_PER_PAGE = 10;
 		final int PAGE_PER_BLOCK = 10;
 		String pageNum = request.getParameter("pageNum");
@@ -21,13 +28,7 @@ public class BoardManage implements CommandProcess {
 			pageNum = "1";
 		int currentPage = Integer.parseInt(pageNum);		
 		ArticleDao ad = ArticleDao.getInstance();
-		HttpSession session = request.getSession();
-	    if (session == null || session.getAttribute("member_num") == null ) {
-	    	return "../sessionChk";
-	    } 
-	    System.out.println("1");
 		int total = ad.getManageTotal();	
-		System.out.println("2");
 		int startRow = (currentPage - 1) * ROW_PER_PAGE + 1;
 		int endRow = startRow + ROW_PER_PAGE - 1;
 		int number = total - startRow + 1;
@@ -37,7 +38,6 @@ public class BoardManage implements CommandProcess {
 		if (endPage > totalPage)
 			endPage = totalPage;		
 		List<Article> list = ad.manageList(startRow, endRow);	
-		System.out.println("3");
 		request.setAttribute("list", list);
 		request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);
 		request.setAttribute("number", number);

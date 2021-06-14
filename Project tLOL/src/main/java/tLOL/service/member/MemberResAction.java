@@ -10,9 +10,14 @@ import tLOL.service.CommandProcess;
 public class MemberResAction implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
+		int result = 0;	
+		if(request.getParameterValues("chk_member_id") == null) {
+			request.setAttribute("result", result);
+			return "memberRes";
+		}
+		
 		String[] member_id = request.getParameterValues("chk_member_id");
 		MemberDao md = MemberDao.getInstance();
-		int result = 0;
 		for(String m : member_id) {
 			md.restore(m);
 			result += 1;

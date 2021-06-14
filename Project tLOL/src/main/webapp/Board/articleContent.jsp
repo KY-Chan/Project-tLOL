@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
+<jsp:useBean id="recom" class="tLOL.service.article.ArticleRecom" scope="session"/>
 <script type="text/javascript" src="../bootstrap/js/jquery.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 	function article_delete() {
 		if(confirm("정말 삭제하시겠습니까?") == true) {
@@ -23,12 +26,14 @@
 		<tr class="table-dark"><th>작성자</th><td>${article.member_nickname }</td></tr>
 		<tr class="table-dark"><th>조회수</th><td>${article.article_read }</td></tr>
 		<tr class="table-dark"><th>작성일</th><td>${article.article_date }</td></tr>
-		<tr class="table-dark"><th>추천수</th><td>${article.article_recom }</td></tr>
+		<tr class="table-dark" id="recom"><th>추천수</th><td>${article.article_recom }</td></tr>
 		<tr class="table-dark"><th>내용</th><td><pre>${article.article_content }</pre></td></tr>
 	</table>
 	<div align="center"><br>
+		<c:if test="${not empty member_num }">
+			<button class="btn btn-primary" onclick="location.href='articleRecom.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum }'">추천</button>
+		</c:if>
 		<c:if test="${member_num eq article.member_num or member_admin eq 1}">
-			<button class="btn btn-primary" onclick="location.href='articleRecom.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">추천</button>
 			<button class="btn btn-primary" onclick="location.href='articleUpdateForm.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">수정</button> 
 			<button class="btn btn-primary" onclick="article_delete()">삭제</button> 
 		</c:if>
@@ -45,26 +50,31 @@
 			<tr class="table-dark">
 				<th style="width: 10%">작성자</th>
 				<th style="width: 50%">내용</th>
-				<th style="width: 10%">추천수</th>
+				<th style="width: 15%" colspan="2">추천수</th>
 				<th style="width: 20%">작성일</th>
-				<th style="width: 10%"></th>
+				<th style="width: 5%"></th>
 			</tr>
 			<tr>
 				<c:if test="${empty list }">
 					<tr>
-						<th colspan="5"><font color="white">댓글이 없습니다</font></th>
+						<th colspan="6"><font color="white">댓글이 없습니다</font></th>
 					</tr>
 				</c:if>
 				<c:if test="${not empty list }">
 					<c:forEach var="comment" items="${list }">
 						<tr>
 							<c:if test="${comment.comment_del == 'y' }">
-								<th colspan="5"><font color="white">삭제된 댓글 입니다</font></th>
+								<th colspan="6"><font color="white">삭제된 댓글 입니다</font></th>
 							</c:if>
 							<c:if test="${comment.comment_del != 'y' }">
 								<td><font color="white">${comment.member_nickname }</font></td>
 								<td><font color="white">${comment.comment_content}</font></td>
 								<td><font color="white">${comment.comment_recom}</font></td>
+								<td>
+									<c:if test="${not empty member_num }">
+										<button class="btn btn-primary" onclick="location.href='commentRecom.do?board_num=${board_num }&article_num=${article_num}&comment_num=${comment.comment_num }&pageNum=${pageNum }'">추천</button>
+									</c:if>
+								</td>
 								<td><font color="white">${comment.comment_date}</font></td>
 								<c:if test="${member_num eq comment.member_num or member_admin eq 1}">
 									<td><a href="commentDelete.do?comment_num=${comment.comment_num }&article_num=${article_num }&board_num=${board_num}&pageNum=${pageNum }">삭제</a></td>

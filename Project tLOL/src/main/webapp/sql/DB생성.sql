@@ -4,7 +4,10 @@ DROP TABLE board;
 DROP TABLE comments;
 DROP TABLE FavoriteID;
 DROP TABLE RecentID;
-DROP TABLE member;
+select * from articlerecom;
+delete from articlerecom;
+ALTER TABLE Article DROP COLUMN article_recom;
+ALTER TABLE Comments DROP COLUMN comment_recom;
 
 CREATE TABLE Article
 (
@@ -15,7 +18,6 @@ CREATE TABLE Article
     article_content    VARCHAR2(500) NOT NULL,
     article_date    VARCHAR2(20) NOT NULL,
     article_read    NUMBER DEFAULT 0 NOT NULL,
-    article_recom    NUMBER DEFAULT 0 NOT NULL,
     article_del    CHAR(1) DEFAULT 'n' NOT NULL
 );
 
@@ -40,7 +42,6 @@ CREATE TABLE Comments
     comment_num    NUMBER NOT NULL,
     member_num    NUMBER,
     comment_content    VARCHAR2(200) NOT NULL,
-    comment_recom    NUMBER DEFAULT 0 NOT NULL,
     comment_date    VARCHAR2(20) NOT NULL,
     comment_del    CHAR(1) DEFAULT 'n' NOT NULL
 );
@@ -106,8 +107,6 @@ CREATE TABLE CommentsRecom
 
 ALTER TABLE CommentsRecom
  ADD CONSTRAINT 엔터티1_PK1 PRIMARY KEY ( member_num,board_num,article_num,comment_num );
-
-
 
 insert into board values(1, '공지사항');
 insert into board values(2, '뉴스');

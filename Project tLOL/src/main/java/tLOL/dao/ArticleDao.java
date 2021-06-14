@@ -120,5 +120,17 @@ public class ArticleDao {
 		parms.put("startRow", startRow);
 		parms.put("endRow", endRow);
 		return session.selectList("articlens.selectManageList", parms);
+	}
+	public int addRecom(int board_num, int article_num, int member_num) {
+		Map<String, Integer> parms = new HashMap<String, Integer>();
+		parms.put("board_num", board_num);
+		parms.put("article_num", article_num);
+		parms.put("member_num", member_num);
+		if(session.selectOne("articlens.findRecom", parms) != null) {
+			return 0;
+		} else {
+			session.insert("articlens.addRecom", parms);
+			return 1;
+		}
 	}	
 }

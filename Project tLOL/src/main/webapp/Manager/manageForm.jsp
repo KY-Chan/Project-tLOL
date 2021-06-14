@@ -29,23 +29,25 @@
 	}
 </script>
 <div class="col-10 bd-content">
-	<h2 class="text-white">회원관리</h2>
+<div class="mt-5 mb-5">
+	<font color="white" size="6">회원관리</font>
+</div>
 	<form method="post" name="select_member">
 		<table class="table table-hover">
 			<thead class="table-primary">
-			<tr>
-				<th>선택</th>
-				<th>회원번호</th>
-				<th>회원ID</th>
-				<th>닉네임</th>
-				<th>가입일</th>
-				<th>이메일</th>
-				<th>ID상태</th>
+			<tr class="table-dark">
+				<th style="width: 5%">선택</th>
+				<th style="width: 12%">회원번호</th>
+				<th style="width: 13%">회원ID</th>
+				<th style="width: 10%">닉네임</th>
+				<th style="width: 20%">가입일</th>
+				<th style="width: 25%">이메일</th>
+				<th style="width: 10%">ID상태</th>
 			</tr>
 			</thead>
 			<tbody class="table-light">
 			<c:forEach var="member" items="${memberlist}">
-				<tr>
+				<tr class="table-dark">
 					<td><c:if test="${member.member_admin eq 0}">
 						<input type="checkbox" name="chk_member_id" value="${member.member_id }"></c:if></td>
 					<td>${member.member_num }</td>
@@ -63,19 +65,30 @@
 		<div align="center">
 			<nav aria-label="Page navigation example">
 			  <ul class="pagination justify-content-center">
+			  <c:if test="${startPage > PAGE_PER_BLOCK}">
 			    <li class="page-item">
-			      <a class="page-link" href="#" aria-label="Previous">
+			      <a class="page-link" href="memberManage.do?&pageNum=${startPage - 1}" aria-label="Previous">
 			        <span aria-hidden="true">&laquo;</span>
 			      </a>
 			    </li>
+			    </c:if>
 				    <c:forEach var="i" begin="${startPage}" end="${endPage}">
-					    <li class="page-item"><a class="page-link" onclick="location.href='memberManage.do?&pageNum=${i}'">${i}</a></li>
+				    	<c:choose>
+				    		<c:when test="${currentPage eq i }">
+					    		<li class="page-item active" aria-current="page"><a class="page-link" href="memberManage.do?&pageNum=${i}">${i}</a></li>
+					    	</c:when>
+					    	<c:otherwise>
+					    		<li class="page-item"><a class="page-link" href="memberManage.do?&pageNum=${i}">${i}</a></li>
+					    	</c:otherwise>
+					    </c:choose>
 					</c:forEach>
+					<c:if test="${endPage < totalPage}">
 			    <li class="page-item">
-			      <a class="page-link" href="#" aria-label="Next">
+			      <a class="page-link" href="memberManage.do?&pageNum=${endPage + 1}" aria-label="Next">
 			        <span aria-hidden="true">&raquo;</span>
 			      </a>
 			    </li>
+			    </c:if>
 			  </ul>
 			</nav>
 		</div>
