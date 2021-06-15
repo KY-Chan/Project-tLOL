@@ -164,4 +164,10 @@
 		member_num from articleRecom where member_num=${member_num} and
 		board_num=${board_num} and article_num=${article_num}
 	</select>
+		
+	<select id="hotList" parameterType="map" resultType="article">
+		select * from article where article_num = (select article_num 
+		from (select article_num, count(*) as Recom from articleRecom group by article_num order by Recom)) and
+		article_date between ${start_date} and ${end_date}
+	</select>
 </mapper> 

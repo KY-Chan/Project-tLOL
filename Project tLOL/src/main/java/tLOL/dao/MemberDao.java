@@ -9,7 +9,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import tLOL.model.Article;
 import tLOL.model.Member;
 public class MemberDao {
 	// singleton
@@ -47,8 +46,11 @@ public class MemberDao {
 	public int getTotal() {
 		return (int) session.selectOne("memberns.total");
 	}
+	public String chkMember(String member_id) {
+		return (String) session.selectOne("memberns.chkMember", member_id);
+	}
 	@SuppressWarnings("unchecked")
-	public List<Member> memberlist(int startRow, int endRow) {
+	public List<Member> memberList(int startRow, int endRow) {
 		Map<String, Integer> parms = new HashMap<String, Integer>();
 		parms.put("startRow", startRow);
 		parms.put("endRow", endRow);

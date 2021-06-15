@@ -38,9 +38,9 @@ public class MemberManageAction implements CommandProcess {
 		if (endPage > totalPage)
 			endPage = totalPage;
 		
-		List<Member> memberlist = md.memberlist(startRow, endRow);
+		List<Member> memberList = md.memberList(startRow, endRow);
 		
-		request.setAttribute("memberlist", memberlist);
+		request.setAttribute("memberList", memberList);
 		request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);
 		request.setAttribute("number", number);
 		request.setAttribute("currentPage", currentPage);

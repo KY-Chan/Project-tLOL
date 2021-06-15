@@ -46,7 +46,7 @@
 			</tr>
 			</thead>
 			<tbody class="table-light">
-			<c:forEach var="member" items="${memberlist}">
+			<c:forEach var="member" items="${memberList}">
 				<tr class="table-dark">
 					<td><c:if test="${member.member_admin eq 0}">
 						<input type="checkbox" name="chk_member_id" value="${member.member_id }"></c:if></td>
