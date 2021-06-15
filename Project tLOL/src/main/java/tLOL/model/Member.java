@@ -7,6 +7,7 @@ public class Member {
 	private String member_nickname;
 	private String member_reg_date;
 	private String member_email;
+	private String member_email2;
 	private String member_del;
 	private int member_admin;
 	
@@ -57,5 +58,30 @@ public class Member {
 	}
 	public void setMember_admin(int member_admin) {
 		this.member_admin = member_admin;
+	}
+	public String getMember_email2() {
+		return member_email2;
+	}
+	public void setMember_email2(String member_email2) {
+		this.member_email2 = member_email2;
+	}
+	
+	// 생성자 생성
+	public Member(int member_num, String member_id, String member_pw, String member_nickname, String member_reg_date,
+			String member_email, String member_email2, String member_del, int member_admin) {
+		super();
+		this.member_num = member_num;
+		this.member_id = member_id;
+		this.member_pw = member_pw;
+		this.member_nickname = member_nickname;
+		this.member_reg_date = member_reg_date;
+		this.member_email = member_email;
+		this.member_email2 = member_email2;
+		this.member_del = member_del;
+		this.member_admin = member_admin;
+	}
+	// 아무것도 없는 생성자 생성
+	public Member() {
+		
 	}
 }

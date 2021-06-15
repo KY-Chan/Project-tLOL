@@ -13,13 +13,15 @@ public class MemberJoin implements CommandProcess {
 		String member_pw = request.getParameter("member_pw");
 		String member_nickname = request.getParameter("member_nickname");
 		String member_email = request.getParameter("member_email");
+		
 
+		
+		
 		Member member = new Member();
 		member.setMember_id(member_id);
 		member.setMember_pw(member_pw);
 		member.setMember_nickname(member_nickname);
 		member.setMember_email(member_email);
-		
 		MemberDao md = MemberDao.getInstance();
 		Member mem = md.select(member_id);
 		

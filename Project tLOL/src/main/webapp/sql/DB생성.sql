@@ -4,6 +4,7 @@ DROP TABLE board;
 DROP TABLE comments;
 DROP TABLE FavoriteID;
 DROP TABLE RecentID;
+DROP TABLE member;
 select * from articlerecom;
 delete from articlerecom;
 ALTER TABLE Article DROP COLUMN article_recom;
@@ -68,6 +69,7 @@ CREATE TABLE Member
     member_nickname    VARCHAR2(20) NOT NULL,
     member_reg_date    VARCHAR2(20) NOT NULL,
     member_email    VARCHAR2(30),
+    member_email2 	VARCHAR2(30),
     member_del    CHAR(1) DEFAULT 'n' NOT NULL,
     member_admin    CHAR(1) DEFAULT '0' NOT NULL
 );

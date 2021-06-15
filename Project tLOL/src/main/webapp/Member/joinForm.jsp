@@ -19,6 +19,39 @@
 	<link href="../bootstrap/css/login.css" rel="stylesheet">	
 	
 	<script type="text/javascript" >
+	function emailcheck(member_email, member_email2){
+        // 유효성 검사
+    	if(!fr.member_email.value || !fr.member_email2.value){ 
+    		//alert(emailerror);
+    		fr.member_email.focus();
+    		return;
+    	}else{
+    		if(fr.member_email.value){
+    			if(fr.member_email2.value==0){
+    				// 직접입력
+    				if(fr.member_email.value.indexOf("@")==-1){
+    					//alert(emailerror);
+    					fr.member_email.focus();
+    					return false;
+    				}
+    			}else{
+    				// 선택입력
+    				if(fr.member_email.value.indexOf("@")!=-1){
+    					//alert(emailerror);
+    					fr.member_email.focus();
+    					return false;
+    				}
+    			}
+    		}
+    	}
+        // 인증을 위해 새창으로 이동
+    	var url="emailCheck.jsp?member_email="+member_email+"&member_email2="+member_email2;
+    	open(url,"emailwindow", "statusbar=no, scrollbar=no, menubar=no,  width=400, height=200" );
+                                                     
+    }
+    function auth(){
+    	document.getElementById("authBtn").disabled = true;
+    }
 	function chk() {
 		if (!frm.member_id.value) {	
 			alert('중복확인이 필요합니다');
@@ -50,10 +83,20 @@
 				<input type="text" class="form-control" placeholder="닉네임" name="member_nickname" required="required" maxlength="20">
 				<label for="floatingInput">Nickname</label>	
 			</div>
-			<div class="mt-1 form-floating">
-				<input type="email" class="form-control" placeholder="e-mail" name="member_email" required="required" maxlength="30">
-				<label for="floatingInput">e-mail</label>	
-			</div>
+			
+			<div class="form-group">
+              <label for="eamil">이메일 인증</label>
+              <input type="text" name="member_email" maxlength="15" required="required" id="email">
+					@ <select name="member_email2">
+					      <option value="0">선택하세요</option>
+					      <option value="naver.com">naver.com</option>
+					      <option value="daum.net">daum.net</option>
+					      <option value="nate.com">nate.com</option>
+					      <option value="gmail.com">gmail.com</option>
+					  </select>
+					<input type="button" name="emailconfirm_btn" value="인증" onclick="emailcheck(fr.member_email.value,fr.member_email2.value); auth();" id="authBtn">
+            </div>
+
 			<button class="mt-2 w-100 btn btn-lg btn-primary" type="submit">회원가입</button>
 			<p class="mt-5 mb-3 text-muted">&copy; Project.tLOL.gg</p>
 		</form>
