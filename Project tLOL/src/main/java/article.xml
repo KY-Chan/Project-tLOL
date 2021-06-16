@@ -165,9 +165,14 @@
 		board_num=${board_num} and article_num=${article_num}
 	</select>
 		
-	<select id="hotList" parameterType="map" resultType="article">
-		select * from article where article_num = (select article_num 
-		from (select article_num, count(*) as Recom from articleRecom group by article_num order by Recom)) and
-		article_date between ${start_date} and ${end_date}
+	<select id="hotList" resultType="article">
+		select r2.*, nvl(com.comment_count,0) comment_count from (select r.* from (select a.*, m.member_nickname, b.board_name, hot.article_recom from article a,
+		(select article_num, count(*) as article_recom from articleRecom group by article_num) hot, member m, board b
+		where a.member_num = m.member_num and a.board_num = b.board_num and a.article_num = hot.article_num
+		order by article_recom desc, article_date desc) r
+		<![CDATA[where rownum <= 10]]>) r2 left outer join
+		(select article_num, count(*) as comment_count from comments group by article_num) com
+		on r2.article_num = com.article_num
+		order by article_recom desc, article_date desc
 	</select>
 </mapper> 

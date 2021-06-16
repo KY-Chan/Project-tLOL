@@ -133,10 +133,7 @@ public class ArticleDao {
 		}
 	}
 	@SuppressWarnings("unchecked")
-	public List<Article> hotList(String start_date, String end_date) {
-		Map<String, String> parms = new HashMap<String, String>();
-		parms.put("start_date", start_date);
-		parms.put("end_date", end_date);
-		return session.selectList("articlens.hotList", parms);
+	public List<Article> hotList() {
+		return session.selectList("articlens.hotList");
 	}
 }

@@ -1,8 +1,5 @@
 package tLOL.service.main;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,20 +14,21 @@ public class MainAction implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 
 		ArticleDao ar = ArticleDao.getInstance();
-		Date date = new Date();
-		SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(date);
-		cal.add(Calendar.DATE, -1);
-		
-		String endDate = dateformat.format(date);  //현재시간
-		String startDate = dateformat.format(cal.getTime());  //하루 전 시간
-		List<Article> hotList = ar.hotList(startDate, endDate);  //현재~하루 전 까지 글 중 hotList로 가져옴
+		List<Article> hotList = ar.hotList();  //최근 글 중 추천수대로 hotList로 가져옴
+
+		for(Article a : hotList) {
+			String content = a.getArticle_content();
+			int s_start = content.indexOf("<img");
+			if(s_start >=0) {
+				int s_end = content.indexOf(">", s_start) + 1;
+				a.setArticle_content(content.substring(s_start, s_end));
+			}
+			else
+				a.setArticle_content("");
+		}
 		
 		request.setAttribute("hotList", hotList);
 		
 		return "main";
 	}
-
 }

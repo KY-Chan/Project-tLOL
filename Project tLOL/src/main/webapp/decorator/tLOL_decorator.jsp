@@ -20,7 +20,7 @@
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
 	<!-- Custom styles for this template -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/6cd41253e5.js" crossorigin="anonymous"></script>    
+	<script src="https://kit.fontawesome.com/6cd41253e5.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="col-12 bg-dark">
