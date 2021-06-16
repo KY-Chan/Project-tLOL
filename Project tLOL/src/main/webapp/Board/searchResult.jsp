@@ -14,7 +14,7 @@
 	                   <button>UPDATE</button>
 	               </p>
 	               <p class="system-date">06/15</p>
-	           </li>
+	           </li> <!--  -->
 	           <li>
 	                <img src="../images/tier/platinum.png" class="rank-img" alt="티어 아이콘" />
 	                <p class="rank-info">
