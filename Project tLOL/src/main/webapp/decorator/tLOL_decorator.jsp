@@ -64,9 +64,9 @@
 					<img src="/Project_tLOL/images/logo-remove.png" alt="" width="230" height="100">
 				</a>
 				<div class="p-2 bd-highlight">
-				    <form class="input-group">
-				      <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-				      <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-search"></i></button>
+				    <form class="input-group" action="/Project_tLOL/Board/testSummon.do">
+				      <input type="search" class="form-control form-control-dark" placeholder="Search..." name="summonerNick" aria-label="Search">
+				      <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
 				    </form>
 			    </div>
 				<c:choose>
