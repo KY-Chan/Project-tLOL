@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 import tLOL.dao.ArticleDao;
 import tLOL.model.Article;
 import tLOL.service.CommandProcess;
-import tLOL.service.article.ArticleUpdateForm;
 
 public class ArticleUpdateForm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -25,7 +24,7 @@ public class ArticleUpdateForm implements CommandProcess {
 		
 		request.setAttribute("article", article);
 		request.setAttribute("pageNum", pageNum);
-		return "articleUpdateForm";
+		return "../summernote/summernoteUpdate";
 	}
 
 }

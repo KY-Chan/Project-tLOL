@@ -33,7 +33,7 @@
 			<button class="btn btn-primary" onclick="location.href='articleRecom.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum }'">추천</button>
 		</c:if>
 		<c:if test="${member_num eq article.member_num or member_admin eq 1}">
-			<button class="btn btn-primary" onclick="location.href='articleUpdateForm.do?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">수정</button> 
+			<button class="btn btn-primary" onclick="location.href='articleUpdateForm.jsp?board_num=${board_num }&article_num=${article_num}&pageNum=${pageNum}'">수정</button> 
 			<button class="btn btn-primary" onclick="article_delete()">삭제</button> 
 		</c:if>
 		<button class="btn btn-primary" onclick="location.href='board.do?board_num=${board_num }&pageNum=${pageNum}'">게시글 목록</button>

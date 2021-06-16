@@ -88,9 +88,15 @@ public class ArticleDao {
 		Map<String, Object> parms = new HashMap<String, Object>();
 		parms.put("board_num", board_num);
 		parms.put("article_num", article_num);
-		parms.put("article_title", article_title);
-		parms.put("article_content", article_content);
-		return session.update("articlens.update", parms);
+		// 작성일 가져오기
+		Article article = (Article) session.selectOne("articlens.select", parms);	
+		// 삭제하기
+		session.delete("articlens.deleteForUpdate", parms);
+
+		// 재입력	
+		article.setArticle_title(article_title);
+		article.setArticle_content(article_content);
+		return session.insert("articlens.update", article);
 	}
 	public int delete(int article_num, int board_num) {
 		Map<String, Object> parms = new HashMap<String, Object>();

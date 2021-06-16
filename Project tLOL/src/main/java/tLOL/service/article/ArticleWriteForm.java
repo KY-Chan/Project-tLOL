@@ -18,7 +18,7 @@ public class ArticleWriteForm implements CommandProcess {
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("board_num", board_num);
 
-		return "articleWriteForm";
+		return "../summernote/summernoteWrite";
 	}
 
 }

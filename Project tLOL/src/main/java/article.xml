@@ -143,13 +143,15 @@
 		'RRRR.MM.DD HH24:MI:SS'), 0
 		,'n')
 	</insert>
-	<update id="update" parameterType="map">
-		update article set
-		article_title = '${article_title}', article_content =
-		'${article_content}'
-		where article_num = ${article_num} and board_num =
+	<delete id="deleteForUpdate" parameterType="map">
+		delete from article where article_num = ${article_num} and board_num =
 		${board_num}
-	</update>
+	</delete>
+	<insert id="update" parameterType="article">
+		insert into article values(#{board_num}, #{article_num},
+		#{member_num}, #{article_title}, #{article_content}, #{article_date}, 0
+		,'n')
+	</insert>
 	<update id="delete" parameterType="map">
 		update article set article_del
 		= 'y'

@@ -62,7 +62,7 @@
 		</c:if>
 		<br><br>
 		<c:if test="${not empty member_id and board_num ne 1 or member_admin eq 1}">
-			<button class="btn btn-primary mb-3" onclick="location.href='articleWriteForm.do?board_num=${board_num }&pageNum=1'">글쓰기</button>
+			<button class="btn btn-primary mb-3" onclick="location.href='articleWriteForm.jsp?board_num=${board_num }&pageNum=1'">글쓰기</button>
 		</c:if>
 		<br>
 		<div class="p-2 bd-highlight" style="width:30%; min-width:20%;">
