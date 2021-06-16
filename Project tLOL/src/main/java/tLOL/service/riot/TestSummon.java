@@ -80,7 +80,7 @@ public class TestSummon implements CommandProcess {
 			e.printStackTrace();
 		}
 		request.setAttribute("sInfo", sInfo);
-		return "testSummon";
+		return "searchResult";
 	}
 
 }
