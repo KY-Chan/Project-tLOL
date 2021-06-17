@@ -15,49 +15,16 @@
 	<!-- Bootstrap core CSS -->
 	<link href="/Project_tLOL/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-	<link href="/Project_tLOL/bootstrap/css/header.css" rel="stylesheet">
-	<link href="/Project_tLOL/bootstrap/css/sidebar.css" rel="stylesheet">
+	<link href="/Project_tLOL/bootstrap/css/styles.css" rel="stylesheet">
 	<link href="/Project_tLOL/bootstrap/css/darkmode.css" rel="stylesheet">
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
 	<!-- Custom styles for this template -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/6cd41253e5.js" crossorigin="anonymous"></script>
-	<style>
-		.bd-placeholder-img {
-			font-size: 1.125rem;
-			text-anchor: middle;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			user-select: none;
-		}
-	
-		@media ( min-width : 768px) {
-			.bd-placeholder-img-lg {
-				font-size: 3.5rem;
-			}
-		}
-		.form-control-dark {
-		  color: #fff;
-		  background-color: var(--bs-dark);
-		  border-color: var(--bs-gray);
-		}
-		.form-control-dark:focus {
-		  color: #fff;
-		  background-color: var(--bs-dark);
-		  border-color: #fff;
-		  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
-		}
-		
-		.footer_copyright {
-		    margin-top: 10px;
-		    line-height: 1.5;
-		    font-size: 11px;
-		}
-	</style>    
 </head>
 
-<body style="background-image: url('/Project_tLOL/images/background.png')">
-	<header class="bg-dark text-white">
+<body class="col-12 bg-dark">
+	<header class="bg-dark text-white fixed-top">
 		<div class="container">
 			<div class="d-flex flex-nowrap align-items-center justify-content-between">
 				<a class="navbar-brand" href="/Project_tLOL/main.jsp">
@@ -114,16 +81,29 @@
 				</c:choose>
 			</div>
 		</div>
+		
+		<nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+	        <div class="container">
+	            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	                Menu
+	                <i class="fas fa-bars ms-1"></i>
+	            </button>
+	            <div class="collapse navbar-collapse" id="navbarResponsive">
+	                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+	                    <li class="nav-item"><a class="nav-link" href="#services">게임소식</a></li>
+	                    <li class="nav-item"><a class="nav-link" href="#portfolio">HOT 게시글</a></li>
+	                    <li class="nav-item"><a class="nav-link" href="#about">챔피언</a></li>
+	                    <li class="nav-item"><a class="nav-link" href="#team">공략</a></li>
+	                    <li class="nav-item"><a class="nav-link" href="#contact">스킨갤러리</a></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </nav>
 	</header>
-	<div class="bg-primary" style="height: 20px;">
-		<div class="container">
-		</div>
-	</div>
-	
-	<!-- Sidebar + Contents -->
-	<aside class="row flex-nowrap">
-		<!-- Sidebar -->
-		<div class="col-2 flex-shrink-0 p-3 bg-dark text-white" style="width: 220px; height: 1080px;">
+
+	<!-- Sidebar -->
+	<aside class="flex-nowrap" style="padding-top:164px; width: 220px; float:left;">
+		<div class="flex-shrink-0 p-3 bg-dark text-white">
 			<form action="/Project_tLOL/Board/boardSearchAll.do" method="get" class="input-group">
 				 <input type="search" pattern=".{2,}" required title="2 글자 이상 입력해주세요" name="keyword" class="form-control form-control-dark" placeholder="전체 검색..." aria-label="Search">
 				 <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
@@ -167,15 +147,16 @@
 				</li>
 			</ul>
 		</div>
+	</aside>
 		<!-- sidebar end -->
 		<!-- content -->
-		
-			<deco:body></deco:body>
-			
-	     <!-- content end -->
-	</aside>
+	<div class="row col-10 justify-content-center" style="padding-top:164px;">
+		<deco:body></deco:body>
+	</div>
+	    <!-- content end -->
+	    
 	<footer class="bg-dark text-white">
-		<div class="container">
+		<div class="container" style="padding: 15px">
 			<ul class="nav">
 				<li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="#">About Project-Tlol</a></li>
 				<li class="nav-item"><a class="nav-link text-white" href="#">도움말</a></li>

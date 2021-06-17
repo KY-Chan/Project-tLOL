@@ -1,7 +1,6 @@
 package tLOL.dao;
 
 import java.io.Reader;
-import java.sql.Connection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -138,5 +137,9 @@ public class ArticleDao {
 			session.insert("articlens.addRecom", parms);
 			return 1;
 		}
-	}	
+	}
+	@SuppressWarnings("unchecked")
+	public List<Article> hotList() {
+		return session.selectList("articlens.hotList");
+	}
 }

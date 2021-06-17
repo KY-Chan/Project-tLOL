@@ -3,6 +3,7 @@ DROP TABLE article;
 TRUNCATE TABLE comments;
 TRUNCATE TABLE articleRecom;
 TRUNCATE TABLE commentsRecom;
+
 CREATE TABLE Article
 (
     board_num    NUMBER NOT NULL,

@@ -3,6 +3,7 @@
 	<decorator name="main" page="tLOL_decorator.jsp">
 		<pattern>/Board/*</pattern>
 		<pattern>/main.jsp</pattern>
+		<pattern>/main.do</pattern>
 		<pattern>/Manager/*</pattern>
 	</decorator>
 	<excludes>
