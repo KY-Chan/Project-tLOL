@@ -20,7 +20,7 @@ public class TestSummon implements CommandProcess {
 		}
 			
 		request.setAttribute("sInfo", sInfo);
-		return "testSummon";
+		return "searchResult";
 	}
 
 }
