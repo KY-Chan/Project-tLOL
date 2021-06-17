@@ -151,7 +151,7 @@
 	</aside>
 		<!-- sidebar end -->
 		<!-- content -->
-	<div class="row col-10 justify-content-center" style="padding-top:164px;">
+	<div class="row justify-content-center" style="padding-top:164px;">
 		<deco:body></deco:body>
 	</div>
 	    <!-- content end -->

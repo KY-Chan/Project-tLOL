@@ -194,8 +194,8 @@ ol, ul {
 }
 
 .wrap .result-container ul li.record-box {
-    float: left;
-    font-size: 15px;
+    float: 1020px;
+    font-size: 13px;
     padding: 30px 0 21px;
     margin-top: 30px;
     margin-right: 25px;
@@ -210,7 +210,7 @@ ol, ul {
 }
 
 .wrap .result-container ul li.record-box:nth-child(1) {
-    width: 30%;
+    width: 100%;
     padding: 37px 0;
 }
 
@@ -310,8 +310,8 @@ ol, ul {
 
 .wrap .result-container ul li.record-box.sec > ul.kda {
     display: inline-block;
-    position: absolute;
-    top: 36px;
+    position: relative;
+    top: -11px;
     width: 30%;
 }
 
@@ -323,7 +323,7 @@ ol, ul {
 
 .wrap .result-container ul li.record-box.sec > ul.kda li span:first-child {
     color: #fff;
-    padding-right: 30px;
+    padding-right: 10px;
     text-align: left;
 }
 
@@ -431,7 +431,7 @@ ol, ul {
 }
 
 .wrap .result-container .profile > ul li:nth-child(3) > img {
-    position: absolute;
+    position: relative;
     right: 140px;
     width: 70px;
     height: 70px;
@@ -439,7 +439,7 @@ ol, ul {
 }
 
 .wrap .result-container .profile > ul li:nth-child(3) > p.rank-info {
-    position: absolute;
+    position: relative;
     right: 0px;
     width: 150px;
     margin-top: 20px;

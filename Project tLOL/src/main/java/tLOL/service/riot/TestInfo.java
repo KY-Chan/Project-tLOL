@@ -7,12 +7,25 @@ public class TestInfo {
 		String puuid;
 		String summonerName;
 		int profileIconId;
+		String profileIconAddr;
+		public String getProfileIconAddr() {
+			return profileIconAddr;
+		}
+		public void setProfileIconAddr(String profileIconAddr) {
+			this.profileIconAddr = profileIconAddr;
+		}
+		public String getTierImage() {
+			return tierImage;
+		}
+		public void setTierImage(String tierImage) {
+			this.tierImage = tierImage;
+		}
 		String revisionDate;
 		Long sumonerLevel;
 		
 		//소환사의 리그 정보
 		String queueType;
-		String tier;
+		String tierImage;
 		String tier_rank;
 		int leaguePoints;
 		int wins;
@@ -74,10 +87,10 @@ public class TestInfo {
 			this.queueType = queueType;
 		}
 		public String getTier() {
-			return tier;
+			return tierImage;
 		}
 		public void setTier(String tier) {
-			this.tier = tier;
+			this.tierImage = tier;
 		}
 		public String getTier_rank() {
 			return tier_rank;
