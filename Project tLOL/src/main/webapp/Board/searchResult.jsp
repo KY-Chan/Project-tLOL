@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <div class="col-10 bd-content">
 <div class="wrap">
 	<section class="result-container">
 	    <div class="profile">
 	       <ul class="clearfix">
 	           <li>
-	               <img src="${sInfo.profileIconId}" alt="플레이어 아이콘" />
+	               <img src="${sInfo.profileIconId}" alt="플레이어 아이콘" onerror="this.src='../images/spell/ignite.png'" />
 	           </li>
 	           <li>
 	               <p class="user-nm">${sInfo.summonerName}</p>
@@ -16,9 +17,9 @@
 	               <p class="system-date">${sInfo.revisionDate}</p>
 	           </li>
 	           <li>
-	                <img src="${sInfo.tierImage}" class="rank-img" alt="티어 아이콘" />
+	                <img src="${sInfo.tierImage}" class="rank-img" alt="티어 아이콘" onerror="this.src='../images/spell/ignite.png'" />
 	                <p class="rank-info">
-	                    <span>${sInfo.queueType}</span>
+	                    <span>솔로랭크</span>
 	                    <span class="rank-nm">${sInfo.tier}</span>
 	                    <span>${winRate} ${sInfo.wins}</span>
 	                    <span class="rank-total"> 
@@ -30,22 +31,21 @@
 	       </ul>
 	    </div>
 	    <ul class="clearfix">
-
-	        <li class="record-box sec">
+	        <li class="record-box">
 	            <ul class="text">
 	                <li>솔랭</li>
 	                <li>6/15</li>
 	                <li class="win">승리</li> <!-- 승리 : win / 패배 : lose -->       
-        <c:if test="${sInfo.wins}"> 
-            <h2> 
-                승리
-            </h2>           
-        </c:if>
-        <c:if test="${sInfo.losses}"> 
-            <h2> 
-                패배
-            </h2>           
-        </c:if>
+<%--         <c:if test="${sInfo.wins}">  --%>
+<!--             <h2>  -->
+<!--                 승리 -->
+<!--             </h2>            -->
+<%--         </c:if> --%>
+<%--         <c:if test="${sInfo.losses}">  --%>
+<!--             <h2>  -->
+<!--                 패배 -->
+<!--             </h2>            -->
+<%--         </c:if> --%>
 	                <li>29분</li>
 	            </ul>
 	            <ul class="clearfix add-magic">

@@ -194,113 +194,80 @@ ol, ul {
 }
 
 .wrap .result-container ul li.record-box {
-    float: 1020px;
+    position: relative;
+    width: 100%;
+    float: left;
     font-size: 13px;
-    padding: 30px 0 21px;
+    padding: 25px 0;
     margin-top: 30px;
-    margin-right: 25px;
     background-color: #191c20;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 6px;
-}
-
-.wrap .result-container ul li.record-box:last-child {
-    margin-right: 0;
-}
-
-.wrap .result-container ul li.record-box:nth-child(1) {
-    width: 100%;
-    padding: 37px 0;
-}
-
-.wrap .result-container ul li.record-box:nth-child(2) {
-    position: relative;
-    width: 67%;
     text-align: left;
 }
 
-.wrap .result-container ul li.record-box.fir > span {
-    width: 100%;
-    display: inline-block;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 400;
-    padding: 5px 0;
-}
-
-.wrap .result-container ul li.record-box.fir > span:first-child {
-    color: #47a447;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 5px 0;
-}
-
-.wrap .result-container ul li.record-box.fir > span:last-child {
-    color: #696969;
-}
-
-.wrap .result-container ul li.record-box.sec > ul.text {
-    display: inline-block;
+.wrap .result-container ul li.record-box > ul.text {
+	display: inline-block;
     width: 10%;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.text li {
+.wrap .result-container ul li.record-box > ul.text li {
     color: #fff;
     font-size: 16px;
     text-align: center;
     padding: 5px 0;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.text li:nth-child(1) {
+.wrap .result-container ul li.record-box > ul.text li:nth-child(1) {
     color: #c2c2c2;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.text li:nth-child(even) {
+.wrap .result-container ul li.record-box > ul.text li:nth-child(even) {
     color: #696969;
     font-size: 14px;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.text li.win {
+.wrap .result-container ul li.record-box > ul.text li.win {
     color: #0088cc;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.text li.lose {
+.wrap .result-container ul li.record-box > ul.text li.lose {
     color: #d53f3a;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.add-magic {
+.wrap .result-container ul li.record-box > ul.add-magic {
     position: relative;
     display: inline-block;
     width: 12%;
     bottom: 10px;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.add-magic li {
+.wrap .result-container ul li.record-box > ul.add-magic li {
     float: left;
     text-align: center;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.add-magic li > img {
+.wrap .result-container ul li.record-box > ul.add-magic li > img {
     width: 35%;
     border-radius: 8px;
 }
 
-.wrap .result-container ul li.record-box.sec > span.champion {
+.wrap .result-container ul li.record-box > span.champion {
     position: relative;
     display: inline-block;
-    width: 20%;
-    bottom: 15px;
+    bottom: 5px;
     text-align: center;
 }
 
-.wrap .result-container ul li.record-box.sec > span.champion img {
+.wrap .result-container ul li.record-box > span.champion img {
     display: block;
     width: 30%;
     margin: 0 auto;
+    border-radius: 25px;
 }
 
-.wrap .result-container ul li.record-box.sec > span.champion > span {
+.wrap .result-container ul li.record-box > span.champion > span {
     display: inline-block;
     color: #c2c2c2;
     font-size: 12px;
@@ -308,56 +275,54 @@ ol, ul {
     margin-top: 15px;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.kda {
+.wrap .result-container ul li.record-box > ul.kda {
     display: inline-block;
-    position: relative;
-    top: -11px;
-    width: 30%;
+    position: absolute;
+    top: 40px;
+    width: 10%;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.kda li {
-    width: 50%;
+.wrap .result-container ul li.record-box > ul.kda li {
+	width: 100%;
     display: inline-block;
     line-height: 1.8;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.kda li span:first-child {
+.wrap .result-container ul li.record-box > ul.kda li span:first-child {
     color: #fff;
     padding-right: 10px;
     text-align: left;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.kda li span:last-child {
+.wrap .result-container ul li.record-box > ul.kda li span:last-child {
     float: right;
     color: #696969;
     text-align: right;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.team {
+.wrap .result-container ul li.record-box > ul.team {
     position: relative;
     float: right;
-    width: 20%;
-    right: 20px;
-    text-align: right;
+    width: 19%;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.team li img {
+.wrap .result-container ul li.record-box > ul.team li img {
     width: 12%;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.team.blue li a:link,
-.wrap .result-container ul li.record-box.sec > ul.team.red li a:link {
+.wrap .result-container ul li.record-box > ul.team.blue li a:link,
+.wrap .result-container ul li.record-box > ul.team.red li a:link {
 	line-height: 1.2;
     text-decoration: none;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.team.blue li a:visited {
+.wrap .result-container ul li.record-box > ul.team.blue li a:visited {
     color: #0088cc;
     font-size: 12px;
     letter-spacing: -0.4px;
 }
 
-.wrap .result-container ul li.record-box.sec > ul.team.red li a:visited {
+.wrap .result-container ul li.record-box > ul.team.red li a:visited {
     color: #d53f3a;
     font-size: 12px;
     letter-spacing: -0.4px;
@@ -380,7 +345,7 @@ ol, ul {
 
 .wrap .result-container .profile > ul li:nth-child(1) > img {
     width: 60%;
-    margin: 30px auto 0;
+    margin: 15px auto 0;
     cursor: pointer;
     border-radius: 50%;
 }
@@ -431,18 +396,20 @@ ol, ul {
 }
 
 .wrap .result-container .profile > ul li:nth-child(3) > img {
-    position: relative;
-    right: 140px;
+    position: absolute;
     width: 70px;
     height: 70px;
-    margin-top: 30px;
+    top: 25px;
+    right: 140px;
+    margin: 0;
 }
 
 .wrap .result-container .profile > ul li:nth-child(3) > p.rank-info {
-    position: relative;
-    right: 0px;
+    position: absolute;
     width: 150px;
-    margin-top: 20px;
+    top: 18px;
+    right: 0;
+    margin: 0;
 }
 
 .wrap .result-container .profile > ul li:nth-child(3) > p.rank-info span {
