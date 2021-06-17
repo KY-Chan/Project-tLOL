@@ -173,6 +173,73 @@ main {
 
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
+/*
+* Base structure
+*/
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+}
+
+
+/*
+* Global add-ons
+*/
+
+.sub-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/*
+* Top navigation
+* Hide default border to remove 1px line.
+*/
+.navbar-fixed-top {
+    border: 0;
+}
+
+/*
+* Sidebar
+*/
+
+/* Hide for mobile, show later */
+.sidebar {
+    display: none;
+}
+@media (min-width: 768px) {
+    .sidebar {
+    	float: left;
+/*position: fixed;
+                top: 150px;
+                left: 0;*/
+        padding-top: 100px;
+        z-index: 1000;
+        display: inline-block;
+        padding: 120px 0 0 20;
+        overflow-x: hidden;
+       	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        width: 220px;
+    }
+}
+/*
+* Main content
+*/
+.main {
+    padding: 20px;
+    min-height: 600px;
+}
+
+@media (min-width: 768px) {
+ .main {
+     padding-right: 40px;
+     padding-left: 220px;
+ }
+}
+.main .page-header {
+    margin-top: 0;
+}
 
 /* main */
 .community-article__list__item__rank {

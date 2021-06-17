@@ -82,65 +82,72 @@
 				</c:choose>
 			</div>
 		</div>
-		
+		<div class="bg-secondary" style="height:20px"></div>
 	</header>
 
 	<!-- Sidebar -->
-	<aside class="flex-nowrap" style="padding-top:164px; width: 220px; float:left;">
-		<div class="flex-shrink-0 p-3 bg-dark text-white">
+  	<div class="container-fluid">
+      <div class="flex-nowrap">
+        <div class="sidebar bg-dark text-white">
 			<form action="/Project_tLOL/Board/boardSearchAll.do" method="get" class="input-group">
 				 <input type="search" pattern=".{2,}" required title="2 글자 이상 입력해주세요" name="keyword" class="form-control form-control-dark" placeholder="전체 검색..." aria-label="Search">
 				 <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
 			</form>
-			<ul class="list-unstyled ps-0">
-				<li class="border-top my-3"></li>
-				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed text-white"
-						data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">뉴스&정보</button>
-					<div class="collapse show" id="home-collapse">
-						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/Project_tLOL/Board/board.do?board_num=1" class="link-dark rounded text-white">공지사항</a></li>
-							<li><a href="/Project_tLOL/Board/board.do?board_num=2" class="link-dark rounded text-white">뉴스</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="border-top my-3"></li>
-				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed text-white"
-						data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">커뮤니티</button>
-					<div class="collapse show" id="dashboard-collapse">
-						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/Project_tLOL/Board/board.do?board_num=3" class="link-dark rounded text-white">자유게시판</a></li>
-							<li><a href="/Project_tLOL/Board/board.do?board_num=6" class="link-dark rounded text-white">팁/노하우</a></li>
-							<li><a href="/Project_tLOL/Board/board.do?board_num=5" class="link-dark rounded text-white">이미지/영상</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="border-top my-3"></li>
-				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed text-white"
-						data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">매칭</button>
-					<div class="collapse show" id="orders-collapse">
-						<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-							<li><a href="/Project_tLOL/Board/board.do?board_num=4" class="link-dark rounded text-white">매칭게시판</a></li>
-							<li><a href="#" class="link-dark rounded text-white">matching</a></li>
-							<li><a href="#" class="link-dark rounded text-white">matching</a></li>
-							<li><a href="#" class="link-dark rounded text-white">matching</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</aside>
-		<!-- sidebar end -->
-		<!-- content -->
-	<div class="row justify-content-center" style="padding-top:164px;">
-		<deco:body></deco:body>
-	</div>
-	    <!-- content end -->
+
+          <ul class="list-unstyled ps-0">
+			<li class="border-top my-3"></li>
+			<li class="mb-1">
+				<button class="btn btn-toggle align-items-center rounded collapsed text-white"
+					data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">뉴스&정보</button>
+				<div class="collapse show" id="home-collapse">
+					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+						<li><a href="/Project_tLOL/Board/board.do?board_num=1" class="link-dark rounded text-white">공지사항</a></li>
+						<li><a href="/Project_tLOL/Board/board.do?board_num=2" class="link-dark rounded text-white">뉴스</a></li>
+					</ul>
+				</div>
+			</li>
+		  </ul>
+          <ul class="list-unstyled ps-0">
+			<li class="border-top my-3"></li>
+			<li class="mb-1">
+				<button class="btn btn-toggle align-items-center rounded collapsed text-white"
+					data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">커뮤니티</button>
+				<div class="collapse show" id="dashboard-collapse">
+					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+						<li><a href="/Project_tLOL/Board/board.do?board_num=3" class="link-dark rounded text-white">자유게시판</a></li>
+						<li><a href="/Project_tLOL/Board/board.do?board_num=6" class="link-dark rounded text-white">팁/노하우</a></li>
+						<li><a href="/Project_tLOL/Board/board.do?board_num=5" class="link-dark rounded text-white">이미지/영상</a></li>
+					</ul>
+				</div>
+			</li>
+          </ul>
+          <ul class="list-unstyled ps-0">
+			<li class="border-top my-3"></li>
+			<li class="mb-1">
+				<button class="btn btn-toggle align-items-center rounded collapsed text-white"
+					data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">매칭</button>
+				<div class="collapse show" id="orders-collapse">
+					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+						<li><a href="/Project_tLOL/Board/board.do?board_num=4" class="link-dark rounded text-white">매칭게시판</a></li>
+						<li><a href="#" class="link-dark rounded text-white">matching</a></li>
+						<li><a href="#" class="link-dark rounded text-white">matching</a></li>
+						<li><a href="#" class="link-dark rounded text-white">matching</a></li>
+					</ul>
+				</div>
+			</li>
+          </ul>
+        </div>
+        
+        <div class="col-sm-12 main">
+          <div class="row justify-content-center" style="padding-top:50px;">
+			<deco:body></deco:body>
+          </div>
+        </div>
+      </div>
+    </div>
 	    
-	<footer class="bg-dark text-white">
-		<div class="container" style="padding: 15px">
+	<footer class="footer bg-dark text-white">
+		<div class="container" style="padding-top:150px;">
 			<ul class="nav">
 				<li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="#">About Project-Tlol</a></li>
 				<li class="nav-item"><a class="nav-link text-white" href="#">도움말</a></li>
@@ -151,7 +158,6 @@
 			</div>
 			<div></div>
 		</div>
-		
 	</footer>
 	
 	<script src="/Project_tLOL/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>

@@ -19,7 +19,7 @@
 		sessionStorage.setItem("elapsedHour", elapsedHour);
 	</script>
 	<div class="row col-8 mt-5 mb-2">
-		<a href="/Project_tLOL/main.jsp"><img src="images/logo-remove.png" class="rounded mx-auto d-block" alt="" style="width:100%; height:100%; max-width:460px; max-height:200px;"></a>
+		<a href="/Project_tLOL/main.jsp"><img src="images/logo-remove.png" class="rounded mx-auto d-block" alt="" style="width:100%; height:100%; max-width: 460px; max-height: 200px;"></a>
 	</div>
 	<div class="row d-flex justify-content-center">
 		<div class="col-6">
