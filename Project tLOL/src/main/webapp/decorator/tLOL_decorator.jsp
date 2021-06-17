@@ -18,7 +18,7 @@
 	<link href="/Project_tLOL/bootstrap/css/header.css" rel="stylesheet">
 	<link href="/Project_tLOL/bootstrap/css/sidebar.css" rel="stylesheet">
 	<link href="/Project_tLOL/bootstrap/css/darkmode.css" rel="stylesheet">
-	<link rel="stylesheet" href="/Project_tLOL/bootstrap/css/style.css">
+	<link rel="stylesheet" href="/Project_tLOL/bootstrap/css/resultStyle.css">
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
 	<!-- Custom styles for this template -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
