@@ -23,7 +23,10 @@
 	</div>
 	<div class="row d-flex justify-content-center">
 		<div class="col-6">
-			<input type="search" class="mt-4 mb-4 form-control form-control-dark" placeholder="소환사명 검색..." aria-label="Search">	
+			 <form class="input-group" action="/Project_tLOL/Board/testSummon.do">
+				      <input type="search" class="form-control form-control-dark" placeholder="Search..." name="summonerNick" aria-label="Search">
+				      <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+			</form>	
     	</div>
     </div>
     <div style="height:250px"></div>
