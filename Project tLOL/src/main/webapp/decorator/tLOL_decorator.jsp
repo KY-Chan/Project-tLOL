@@ -56,7 +56,7 @@
 	</style>    
 </head>
 
-<body>
+<body style="background-image: url('/Project_tLOL/images/background.png')">
 	<header class="bg-dark text-white">
 		<div class="container">
 			<div class="d-flex flex-nowrap align-items-center justify-content-between">

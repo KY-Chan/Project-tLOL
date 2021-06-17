@@ -4,7 +4,6 @@
 		<pattern>/Board/*</pattern>
 		<pattern>/main.jsp</pattern>
 		<pattern>/Manager/*</pattern>
-		<pattern>/searchProtoType.jsp</pattern>
 	</decorator>
 	<excludes>
 	</excludes>
