@@ -16,7 +16,6 @@
 	}
 </script>
 
-<div class="col-10 bd-content">
 <div class="mt-5 mb-5">
 	<font color="white" size="6">${article.board_name }</font>
 </div>
@@ -101,5 +100,4 @@
 		</table>
 
 	</form>
-</div>
 </html>
