@@ -17,6 +17,7 @@
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link href="/Project_tLOL/bootstrap/css/styles.css" rel="stylesheet">
 	<link href="/Project_tLOL/bootstrap/css/darkmode.css" rel="stylesheet">
+	<link rel="stylesheet" href="/Project_tLOL/bootstrap/css/resultStyle.css">
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
 	<!-- Custom styles for this template -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
