@@ -9,7 +9,10 @@
 		</div>
 		<div class="row d-flex justify-content-center">
 			<div class="col-6">
-				<input type="search" class="mb-4 form-control form-control-dark" placeholder="소환사명 검색..." aria-label="Search">	
+				<form class="input-group">
+				      <input type="search" class="form-control form-control-dark" placeholder="소환사명 검색..." name="summonerName" aria-label="Search">
+				      <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+				    </form>
 	    	</div>
 	    </div>
 	    <div class="row text-white">

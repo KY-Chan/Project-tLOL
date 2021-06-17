@@ -178,7 +178,7 @@ ol, ul {
 /* result start */
 
 .wrap .result-container {
-    width: 1020px;
+    width: 100%;
     /* margin: 0 auto; */
     margin-left: 150px;
 }
