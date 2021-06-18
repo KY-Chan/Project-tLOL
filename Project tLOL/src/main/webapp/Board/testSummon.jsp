@@ -18,7 +18,7 @@
 			<th>갱신일</th><td>${sInfo.revisionDate }</td>
 		</tr>
 		<tr>
-			<th>소환사레벨</th><td>${sInfo.sumonerLevel }</td>
+			<th>소환사레벨</th><td>${sInfo.summonerLevel }</td>
 		</tr>
 		
 	</table>

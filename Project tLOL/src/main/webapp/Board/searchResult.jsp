@@ -47,15 +47,15 @@
 	            </ul>
 	            <ul class="clearfix add-magic">
 	                <li>
-	                    <img src="../images/spell/ignite.png" alt="스펠 이미지" />
-	                    <img src="../images/spell/flash.png" alt="스펠 이미지" />
-	                    <img src="../images/rune/Aftershock.png" alt="룬 이미지" />
-	                    <img src="../images/rune/Inspiration.png" alt="룬 이미지" />
+	                    <img src="${match.spell_1Addr }" alt="스펠 이미지" />
+	                    <img src="${match.spell_2Addr }" alt="스펠 이미지" />
+	                    <img src="${match.rune_1Addr }" alt="룬 이미지" />
+	                    <img src="${match.rune_2Addr }" alt="룬 이미지" />
 	                </li>
 	            </ul>
 	            <span class="champion">
 	                <img src="${match.championAddr }" alt="챔피언 초상화" />
-	                <span>챔프레벨</span>
+	                <span>챔피언 레벨</span>
 	            </span>
 	            <ul class="clearfix kda">
 	                <li>

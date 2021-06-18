@@ -13,8 +13,8 @@
 		var date1 = new Date(sessionStorage.getItem("hotList.article_date"));
 		var date2 = new Date();
 		
-		var elapsedMsec = date2.getTime() - date1.getTeime();
-		var elapsedHour = elapsedMSec / 1000 / 60 / 60;
+		var elapsedMsec = date2.getTime() - date1.getTime();
+		var elapsedHour = elapsedMsec / 1000 / 60 / 60;
 		
 		sessionStorage.setItem("elapsedHour", elapsedHour);
 	</script>

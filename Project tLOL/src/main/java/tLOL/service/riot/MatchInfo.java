@@ -9,6 +9,20 @@ public class MatchInfo {
 	private String championAddr;
 	private int spell_1Addr;
 	private int spell_2Addr;
+	private int rune_1Addr;
+	private int rune_2Addr;
+	public int getRune_1Addr() {
+		return rune_1Addr;
+	}
+	public void setRune_1Addr(int rune_1Addr) {
+		this.rune_1Addr = rune_1Addr;
+	}
+	public int getRune_2Addr() {
+		return rune_2Addr;
+	}
+	public void setRune_2Addr(int rune_2Addr) {
+		this.rune_2Addr = rune_2Addr;
+	}
 	private int kill;
 	private int death;
 	private int assist;

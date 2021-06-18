@@ -57,7 +57,7 @@ public class TestSummon implements CommandProcess {
 		if(sInfo == null)
 			System.out.println("실패");*/
 		
-		ApiConfig config = new ApiConfig().setKey("RGAPI-ba22d919-0995-40b6-b481-616624df8c81");
+		ApiConfig config = new ApiConfig().setKey("RGAPI-4f4f7ba9-e1a6-4815-a58b-1149623d0c84");
 		RiotApi api = new RiotApi(config);
 		RiotApiAsync apiAsync = api.getAsyncApi();
 
