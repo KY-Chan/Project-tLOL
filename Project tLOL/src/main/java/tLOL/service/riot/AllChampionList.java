@@ -37,12 +37,12 @@ public class AllChampionList {
 		champions.put(28, "Evelynn");
 		champions.put(29, "Twitch");
 		champions.put(30, "Karthus");
-		champions.put(31, "Cho'Gath");
+		champions.put(31, "ChoGath");
 		champions.put(32, "Amumu");
 		champions.put(33, "Rammus");
 		champions.put(34, "Anivia");
 		champions.put(35, "Shaco");
-		champions.put(36, "Dr.Mundo");
+		champions.put(36, "DrMundo");
 		champions.put(37, "Sona");
 		champions.put(38, "Kassadin");
 		champions.put(39, "Irelia");
@@ -88,7 +88,7 @@ public class AllChampionList {
 		champions.put(90, "Malzahar");
 		champions.put(91, "Talon");
 		champions.put(92, "Riven");
-		champions.put(96, "Kog'Maw");
+		champions.put(96, "KogMaw");
 		champions.put(98, "Shen");
 		champions.put(99, "Lux");
 		champions.put(101, "Xerath");
@@ -107,7 +107,7 @@ public class AllChampionList {
 		champions.put(117, "Lulu");
 		champions.put(119, "Draven");
 		champions.put(120, "Hecarim");
-		champions.put(121, "Kha'Zix");
+		champions.put(121, "KhaZix");
 		champions.put(122, "Darius");
 		champions.put(126, "Jayce");
 		champions.put(127, "Lissandra");
@@ -118,11 +118,11 @@ public class AllChampionList {
 		champions.put(141, "Kayn");
 		champions.put(142, "Zoe");
 		champions.put(143, "Zyra");
-		champions.put(145, "Kai'sa");
+		champions.put(145, "Kaisa");
 		champions.put(150, "Gnar");
 		champions.put(154, "Zac");
 		champions.put(157, "Yasuo");
-		champions.put(161, "Vel'Koz");
+		champions.put(161, "VelKoz");
 		champions.put(163, "Taliyah");
 		champions.put(164, "Camille");
 		champions.put(201, "Braum");
@@ -143,7 +143,7 @@ public class AllChampionList {
 		champions.put(350, "Yuumi");
 		champions.put(412, "Thresh");
 		champions.put(420, "Illaoi");
-		champions.put(421, "Rek'Sai");
+		champions.put(421, "RekSai");
 		champions.put(427, "Ivern");
 		champions.put(429, "Kalista");
 		champions.put(432, "Bard");

@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
-
 <div class="wrap">
 	<section class="result-container">
 	    <div class="profile">
@@ -49,8 +48,8 @@
 	                <li>
 	                    <img src="${match.spell_1Addr }" alt="스펠 이미지" />
 	                    <img src="${match.spell_2Addr }" alt="스펠 이미지" />
-	                    <img src="${match.rune_1Addr }" alt="룬 이미지" />
-	                    <img src="${match.rune_2Addr }" alt="룬 이미지" />
+<%-- 	                    <img src="${match.rune_1Addr }" alt="룬 이미지" /> --%>
+<%-- 	                    <img src="${match.rune_2Addr }" alt="룬 이미지" /> --%>
 	                </li>
 	            </ul>
 	            <span class="champion">
@@ -76,7 +75,7 @@
 	            <c:forEach var="i" begin="5" end="9">
 	                <li>
 	                    <img src="${match.playerChampionAddr[i] }" alt="챔피언 초상화" />
-	                    <a href="/Project_tLOL/Board/testSummon.do?summonerNick=${match.player[i] }">${match.player[i] }</a>
+	                    <a id="blue-team" href="/Project_tLOL/Board/testSummon.do?summonerNick=${match.player[i] }">${match.player[i] }</a>
 	                </li>
 	             </c:forEach> 
 	            </ul>
@@ -84,7 +83,7 @@
 	            <c:forEach var="i" begin="0" end="4">
 	                <li>
 	                    <img src="${match.playerChampionAddr[i] }" alt="챔피언 초상화" />
-	                    <a href="/Project_tLOL/Board/testSummon.do?summonerNick=${match.player[i] }">${match.player[i] }</a>
+	                    <a id="red-team" href="/Project_tLOL/Board/testSummon.do?summonerNick=${match.player[i] }">${match.player[i] }</a>
 	                </li>
 	            </c:forEach>
 	            </ul>
