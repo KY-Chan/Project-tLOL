@@ -1,7 +1,14 @@
 package tLOL.service.riot;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;
@@ -19,16 +26,7 @@ import net.rithms.riot.api.request.AsyncRequest;
 import net.rithms.riot.api.request.RequestAdapter;
 import net.rithms.riot.constant.Platform;
 
-/**
- * This example demonstrates how to use asynchronous requests. In this example we get a summoner's base information, as well as league
- * information asynchronously. Requesting these information asynchronously can save a lot of time, since the requests do not block each
- * other.
- */
-public class AsyncExample {
-
-	/*public static void main(String[] args) throws RiotApiException {
-		new AsyncExample();
-	}*/
+public class AsyncApi {
 
 	// Inner class to store information in
 	private class ExtendedSummoner {
@@ -38,13 +36,17 @@ public class AsyncExample {
 		public LeagueEntry leagueFlexTT;
 	}
 
-	public AsyncExample() throws RiotApiException {
-		ApiConfig config = new ApiConfig().setKey("RGAPI-917e2f58-8f57-46ea-b3d8-532d559df10d");
+	public SummonerInfo getInfo(String nickname) throws RiotApiException {
+		SummonerInfo sInfo = new SummonerInfo();
+		ApiConfig config = new ApiConfig().setKey("RGAPI-ba22d919-0995-40b6-b481-616624df8c81");
 		RiotApi api = new RiotApi(config);
 		RiotApiAsync apiAsync = api.getAsyncApi();
 
-		Summoner summoner = api.getSummonerByName(Platform.KR, "나나나솨");
-		
+		Summoner summoner = api.getSummonerByName(Platform.KR, nickname);
+		if(summoner == null) {
+			System.out.println("그런 소환사는 없습니다");
+			return sInfo;
+		}
 		// TODO need to rewrite this example to properly work with v4 endpoints
 		String summonerId = summoner.getId(); // Encrypted summonerId to request
 		Platform platform = Platform.KR; // platform to request
@@ -89,41 +91,48 @@ public class AsyncExample {
 		}
 
 		// Print information stored in eSummoner
-		System.out.println("Summoner name: " + eSummoner.summoner.getName());
+		sInfo.setSummonerName(eSummoner.summoner.getName()); // 소환사명 기록
+		sInfo.setProfileIconAddr("http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/" + eSummoner.summoner.getProfileIconId() +".png");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // ^ 프로필 아이콘 주소
+		sInfo.setRevisionDate(sdf.format(eSummoner.summoner.getRevisionDate())); // 최근 활동일
+		sInfo.setSumonerLevel(eSummoner.summoner.getSummonerLevel()); // 소환사 레벨
 
-		System.out.print("Solo Rank: ");
 		if (eSummoner.leagueSolo == null) {
-			System.out.println("unranked");
+			sInfo.setRank("unranked"); // 언랭
 		} else {
-			System.out.println(eSummoner.leagueSolo.getTier() + " " + eSummoner.leagueSolo.getRank());
-			System.out.println("win/lose : " + eSummoner.leagueSolo.getWins() + "/" + eSummoner.leagueSolo.getLosses());
+			sInfo.setRank(eSummoner.leagueSolo.getRank()); // 랭크
+			sInfo.setTier(eSummoner.leagueSolo.getTier()); // 티어
+			sInfo.setpWins(eSummoner.leagueSolo.getWins()); // 승리수
+			sInfo.setpLosses(eSummoner.leagueSolo.getLosses()); // 패배수
+			sInfo.setLeaguePoints(eSummoner.leagueSolo.getLeaguePoints()); // 랭크점수
+			sInfo.setTierImageAddr("/Project_tLOL/images/tier/" + eSummoner.leagueSolo.getTier() + ".png"); // 티어 아이콘
+			
 			String accountId = eSummoner.summoner.getAccountId();
-			MatchList matchList = api.getMatchListByAccountId(platform, accountId, null, null, null, -1,-1,0,5);
+			MatchList matchList = api.getMatchListByAccountId(platform, accountId, null, null, null, -1,-1,0,10);
 			int kill = 0, death = 0, assist = 0;
+			
+			
 			List<MatchReference> gameList = matchList.getMatches();
+			sInfo.setGames(gameList.size()); // 게임수
 			for(MatchReference game : gameList) {
+				MatchInfo mi = new MatchInfo();
 				Long gameId = game.getGameId();
 				Match match = api.getMatch(platform, gameId, accountId);
 				Participant part = match.getParticipantBySummonerId(summonerId);
 				ParticipantStats ps = part.getStats();
+				mi.setWinLose(ps.isWin()); // 승리 여부
+				mi.setChampion(part.getChampionId()); // 챔피온
+				System.out.println(mi.getChampion());
 				kill += ps.getKills();
 				death += ps.getDeaths();
 				assist += ps.getAssists();
 			}
-			System.out.println("total kda : " + kill + "/" + death +"/" + assist);
-			/*if (matchList.getMatches() != null) {
-				for (MatchReference match : matchList.getMatches()) {
-					Long gameId = match.getGameId();
-					Match m = api.getMatch(platform, gameId, accountId);
-					Participant part = m.getParticipantBySummonerId(summonerId);
-					ParticipantStats ps = part.getStats();
-					System.out.println(ps.getKills());
-				}
-			}*/
+			sInfo.setKda(((float)kill + assist) / death);
+			sInfo.setKills(kill / sInfo.getGames());
 			
 		}
 
-		System.out.print("Flex SR Rank: ");
+		/*System.out.print("Flex SR Rank: ");
 		if (eSummoner.leagueFlexSR == null) {
 			System.out.println("unranked");
 		} else {
@@ -135,6 +144,8 @@ public class AsyncExample {
 			System.out.println("unranked");
 		} else {
 			System.out.println(eSummoner.leagueFlexTT.getTier() + " " + eSummoner.leagueFlexTT.getRank());
-		}
+		}*/
+		
+		return sInfo;
 	}
 }

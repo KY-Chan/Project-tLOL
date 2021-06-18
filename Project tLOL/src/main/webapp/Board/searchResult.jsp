@@ -7,7 +7,7 @@
 	    <div class="profile">
 	       <ul class="clearfix">
 	           <li>
-	               <img src="${sInfo.profileIconId}" alt="플레이어 아이콘" onerror="this.src='../images/spell/ignite.png'" />
+	               <img src="${sInfo.profileIconAddr}" alt="플레이어 아이콘" onerror="this.src='../images/spell/ignite.png'" />
 	           </li>
 	           <li>
 	               <p class="user-nm">${sInfo.summonerName}</p>
@@ -17,11 +17,11 @@
 	               <p class="system-date">${sInfo.revisionDate}</p>
 	           </li>
 	           <li>
-	                <img src="${sInfo.tierImage}" class="rank-img" alt="티어 아이콘" onerror="this.src='../images/spell/ignite.png'" />
+	                <img src="${sInfo.tierImageAddr}" class="rank-img" alt="티어 아이콘" onerror="this.src='../images/spell/ignite.png'" />
 	                <p class="rank-info">
 	                    <span>솔로랭크</span>
 	                    <span class="rank-nm">${sInfo.tier}</span>
-	                    <span>${winRate} ${sInfo.wins}</span>
+	                    <span>${sInfo.wins / sInfo.losses} </span>
 	                    <span class="rank-total"> 
 	                        <span>${sInfo.wins}</span>
 	                        <span>${sInfo.losses}</span>
