@@ -14,7 +14,7 @@ public class AllChampionList {
 		champions.put(4, "TwistedFate");
 		champions.put(5, "XinZhao");
 		champions.put(6, "Urgot");
-		champions.put(7, "LeBlanc");
+		champions.put(7, "Leblanc");
 		champions.put(8, "Vladimir");
 		champions.put(9, "Fiddlesticks");
 		champions.put(10, "Kayle");

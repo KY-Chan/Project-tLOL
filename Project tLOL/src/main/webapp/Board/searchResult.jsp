@@ -42,7 +42,7 @@
 	                 <c:if test="${match.winLose eq false }">
 	                	<li class="lose">패배</li> <!-- 승리 : win / 패배 : lose -->  
 	                </c:if>    
-	                <li>게임시간</li>
+	                <li>${match.gameDuration }</li>
 	            </ul>
 	            <ul class="clearfix add-magic">
 	                <li>
@@ -54,7 +54,7 @@
 	            </ul>
 	            <span class="champion">
 	                <img src="${match.championAddr }" alt="챔피언 초상화" />
-	                <span>챔피언 레벨</span>
+	                <span>${match.champLevel }</span>
 	            </span>
 	            <ul class="clearfix kda">
 	                <li>
@@ -62,11 +62,11 @@
 	                    <span>KDA</span>
 	                </li>
 	                <li>
-	                    <span>CS(분당CS)</span>
+	                    <span>${match.totalMinion }</span>
 	                    <span>CS</span>
 	                </li>
 	                <li>
-	                    <span>25%</span>
+	                    <span><fmt:formatNumber value="${(match.kill + match.assist) / match.totalKill}" pattern="00%"/></span>
 	                    <span>KP</span>
 	                </li>
 	            </ul>
