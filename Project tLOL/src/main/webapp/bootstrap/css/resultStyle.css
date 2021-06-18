@@ -58,6 +58,12 @@ input, textarea, button {
 	-moz-border-radius: 0;
 }
 */
+#red-team {
+	text-decoration: red; color: red;
+}
+#blue-team {
+	text-decoration: blue; color: blue;
+}
 
 .flex-nowrap {
     background-color: rgb(34, 37, 41);
