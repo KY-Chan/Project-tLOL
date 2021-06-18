@@ -7,10 +7,39 @@ public class MatchInfo {
 	private boolean winLose;
 	private int champion;
 	private String championAddr;
-	private int spell_1Addr;
-	private int spell_2Addr;
+	private String spell_1Addr;
+	private String spell_2Addr;
 	private int rune_1Addr;
 	private int rune_2Addr;
+	private int champLevel;
+	private int totalMinion;
+	private long gameDuration;
+	private int totalKill;
+	
+	public int getTotalKill() {
+		return totalKill;
+	}
+	public void setTotalKill(int totalKill) {
+		this.totalKill = totalKill;
+	}
+	public int getChampLevel() {
+		return champLevel;
+	}
+	public void setChampLevel(int champLevel) {
+		this.champLevel = champLevel;
+	}
+	public int getTotalMinion() {
+		return totalMinion;
+	}
+	public void setTotalMinion(int totalMinion) {
+		this.totalMinion = totalMinion;
+	}
+	public long getGameDuration() {
+		return gameDuration;
+	}
+	public void setGameDuration(long gameDuration) {
+		this.gameDuration = gameDuration;
+	}
 	public int getRune_1Addr() {
 		return rune_1Addr;
 	}
@@ -58,16 +87,16 @@ public class MatchInfo {
 	public void setChampionAddr(String championAddr) {
 		this.championAddr = championAddr;
 	}
-	public int getSpell_1Addr() {
+	public String getSpell_1Addr() {
 		return spell_1Addr;
 	}
-	public void setSpell_1Addr(int spell_1Addr) {
+	public void setSpell_1Addr(String spell_1Addr) {
 		this.spell_1Addr = spell_1Addr;
 	}
-	public int getSpell_2Addr() {
+	public String getSpell_2Addr() {
 		return spell_2Addr;
 	}
-	public void setSpell_2Addr(int spell_2Addr) {
+	public void setSpell_2Addr(String spell_2Addr) {
 		this.spell_2Addr = spell_2Addr;
 	}
 	public int getTeam1Kill() {

@@ -1,19 +1,13 @@
 package tLOL.service.riot;
 
-import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;
@@ -27,7 +21,7 @@ import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 import net.rithms.riot.api.endpoints.match.dto.Participant;
 import net.rithms.riot.api.endpoints.match.dto.ParticipantIdentity;
 import net.rithms.riot.api.endpoints.match.dto.ParticipantStats;
-import net.rithms.riot.api.endpoints.static_data.dto.ChampionList;
+import net.rithms.riot.api.endpoints.match.dto.Rune;
 import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.api.request.AsyncRequest;
 import net.rithms.riot.api.request.RequestAdapter;
@@ -130,8 +124,6 @@ public class TestSummon implements CommandProcess {
 			MatchList matchList = api.getMatchListByAccountId(platform, accountId, null, null, null, -1,-1,0,10);
 			int kill = 0, death = 0, assist = 0;
 			
-			
-			
 			List<MatchReference> gameList = matchList.getMatches();
 			sInfo.setGames(gameList.size()); // 게임수
 			for(MatchReference game : gameList) {
@@ -145,8 +137,8 @@ public class TestSummon implements CommandProcess {
 				mi.setChampion(part.getChampionId()); // 챔피온
 				AllChampionList acl = new AllChampionList();
 				mi.setChampionAddr("http://ddragon.leagueoflegends.com/cdn/11.12.1/img/champion/" + acl.champions.get(mi.getChampion()) + ".png");
-				mi.setSpell_1Addr(part.getSpell1Id());
-				mi.setSpell_2Addr(part.getSpell2Id());
+				mi.setSpell_1Addr("https://ddragon.leagueoflegends.com/cdn/11.12.1/img/spell/" + acl.spells.get(part.getSpell1Id()) + ".png");
+				mi.setSpell_2Addr("https://ddragon.leagueoflegends.com/cdn/11.12.1/img/spell/" + acl.spells.get(part.getSpell2Id()) + ".png");
 				mi.setTeamId(part.getTeamId());
 				
 				mi.setKill(ps.getKills());
@@ -156,13 +148,21 @@ public class TestSummon implements CommandProcess {
 			    sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
 			    mi.setDate(sdf.format(date));
 				
+			    mi.setChampLevel(ps.getChampLevel());
+				mi.setTotalMinion(ps.getTotalMinionsKilled());
+				mi.setGameDuration(match.getGameDuration());
+				
+
+				int totalKill = 0;
 				List<ParticipantIdentity> players= match.getParticipantIdentities();
 				List<Participant> champions = match.getParticipants();
 				for(int i =0;i<10;i++) {
+					totalKill += champions.get(i).getStats().getKills();
 					mi.player.add(players.get(i).getPlayer().getSummonerName());
 					mi.playerChampion.add(champions.get(i).getChampionId());
 					mi.playerChampionAddr.add("http://ddragon.leagueoflegends.com/cdn/11.12.1/img/champion/" + acl.champions.get(champions.get(i).getChampionId()) + ".png");
 				}
+				mi.setTotalKill(totalKill);
 				sInfo.matchInfo.add(mi);
 				kill += ps.getKills();
 				death += ps.getDeaths();
