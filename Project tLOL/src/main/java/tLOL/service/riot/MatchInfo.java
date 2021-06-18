@@ -9,15 +9,22 @@ public class MatchInfo {
 	private String championAddr;
 	private int spell_1Addr;
 	private int spell_2Addr;
+	private int kill;
+	private int death;
+	private int assist;
+	
 	private int team1Kill;
 	private int team2Kill;
 	private int teamId;
+	private String date;
 	
 	public List<String> player;
 	public List<Integer> playerChampion;
+	public List<String> playerChampionAddr;
 	public MatchInfo() {
 		player = new ArrayList<String>();
 		playerChampion = new ArrayList<Integer>();
+		playerChampionAddr = new ArrayList<String>();
 	}
 	public boolean isWinLose() {
 		return winLose;
@@ -76,9 +83,39 @@ public class MatchInfo {
 	public List<Integer> getPlayerChampion() {
 		return playerChampion;
 	}
+	
+	public List<String> getPlayerChampionAddr() {
+		return playerChampionAddr;
+	}
+	public void setPlayerChampionAddr(List<String> playerChampionAddr) {
+		this.playerChampionAddr = playerChampionAddr;
+	}
 	public void setPlayerChampion(List<Integer> playerChampion) {
 		this.playerChampion = playerChampion;
 	}
-	
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public int getKill() {
+		return kill;
+	}
+	public void setKill(int kill) {
+		this.kill = kill;
+	}
+	public int getDeath() {
+		return death;
+	}
+	public void setDeath(int death) {
+		this.death = death;
+	}
+	public int getAssist() {
+		return assist;
+	}
+	public void setAssist(int assist) {
+		this.assist = assist;
+	}
 	
 }

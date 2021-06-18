@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<html>
 
-<div class="col-10 bd-content">
 <div class="wrap">
 	<section class="result-container">
 	    <div class="profile">
@@ -12,7 +13,7 @@
 	           <li>
 	               <p class="user-nm">${sInfo.summonerName}</p>
 	               <p class="update-btn">
-	                   <button>UPDATE</button>
+	                   <button onclick="location.reload()">UPDATE</button>
 	               </p>
 	               <p class="system-date">${sInfo.revisionDate}</p>
 	           </li>
@@ -21,32 +22,28 @@
 	                <p class="rank-info">
 	                    <span>솔로랭크</span>
 	                    <span class="rank-nm">${sInfo.tier}</span>
-	                    <span>${sInfo.wins / sInfo.losses} </span>
+	                    <span><fmt:formatNumber value="${sInfo.wins / sInfo.losses}" pattern=".00"/></span>
 	                    <span class="rank-total"> 
-	                        <span>${sInfo.wins}</span>
-	                        <span>${sInfo.losses}</span>
+	                        <span>${sInfo.wins}승</span>
+	                        <span>${sInfo.losses}패</span>
 	                    </span>
 	                </p>
 	           </li>
 	       </ul>
 	    </div>
 	    <ul class="clearfix">
+	    <c:forEach var="match" items="${sInfo.matchInfo }">
 	        <li class="record-box">
 	            <ul class="text">
 	                <li>솔랭</li>
-	                <li>6/15</li>
-	                <li class="win">승리</li> <!-- 승리 : win / 패배 : lose -->       
-<%--         <c:if test="${sInfo.wins}">  --%>
-<!--             <h2>  -->
-<!--                 승리 -->
-<!--             </h2>            -->
-<%--         </c:if> --%>
-<%--         <c:if test="${sInfo.losses}">  --%>
-<!--             <h2>  -->
-<!--                 패배 -->
-<!--             </h2>            -->
-<%--         </c:if> --%>
-	                <li>29분</li>
+	                <li>${match.date }</li>
+	                <c:if test="${match.winLose eq true }">
+	                	<li class="win">승리</li> <!-- 승리 : win / 패배 : lose -->  
+	                </c:if>  
+	                 <c:if test="${match.winLose eq false }">
+	                	<li class="lose">패배</li> <!-- 승리 : win / 패배 : lose -->  
+	                </c:if>    
+	                <li>게임시간</li>
 	            </ul>
 	            <ul class="clearfix add-magic">
 	                <li>
@@ -57,16 +54,16 @@
 	                </li>
 	            </ul>
 	            <span class="champion">
-	                <img src="../images/champions/blitzcrank.png" alt="챔피언 초상화" />
-	                <span>LV 14</span>
+	                <img src="${match.championAddr }" alt="챔피언 초상화" />
+	                <span>챔프레벨</span>
 	            </span>
 	            <ul class="clearfix kda">
 	                <li>
-	                    <span>2/8/7</span>
+	                    <span>${match.kill }/${match.death }/${match.assist }</span>
 	                    <span>KDA</span>
 	                </li>
 	                <li>
-	                    <span>208(7.2)</span>
+	                    <span>CS(분당CS)</span>
 	                    <span>CS</span>
 	                </li>
 	                <li>
@@ -74,52 +71,26 @@
 	                    <span>KP</span>
 	                </li>
 	            </ul>
-	            <ul class="team red">
-	                <li>
-	                    <img src="../images/champions/blitzcrank.png" alt="챔피언 초상화" />
-	                    <a href="">레드팀 아이디</a>
-	                </li>
-	                <li>
-	                    <img src="../images/champions/blitzcrank.png" alt="챔피언 초상화" />
-	                    <a href="">레드팀 아이디</a>
-	                </li>
-	                <li>
-	                    <img src="../images/champions/blitzcrank.png" alt="챔피언 초상화" />
-	                    <a href="">레드팀 아이디</a>
-	                </li>
-	                <li>
-	                    <img src="../images/champions/blitzcrank.png" alt="챔피언 초상화" />
-	                    <a href="">레드팀 아이디</a>
-	                </li>
-	                <li>
-	                    <img src="../images/champions/blitzcrank.png" alt="챔피언 초상화" />
-	                    <a href="">레드팀 아이디</a>
-	                </li>
-	            </ul>
+	            
 	            <ul class="team blue">
+	            <c:forEach var="i" begin="5" end="9">
 	                <li>
-	                    <img src="../images/champions/blitzcrank.png" alt="챔피언 초상화" />
-	                    <a href="">블루팀 아이디</a>
+	                    <img src="${match.playerChampionAddr[i] }" alt="챔피언 초상화" />
+	                    <a href="/Project_tLOL/Board/testSummon.do?summonerNick=${match.player[i] }">${match.player[i] }</a>
 	                </li>
+	             </c:forEach> 
+	            </ul>
+	            <ul class="team red">
+	            <c:forEach var="i" begin="0" end="4">
 	                <li>
-	                    <img src="../images/champions/blitzcrank.png" alt="챔피언 초상화" />
-	                    <a href="">블루팀 아이디</a>
+	                    <img src="${match.playerChampionAddr[i] }" alt="챔피언 초상화" />
+	                    <a href="/Project_tLOL/Board/testSummon.do?summonerNick=${match.player[i] }">${match.player[i] }</a>
 	                </li>
-	                <li>
-	                    <img src="../images/champions/blitzcrank.png" alt="챔피언 초상화" />
-	                    <a href="">블루팀 아이디</a>
-	                </li>
-	                <li>
-	                    <img src="../images/champions/blitzcrank.png" alt="챔피언 초상화" />
-	                    <a href="">블루팀 아이디</a>
-	                </li>
-	                <li>
-	                    <img src="../images/champions/blitzcrank.png" alt="챔피언 초상화" />
-	                    <a href="">블루팀 아이디</a>
-	                </li>
+	            </c:forEach>
 	            </ul>
 	        </li>
+	    </c:forEach>
 	    </ul>
 	</section>
 </div>
-</div>
+</html>

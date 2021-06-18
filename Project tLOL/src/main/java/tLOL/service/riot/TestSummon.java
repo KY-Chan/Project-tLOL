@@ -2,6 +2,7 @@ package tLOL.service.riot;
 
 import java.io.FileReader;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -120,10 +121,10 @@ public class TestSummon implements CommandProcess {
 		} else {
 			sInfo.setRank(eSummoner.leagueSolo.getRank()); // 랭크
 			sInfo.setTier(eSummoner.leagueSolo.getTier()); // 티어
-			sInfo.setpWins(eSummoner.leagueSolo.getWins()); // 승리수
-			sInfo.setpLosses(eSummoner.leagueSolo.getLosses()); // 패배수
+			sInfo.setWins(eSummoner.leagueSolo.getWins()); // 승리수
+			sInfo.setLosses(eSummoner.leagueSolo.getLosses()); // 패배수
 			sInfo.setLeaguePoints(eSummoner.leagueSolo.getLeaguePoints()); // 랭크점수
-			sInfo.setTierImageAddr("/Project_tLOL/images/tier/" + eSummoner.leagueSolo.getTier() + ".png"); // 티어 아이콘
+			sInfo.setTierImageAddr("/Project_tLOL/images/tiers/" + eSummoner.leagueSolo.getTier() + ".png"); // 티어 아이콘
 			
 			String accountId = eSummoner.summoner.getAccountId();
 			MatchList matchList = api.getMatchListByAccountId(platform, accountId, null, null, null, -1,-1,0,10);
@@ -142,14 +143,25 @@ public class TestSummon implements CommandProcess {
 				
 				mi.setWinLose(ps.isWin()); // 승리 여부
 				mi.setChampion(part.getChampionId()); // 챔피온
+				AllChampionList acl = new AllChampionList();
+				mi.setChampionAddr("http://ddragon.leagueoflegends.com/cdn/11.12.1/img/champion/" + acl.champions.get(mi.getChampion()) + ".png");
 				mi.setSpell_1Addr(part.getSpell1Id());
 				mi.setSpell_2Addr(part.getSpell2Id());
 				mi.setTeamId(part.getTeamId());
+				
+				mi.setKill(ps.getKills());
+				mi.setDeath(ps.getDeaths());
+				mi.setAssist(ps.getAssists());
+				Date date = new Date(game.getTimestamp()); 
+			    sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+			    mi.setDate(sdf.format(date));
+				
 				List<ParticipantIdentity> players= match.getParticipantIdentities();
 				List<Participant> champions = match.getParticipants();
 				for(int i =0;i<10;i++) {
 					mi.player.add(players.get(i).getPlayer().getSummonerName());
 					mi.playerChampion.add(champions.get(i).getChampionId());
+					mi.playerChampionAddr.add("http://ddragon.leagueoflegends.com/cdn/11.12.1/img/champion/" + acl.champions.get(champions.get(i).getChampionId()) + ".png");
 				}
 				sInfo.matchInfo.add(mi);
 				kill += ps.getKills();
