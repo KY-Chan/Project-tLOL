@@ -96,7 +96,7 @@ public class AsyncApi {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // ^ 프로필 아이콘 주소
 		sInfo.setRevisionDate(sdf.format(eSummoner.summoner.getRevisionDate())); // 최근 활동일
 		sInfo.setSumonerLevel(eSummoner.summoner.getSummonerLevel()); // 소환사 레벨
-
+		
 		if (eSummoner.leagueSolo == null) {
 			sInfo.setRank("unranked"); // 언랭
 		} else {
@@ -108,9 +108,9 @@ public class AsyncApi {
 			sInfo.setTierImageAddr("/Project_tLOL/images/tier/" + eSummoner.leagueSolo.getTier() + ".png"); // 티어 아이콘
 			
 			String accountId = eSummoner.summoner.getAccountId();
+			System.out.println(eSummoner.leagueSolo.getLeagueId());
 			MatchList matchList = api.getMatchListByAccountId(platform, accountId, null, null, null, -1,-1,0,10);
 			int kill = 0, death = 0, assist = 0;
-			
 			
 			List<MatchReference> gameList = matchList.getMatches();
 			sInfo.setGames(gameList.size()); // 게임수

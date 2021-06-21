@@ -108,7 +108,7 @@ public class AllChampionList {
 		champions.put(117, "Lulu");
 		champions.put(119, "Draven");
 		champions.put(120, "Hecarim");
-		champions.put(121, "KhaZix");
+		champions.put(121, "Khazix");
 		champions.put(122, "Darius");
 		champions.put(126, "Jayce");
 		champions.put(127, "Lissandra");
@@ -123,7 +123,7 @@ public class AllChampionList {
 		champions.put(150, "Gnar");
 		champions.put(154, "Zac");
 		champions.put(157, "Yasuo");
-		champions.put(161, "VelKoz");
+		champions.put(161, "Velkoz");
 		champions.put(163, "Taliyah");
 		champions.put(164, "Camille");
 		champions.put(201, "Braum");

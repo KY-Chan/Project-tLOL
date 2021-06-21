@@ -15,7 +15,6 @@
 		
 		var elapsedMsec = date2.getTime() - date1.getTime();
 		var elapsedHour = elapsedMsec / 1000 / 60 / 60;
-		
 		sessionStorage.setItem("elapsedHour", elapsedHour);
 	</script>
 	<div class="row col-8 mt-5 mb-2">
