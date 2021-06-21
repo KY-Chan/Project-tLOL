@@ -15,7 +15,7 @@
 	                   <button onclick="location.reload()">UPDATE</button>
 	               </p>
 	               <p class="system-date">${sInfo.revisionDate}</p>
-	           </li>
+	           </li>           
 	           <li>
 	                <img src="${sInfo.tierImageAddr}" class="rank-img" alt="티어 아이콘" onerror="this.src='../images/spell/ignite.png'" />
 	                <p class="rank-info">
@@ -41,11 +41,13 @@
 	                </c:if>  
 	                 <c:if test="${match.winLose eq false }">
 	                	<li class="lose">패배</li> <!-- 승리 : win / 패배 : lose -->  
-	                </c:if>    
-	                <li>${match.gameDuration }</li>
+	                </c:if> 
+	                <li>게임시간</li>   
+	                <li><fmt:formatNumber value="${match.gameDuration/60 }" pattern="00"/>분 ${match.gameDuration%60 }초</li>
 	            </ul>
 	            <ul class="clearfix add-magic">
-	                <li>
+	                <li style="margin: 10%;">
+	                	
 	                    <img src="${match.spell_1Addr }" alt="스펠 이미지" />
 	                    <img src="${match.spell_2Addr }" alt="스펠 이미지" />
 <%-- 	                    <img src="${match.rune_1Addr }" alt="룬 이미지" /> --%>
@@ -54,7 +56,7 @@
 	            </ul>
 	            <span class="champion">
 	                <img src="${match.championAddr }" alt="챔피언 초상화" />
-	                <span>${match.champLevel }</span>
+	                <span>Lv. ${match.champLevel }</span>
 	            </span>
 	            <ul class="clearfix kda">
 	                <li>

@@ -81,7 +81,9 @@ dl, dt, dd, ol, ul, li{
 ol, ul {
 	list-style: none;
 }
-
+.clearfix {
+	font-size: 115%;
+}
 .clearfix:after {
     content: '';
     clear: both;
@@ -245,7 +247,7 @@ ol, ul {
 .wrap .result-container ul li.record-box > ul.add-magic {
     position: relative;
     display: inline-block;
-    width: 12%;
+    width: 21%;
     bottom: 10px;
 }
 
@@ -262,13 +264,14 @@ ol, ul {
 .wrap .result-container ul li.record-box > span.champion {
     position: relative;
     display: inline-block;
-    bottom: 5px;
+    bottom: -4%;
+    right: 3%;
     text-align: center;
 }
 
 .wrap .result-container ul li.record-box > span.champion img {
     display: block;
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
     border-radius: 25px;
 }
@@ -276,16 +279,16 @@ ol, ul {
 .wrap .result-container ul li.record-box > span.champion > span {
     display: inline-block;
     color: #c2c2c2;
-    font-size: 12px;
+    font-size: 16px;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .wrap .result-container ul li.record-box > ul.kda {
     display: inline-block;
     position: absolute;
-    top: 40px;
-    width: 10%;
+    top: 58px;
+    width: 7%;
 }
 
 .wrap .result-container ul li.record-box > ul.kda li {
@@ -406,7 +409,7 @@ ol, ul {
     width: 70px;
     height: 70px;
     top: 25px;
-    right: 140px;
+    right: 210px;
     margin: 0;
 }
 
@@ -414,7 +417,7 @@ ol, ul {
     position: absolute;
     width: 150px;
     top: 18px;
-    right: 0;
+    right: 65px;
     margin: 0;
 }
 
