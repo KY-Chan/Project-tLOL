@@ -21,11 +21,13 @@
 	                <p class="rank-info">
 	                    <span>솔로랭크</span>
 	                    <span class="rank-nm">${sInfo.tier}</span>
-	                    <span><fmt:formatNumber value="${sInfo.wins / sInfo.losses}" pattern=".00"/></span>
+	                    <span><fmt:formatNumber value="${sInfo.wins / (sInfo.losses+sInfo.wins)*100}" pattern=".00"/>%</span> 
 	                    <span class="rank-total"> 
 	                        <span>${sInfo.wins}승</span>
-	                        <span>${sInfo.losses}패</span>
+	                        <span>${sInfo.losses}패</span>       
 	                    </span>
+	                    <span>${sInfo.tier}</span>
+	                    <span>${sInfo.leaguePoints}점</span>
 	                </p>
 	           </li>
 	       </ul>

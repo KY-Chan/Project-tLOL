@@ -58,8 +58,9 @@ public class Controller extends HttpServlet {
 		      command = command.substring(request.getContextPath().length()+1);
 	          com = (CommandProcess)commandMap.get(command);
 	          view = com.requestPro(request, response);
-	    } catch(Throwable e)
-	    	{ throw new ServletException(e); } 
+	    } catch(Throwable e)	    
+	    	{ throw new ServletException(e); 	    	
+	    	} 
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(view+".jsp");
 	    dispatcher.forward(request, response);
 	}
