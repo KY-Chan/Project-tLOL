@@ -21,7 +21,6 @@ import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 import net.rithms.riot.api.endpoints.match.dto.Participant;
 import net.rithms.riot.api.endpoints.match.dto.ParticipantIdentity;
 import net.rithms.riot.api.endpoints.match.dto.ParticipantStats;
-import net.rithms.riot.api.endpoints.match.dto.Rune;
 import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.api.request.AsyncRequest;
 import net.rithms.riot.api.request.RequestAdapter;
@@ -41,15 +40,6 @@ public class TestSummon implements CommandProcess {
 		// TODO Auto-generated method stub
 		String summonerNick = request.getParameter("summonerNick");
 		SummonerInfo sInfo = new SummonerInfo();
-		/*try {
-			AsyncApi async = new AsyncApi();
-			sInfo = async.getInfo(summonerNick);
-		} catch (RiotApiException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		if(sInfo == null)
-			System.out.println("실패");*/
 		
 		ApiConfig config = new ApiConfig().setKey("RGAPI-972a7043-6423-4bb3-94c1-de98fe50b7ef");
 		RiotApi api = new RiotApi(config);
@@ -121,17 +111,22 @@ public class TestSummon implements CommandProcess {
 			sInfo.setTierImageAddr("/Project_tLOL/images/tiers/" + eSummoner.leagueSolo.getTier() + ".png"); // 티어 아이콘
 			
 			String accountId = eSummoner.summoner.getAccountId();
+			// 최근 10개의 경기
 			MatchList matchList = api.getMatchListByAccountId(platform, accountId, null, null, null, -1,-1,0,10);
 			int kill = 0, death = 0, assist = 0;
-			
+			// 최근 10개의 경기 불러오기
 			List<MatchReference> gameList = matchList.getMatches();
 			sInfo.setGames(gameList.size()); // 게임수
 			for(MatchReference game : gameList) {
 				MatchInfo mi = new MatchInfo();
 				Long gameId = game.getGameId();
-				Match match = api.getMatch(platform, gameId, accountId);
-				Participant part = match.getParticipantBySummonerId(summonerId);
-				ParticipantStats ps = part.getStats();
+				 // gameId 기반으로 게임정보 검색
+				Match match = api.getMatch(platform, gameId, accountId); // match : 게임 정보
+				Participant part = match.getParticipantBySummonerId(summonerId); // part : 게임 중 내 정보
+				ParticipantStats ps = part.getStats(); // ps : 게임 중 내 세부정보
+				// System.out.println(match.toString(true));
+				// System.out.println(part.toString(true));
+				// 위와 같은 방식으로, 어떤 데이터가 넘어오는지 콘솔로 확인 가능
 				
 				mi.setWinLose(ps.isWin()); // 승리 여부
 				mi.setChampion(part.getChampionId()); // 챔피온
